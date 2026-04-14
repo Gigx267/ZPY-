@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="ZPY – Zentrum für Präventivmedizin Yunusah. Moderne Präventivmedizin, Stoffwechsel- und Endokrinologie in Düsseldorf.">
+<title>ZPY – Zentrum für Präventivmedizin Yunusah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #1a2f5e;
+  --navy-deep: #0f1d3a;
+  --navy-mid: #243f7a;
+  --gold: #c9a84c;
+  --gold-light: #e0bc6e;
+  --gold-pale: #f7f0df;
+  --white: #ffffff;
+  --off-white: #faf8f4;
+  --text: #1a2f5e;
+  --text-mid: #3a4a6b;
+  --text-light: #7a8aab;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --transition: 0.3s ease;
+  --shadow-sm: 0 12px 30px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 20px 35px rgba(26, 47, 94, 0.12);
+}
+
+body {
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--off-white);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+[lang="ar"] {
+  direction: rtl;
+  font-family: 'Noto Naskh Arabic', var(--sans), sans-serif;
+}
+
+/* Language Switcher */
+.lang-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 40px;
+  height: 36px;
+  gap: 6px;
+}
+
+.lang-bar button {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: 20px;
+}
+
+.lang-bar button:hover,
+.lang-bar button.active {
+  background: var(--gold);
+  color: var(--navy-deep);
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 36px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(15, 29, 58, 0.96);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  height: 72px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-logo-zpy {
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 4px;
+  transition: var(--transition);
+}
+
+.nav-logo-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(201, 168, 76, 0.4);
+}
+
+.nav-logo-sub {
+  font-family: var(--sans);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1.2px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  gap: 42px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: var(--transition);
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--navy-deep) !important;
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-weight: 600 !important;
+}
+
+.nav-cta::after {
+  display: none !important;
+}
+
+.nav-cta:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* Sections */
+section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+section.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-mid) 100%);
+  display: flex;
+  align-items: center;
+  padding: 160px 60px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 700px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-label::before {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(44px, 6vw, 74px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.hero-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin-bottom: 48px;
+  max-width: 520px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 14px 34px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--navy-deep);
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-3px);
+}
+
+/* Section shared */
+.section-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::before {
+  content: '';
+  width: 35px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  color: var(--navy);
+  margin-bottom: 60px;
+  line-height: 1.2;
+}
+
+/* USP Grid */
+.usp {
+  background: var(--off-white);
+  padding: 100px 60px;
+}
+
+.usp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.usp-card {
+  background: var(--white);
+  padding: 42px 28px;
+  position: relative;
+  transition: var(--transition);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.usp-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.usp-icon {
+  font-size: 32px;
+  margin-bottom: 22px;
+  display: inline-block;
+}
+
+.usp-card h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.usp-card p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.usp-number {
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 700;
+  color: rgba(201, 168, 76, 0.08);
+  line-height: 1;
+}
+
+/* Profile Section */
+.profile {
+  background: var(--navy);
+  padding: 100px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.profile-text .section-label {
+  color: var(--gold);
+}
+
+.profile-text .section-label::before {
+  background: var(--gold);
+}
+
+.profile-title {
+  font-family: var(--serif);
+  font-size: clamp(38px, 4.5vw, 56px);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.profile-role {
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.profile-text p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.profile-tag {
+  padding: 6px 18px;
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  color: var(--gold-light);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 30px;
+}
+
+.profile-card {
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  padding: 48px 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(4px);
+}
+
+.profile-card-title {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  font-weight: 600;
+}
+
+.profile-why-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.profile-why-item::before {
+  content: '●';
+  color: var(--gold);
+  font-size: 12px;
+}
+
+/* Leistungen */
+.leistungen {
+  padding: 100px 60px;
+  background: var(--off-white);
+}
+
+.leistungen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.leistung-card {
+  background: var(--white);
+  padding: 42px 32px;
+  border-radius: 20px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.leistung-card:hover {
+  transform: translateY(-6px);
+  background: var(--navy);
+  box-shadow: var(--shadow-hover);
+}
+
+.leistung-card:hover .leistung-title,
+.leistung-card:hover .leistung-num {
+  color: var(--gold);
+}
+
+.leistung-card:hover .leistung-item {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.leistung-num {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 18px;
+  display: block;
+  font-weight: 500;
+}
+
+.leistung-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 28px;
+  transition: var(--transition);
+}
+
+.leistung-list {
+  list-style: none;
+}
+
+.leistung-item {
+  font-size: 14px;
+  color: var(--text-mid);
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 300;
+  transition: var(--transition);
+  border-bottom: 1px solid rgba(26, 47, 94, 0.05);
+}
+
+.leistung-item::before {
+  content: '—';
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* Philosophie */
+.philosophie {
+  background: var(--navy-deep);
+  padding: 120px 60px;
+  position: relative;
+}
+
+.philosophie-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.philosophie-inner .section-label {
+  justify-content: center;
+}
+
+.philosophie-title {
+  font-family: var(--serif);
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 48px;
+  line-height: 1.2;
+}
+
+.philosophie-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.philosophie p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.9;
+  font-weight: 300;
+  margin-bottom: 28px;
+}
+
+.philosophie-divider {
+  width: 80px;
+  height: 2px;
+  background: var(--gold);
+  margin: 40px auto;
+  opacity: 0.6;
+}
+
+/* International */
+.international {
+  padding: 100px 60px;
+  background: var(--off-white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.intl-services {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.intl-service {
+  background: var(--white);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 14px;
+  border-radius: 12px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.intl-service:hover {
+  transform: translateX(6px);
+  border-left: 3px solid var(--gold);
+}
+
+.intl-service-icon {
+  font-size: 24px;
+}
+
+.intl-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.intl-flag {
+  padding: 8px 20px;
+  background: white;
+  border-radius: 40px;
+  font-size: 13px;
+  color: var(--text-mid);
+  font-weight: 400;
+  box-shadow: var(--shadow-sm);
+}
+
+.intl-visual {
+  background: var(--navy);
+  padding: 56px;
+  border-radius: 32px;
+}
+
+.intl-stat {
+  margin-bottom: 32px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  padding-bottom: 24px;
+}
+
+.intl-stat:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.intl-stat-value {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1.1;
+}
+
+.intl-stat-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+/* Kontakt */
+.kontakt {
+  padding: 100px 60px;
+  background: var(--white);
+}
+
+.kontakt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  margin-top: 50px;
+}
+
+.kontakt-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.kontakt-item-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--gold);
+}
+
+.kontakt-item-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.kontakt-item-value {
+  font-size: 16px;
+  color: var(--navy);
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.kontakt-hours {
+  background: var(--off-white);
+  padding: 28px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.kontakt-hours-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.kontakt-hour-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--text-mid);
+  border-bottom: 1px solid rgba(26, 47, 94, 0.08);
+}
+
+.kontakt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.form-input, .form-textarea, .form-select {
+  padding: 14px 18px;
+  border: 1px solid rgba(26, 47, 94, 0.15);
+  background: var(--off-white);
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--navy);
+  border-radius: 12px;
+  transition: var(--transition);
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  border-color: var(--gold);
+  outline: none;
+  background: white;
+}
+
+.form-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.form-submit {
+  background: var(--navy);
+  color: var(--gold);
+  padding: 14px 32px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+.form-submit:hover {
+  background: var(--gold);
+  color: var(--navy-deep);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background: var(--navy-deep);
+  padding: 50px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 4px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-links {
+  display: flex;
+  gap: 32px;
+}
+
+.footer-links a {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 30px;
+  }
+  .nav-links {
+    gap: 24px;
+  }
+  .usp-grid, .leistungen-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .profile, .international, .kontakt-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .lang-bar {
+    padding: 0 16px;
+  }
+  nav {
+    padding: 0 20px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hero {
+    padding: 140px 24px 70px;
+  }
+  .usp, .leistungen, .philosophie, .international, .kontakt, .profile {
+    padding: 60px 24px;
+  }
+  .usp-grid, .leistungen-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 24px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content > * {
+  animation: fadeInUp 0.7s ease forwards;
+  opacity: 0;
+}
+
+.hero-label { animation-delay: 0.1s; }
+.hero h1 { animation-delay: 0.2s; }
+.hero-sub { animation-delay: 0.35s; }
+.hero-buttons { animation-delay: 0.5s; }
+
+html {
+  scroll-behavior: smooth;
+}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="active" onclick="setLang('de')">DE</button>
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('fr')">FR</button>
+  <button onclick="setLang('ru')">RU</button>
+  <button onclick="setLang('ar')">AR</button>
+</div>
+
+<nav>
+  <a href="#" class="nav-logo" onclick="showSection('home')">
+    <span class="nav-logo-zpy">ZPY</span>
+    <span class="nav-logo-divider"></span>
+    <span class="nav-logo-sub" data-de="Zentrum für<br>Präventivmedizin" data-en="Preventive<br>Medicine Center" data-fr="Centre de<br>Médecine Préventive" data-ru="Центр<br>Профилактической Медицины" data-ar="مركز<br>الطب الوقائي"></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showSection('home')" data-de="Start" data-en="Home" data-fr="Accueil" data-ru="Главная" data-ar="الرئيسية"></a></li>
+    <li><a href="#" onclick="showSection('leistungen')" data-de="Leistungen" data-en="Services" data-fr="Services" data-ru="Услуги" data-ar="الخدمات"></a></li>
+    <li><a href="#" onclick="showSection('philosophie')" data-de="Konzept" data-en="Concept" data-fr="Concept" data-ru="Концепция" data-ar="المفهوم"></a></li>
+    <li><a href="#" onclick="showSection('international')" data-de="International" data-en="International" data-fr="International" data-ru="Международное" data-ar="دولي"></a></li>
+    <li><a href="#" class="nav-cta" onclick="showSection('kontakt')" data-de="Termin" data-en="Appointment" data-fr="RDV" data-ru="Запись" data-ar="موعد"></a></li>
+  </ul>
+</nav>
+
+<section id="home" class="active">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-label"><span data-de="ZPY – Präventivmedizin Yunusah" data-en="ZPY – Preventive Medicine Yunusah" data-fr="ZPY – Médecine Préventive Yunusah" data-ru="ZPY – Профилактическая медицина" data-ar="ZPY – الطب الوقائي يونوساه"></span></div>
+      <h1><span data-de="Wir behandeln Gesundheit,<br><em>bevor Krankheit entsteht.</em>" data-en="We care for your health<br><em>before illness occurs.</em>" data-fr="Nous soignons votre santé<br><em>avant la maladie.</em>" data-ru="Мы заботимся о здоровье<br><em>до появления болезни.</em>" data-ar="نعتني بصحتك<br><em>قبل أن يظهر المرض.</em>"></span></h1>
+      <p class="hero-sub" data-de="Hausärztliche Versorgung kombiniert mit moderner Präventiv- und Stoffwechselmedizin." data-en="General medicine combined with modern preventive & metabolic care." data-fr="Soins généraux et médecine préventive métabolique." data-ru="Общая помощь + профилактическая метаболическая медицина." data-ar="رعاية طبية عامة + طب وقائي واستقلابي حديث."></p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="showSection('kontakt')" data-de="Termin buchen" data-en="Book now" data-fr="Réserver" data-ru="Записаться" data-ar="احجز"></button>
+        <button class="btn-secondary" onclick="showSection('leistungen')" data-de="Leistungen" data-en="Services" data-fr="Services" data-ru="Услуги" data-ar="الخدمات"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="usp">
+    <div class="section-label" data-de="Unser Ansatz" data-en="Our Approach" data-fr="Notre Approche" data-ru="Наш Подход" data-ar="نهجنا"></div>
+    <h2 class="section-title" data-de="Medizin, die <em>vorausdenkt</em>" data-en="Medicine that <em>thinks ahead</em>" data-fr="Médecine qui <em>anticipe</em>" data-ru="Медицина, которая <em>думает вперёд</em>" data-ar="طب <em>يفكر مسبقاً</em>"></h2>
+    <div class="usp-grid">
+      <div class="usp-card"><span class="usp-number">01</span><span class="usp-icon">🛡️</span><h3 data-de="Prävention" data-en="Prevention" data-fr="Prévention" data-ru="Профилактика" data-ar="الوقاية"></h3><p data-de="Früherkennung und gezielte Prävention statt reaktiver Behandlung." data-en="Early detection & targeted prevention." data-fr="Détection précoce et prévention ciblée." data-ru="Раннее выявление и профилактика." data-ar="الكشف المبكر والوقاية"></p></div>
+      <div class="usp-card"><span class="usp-number">02</span><span class="usp-icon">🔄</span><h3 data-de="Stoffwechsel" data-en="Metabolism" data-fr="Métabolisme" data-ru="Метаболизм" data-ar="التمثيل الغذائي"></h3><p data-de="Stoffwechsel als zentrales Regulationssystem optimieren." data-en="Optimizing metabolism as core regulator." data-fr="Optimiser le métabolisme régulateur." data-ru="Оптимизация метаболизма." data-ar="تحسين التمثيل الغذائي"></p></div>
+      <div class="usp-card"><span class="usp-number">03</span><span class="usp-icon">🧬</span><h3 data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></h3><p data-de="Hormonelle Balance für langfristige Gesundheit." data-en="Hormonal balance for lasting health." data-fr="Équilibre hormonal." data-ru="Гормональный баланс." data-ar="توازن هرموني"></p></div>
+      <div class="usp-card"><span class="usp-number">04</span><span class="usp-icon">🔬</span><h3 data-de="Früherkennung" data-en="Early Detection" data-fr="Dépistage" data-ru="Ранняя диагностика" data-ar="الكشف المبكر"></h3><p data-de="Erweiterte Diagnostik für personalisierte Prävention." data-en="Advanced diagnostics for personalised prevention." data-fr="Diagnostics avancés." data-ru="Расширенная диагностика." data-ar="تشخيص متقدم"></p></div>
+    </div>
+  </div>
+
+  <div class="profile">
+    <div class="profile-text">
+      <div class="section-label" data-de="Kurzprofil" data-en="Profile" data-fr="Profil" data-ru="Профиль" data-ar="الملف الشخصي"></div>
+      <h2 class="profile-title">MD Fattah<br>Yunusah</h2>
+      <div class="profile-role" data-de="Facharzt für Allgemeinmedizin & Allgemeinchirurgie" data-en="Specialist in General Medicine & Surgery" data-fr="Spécialiste en médecine générale & chirurgie" data-ru="Специалист по общей медицине и хирургии" data-ar="اختصاصي طب عام وجراحة"></div>
+      <p data-de="Mit Fokus auf Prävention, Stoffwechsel und endokrine Regulation – medizinische Versorgung über dem Standard." data-en="Focus on prevention, metabolism, endocrine regulation – care beyond the standard." data-fr="Prévention, métabolisme, régulation endocrine – soins au-delà du standard." data-ru="Профилактика, метаболизм, эндокринная регуляция." data-ar="الوقاية، التمثيل الغذائي، التنظيم الهرموني – رعاية فائقة"></p>
+      <div class="profile-tags"><span class="profile-tag" data-de="Präventivmedizin" data-en="Preventive Med" data-fr="Méd. Préventive" data-ru="Проф. медицина" data-ar="الطب الوقائي"></span><span class="profile-tag" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></span><span class="profile-tag" data-de="Stoffwechsel" data-en="Metabolism" data-fr="Métabolisme" data-ru="Метаболизм" data-ar="التمثيل الغذائي"></span></div>
+    </div>
+    <div class="profile-visual"><div class="profile-card"><div class="profile-card-title" data-de="Warum ZPY?" data-en="Why ZPY?" data-fr="Pourquoi ZPY?" data-ru="Почему ZPY?" data-ar="لماذا ZPY؟"></div><div class="profile-why-item" data-de="Früherkennung statt Spättherapie" data-en="Early detection over late therapy" data-fr="Dépistage précoce" data-ru="Раннее выявление" data-ar="الكشف المبكر"></div><div class="profile-why-item" data-de="Systemmedizinischer Ansatz" data-en="Systems medicine" data-fr="Médecine systémique" data-ru="Системная медицина" data-ar="طب جهازي"></div><div class="profile-why-item" data-de="Individuelle Betreuung" data-en="Individualised care" data-fr="Soins personnalisés" data-ru="Индивидуальный подход" data-ar="رعاية فردية"></div></div></div>
+  </div>
+</section>
+
+<section id="leistungen"><div class="leistungen"><div class="section-label" data-de="Unser Angebot" data-en="Our Services" data-fr="Nos Services" data-ru="Наши услуги" data-ar="خدماتنا"></div><h2 class="section-title" data-de="Leistungen" data-en="Services" data-fr="Prestations" data-ru="Услуги" data-ar="الخدمات"></h2><div class="leistungen-grid"><div class="leistung-card"><span class="leistung-num">01</span><div class="leistung-title" data-de="Hausärztliche Versorgung" data-en="General Medicine" data-fr="Médecine Générale" data-ru="Общая медицина" data-ar="الطب العام"></div><ul class="leistung-list"><li class="leistung-item" data-de="Akut- & Langzeitbetreuung" data-en="Acute & long-term care" data-fr="Soins aigus & chroniques" data-ru="Острая и хроническая помощь" data-ar="رعاية حادة ومزمنة"></li><li class="leistung-item" data-de="Check-ups & Vorsorge" data-en="Check-ups & prevention" data-fr="Bilans & prévention" data-ru="Чек-апы" data-ar="فحوصات دورية"></li><li class="leistung-item" data-de="Chronikerbetreuung" data-en="Chronic care" data-fr="Maladies chroniques" data-ru="Хронические заболевания" data-ar="الأمراض المزمنة"></li></ul></div><div class="leistung-card"><span class="leistung-num">02</span><div class="leistung-title" data-de="Präventivmedizin" data-en="Preventive Med" data-fr="Méd. Préventive" data-ru="Профилактика" data-ar="الطب الوقائي"></div><ul class="leistung-list"><li class="leistung-item" data-de="Erweiterte Vorsorge" data-en="Advanced prevention" data-fr="Prévention avancée" data-ru="Расширенная профилактика" data-ar="وقاية متقدمة"></li><li class="leistung-item" data-de="Risikoanalysen" data-en="Risk analyses" data-fr="Analyses risque" data-ru="Анализ рисков" data-ar="تحليل المخاطر"></li><li class="leistung-item" data-de="Indiv. Präventionsstrategien" data-en="Individual plans" data-fr="Plans personnalisés" data-ru="Индивидуальные планы" data-ar="خطط وقائية شخصية"></li></ul></div><div class="leistung-card"><span class="leistung-num">03</span><div class="leistung-title" data-de="Stoffwechselmedizin" data-en="Metabolic Med" data-fr="Méd. Métabolique" data-ru="Метаболическая медицина" data-ar="طب التمثيل الغذائي"></div><ul class="leistung-list"><li class="leistung-item" data-de="Insulinresistenz" data-en="Insulin resistance" data-fr="Résistance insuline" data-ru="Инсулинорезистентность" data-ar="مقاومة الأنسولين"></li><li class="leistung-item" data-de="Metabolisches Syndrom" data-en="Metabolic syndrome" data-fr="Syndrome métabolique" data-ru="Метаболический синдром" data-ar="المتلازمة الاستقلابية"></li><li class="leistung-item" data-de="Gewichtsmanagement" data-en="Weight management" data-fr="Gestion du poids" data-ru="Контроль веса" data-ar="إدارة الوزن"></li></ul></div></div></div></section>
+
+<section id="philosophie"><div class="philosophie"><div class="philosophie-inner"><div class="section-label" data-de="Unser Konzept" data-en="Our Concept" data-fr="Notre Concept" data-ru="Наша концепция" data-ar="مفهومنا"></div><h2 class="philosophie-title" data-de="Medizin neu gedacht –<br><em>Prävention als System</em>" data-en="Medicine reimagined –<br><em>Prevention as a System</em>" data-fr="Médecine repensée –<br><em>Prévention systémique</em>" data-ru="Медицина заново –<br><em>Профилактика как система</em>" data-ar="طب جديد –<br><em>الوقاية كنظام</em>"></h2><div class="philosophie-divider"></div><p data-de="Klassische Medizin setzt oft erst bei manifester Krankheit an. ZPY setzt auf frühzeitige Erkennung & Steuerung biologischer Systeme – bevor Schäden entstehen." data-en="Conventional medicine often acts too late. ZPY focuses on early detection & biological system control." data-fr="La médecine classique agit souvent tard. ZPY se concentre sur la détection précoce." data-ru="Обычная медицина часто запаздывает. ZPY делает ставку на раннее выявление." data-ar="الطب التقليدي غالباً ما يتأخر. ZPY تركز على الكشف المبكر."></p><p data-de="Stoffwechsel als zentrales Regulationssystem – koordiniert Energie, Hormone, Immunfunktion und langfristige Gesundheit." data-en="Metabolism as central regulator – energy, hormones, immunity, long-term health." data-fr="Le métabolisme régulateur central." data-ru="Метаболизм – центральная регуляторная система." data-ar="التمثيل الغذائي كنظام تنظيمي مركزي."></p></div></div></section>
+
+<section id="international"><div class="international"><div><div class="section-label" data-de="Weltweit willkommen" data-en="Welcome Worldwide" data-fr="Bienvenue" data-ru="Добро пожаловать" data-ar="مرحباً"></div><h2 class="section-title" data-de="Internationale Patienten" data-en="International Patients" data-fr="Patients Internationaux" data-ru="Иностранные пациенты" data-ar="المرضى الدوليون"></h2><p style="margin-bottom:32px;color:var(--text-mid);" data-de="Konsultationen & Diagnostik für internationale Patienten – modernste Präventiv- & Stoffwechselmedizin in Düsseldorf." data-en="Consultations & diagnostics for international patients – advanced preventive & metabolic care in Düsseldorf." data-fr="Consultations & diagnostics – médecine préventive de pointe à Düsseldorf." data-ru="Консультации и диагностика для иностранных пациентов." data-ar="استشارات وتشخيص للمرضى الدوليين."></p><div class="intl-services"><div class="intl-service"><span class="intl-service-icon">🌐</span><span data-de="Konsultationen: Englisch, Arabisch, Französisch, Russisch" data-en="Consultations: EN, AR, FR, RU" data-fr="Consultations: EN, AR, FR, RU" data-ru="Консультации: EN, AR, FR, RU" data-ar="استشارات: EN, AR, FR, RU"></span></div><div class="intl-service"><span class="intl-service-icon">📍</span><span data-de="Düsseldorf, Hansaallee 179 – Zentrum Europas" data-en="Düsseldorf, Hansaallee 179 – Heart of Europe" data-fr="Düsseldorf, Hansaallee 179 – Cœur de l'Europe" data-ru="Дюссельдорф, Hansaallee 179" data-ar="دوسلدورف، هانزاأليه 179"></span></div></div><div class="intl-flags"><span class="intl-flag">🇩🇪 DE</span><span class="intl-flag">🇬🇧 EN</span><span class="intl-flag">🇫🇷 FR</span><span class="intl-flag">🇷🇺 RU</span><span class="intl-flag">🇸🇦 AR</span></div></div><div class="intl-visual"><div class="intl-stat"><div class="intl-stat-value">5</div><div class="intl-stat-label" data-de="Sprachen" data-en="Languages" data-fr="Langues" data-ru="Языков" data-ar="لغات"></div></div><div class="intl-stat"><div class="intl-stat-value" data-de="Juli '26" data-en="July '26" data-fr="Juillet '26" data-ru="Июль '26" data-ar="يوليو '26"></div><div class="intl-stat-label" data-de="Praxis-Eröffnung" data-en="Opening" data-fr="Ouverture" data-ru="Открытие" data-ar="الافتتاح"></div></div><div class="intl-stat"><div class="intl-stat-value">Ddorf</div><div class="intl-stat-label" data-de="Hansaallee 179" data-en="Hansaallee 179" data-fr="Hansaallee 179" data-ru="Hansaallee 179" data-ar="هانزاأليه 179"></div></div></div></div></section>
+
+<section id="kontakt"><div class="kontakt"><div class="section-label" data-de="Sprechen Sie uns an" data-en="Get in Touch" data-fr="Contactez-nous" data-ru="Свяжитесь с нами" data-ar="تواصل معنا"></div><h2 class="section-title" data-de="Kontakt & Termin" data-en="Contact & Appointment" data-fr="Contact & RDV" data-ru="Контакт и запись" data-ar="التواصل والمواعيد"></h2><div class="kontakt-grid"><div class="kontakt-info"><div class="kontakt-item"><div class="kontakt-item-icon">📍</div><div><div class="kontakt-item-label" data-de="Adresse" data-en="Address" data-fr="Adresse" data-ru="Адрес" data-ar="العنوان"></div><div class="kontakt-item-value">Hansaallee 179, 40549 Düsseldorf</div></div></div><div class="kontakt-item"><div class="kontakt-item-icon">📞</div><div><div class="kontakt-item-label" data-de="Telefon" data-en="Phone" data-fr="Téléphone" data-ru="Телефон" data-ar="الهاتف"></div><div class="kontakt-item-value">+49 211 1234567</div></div></div><div class="kontakt-item"><div class="kontakt-item-icon">✉️</div><div><div class="kontakt-item-label" data-de="E-Mail" data-en="Email" data-fr="Email" data-ru="Email" data-ar="البريد الإلكتروني"></div><div class="kontakt-item-value">info@zpy-praxis.de</div></div></div><div class="kontakt-hours"><div class="kontakt-hours-title" data-de="Öffnungszeiten" data-en="Opening Hours" data-fr="Horaires" data-ru="Часы работы" data-ar="ساعات العمل"></div><div class="kontakt-hour-row"><span data-de="Mo – Do" data-en="Mon – Thu" data-fr="Lun – Jeu" data-ru="Пн – Чт" data-ar="الاثنين – الخميس"></span><span>08:00 – 18:00</span></div><div class="kontakt-hour-row"><span data-de="Freitag" data-en="Friday" data-fr="Vendredi" data-ru="Пятница" data-ar="الجمعة"></span><span>08:00 – 14:00</span></div></div></div><div class="kontakt-form"><div class="form-row"><div class="form-group"><label class="form-label" data-de="Vorname" data-en="First Name" data-fr="Prénom" data-ru="Имя" data-ar="الاسم الأول"></label><input class="form-input" type="text"></div><div class="form-group"><label class="form-label" data-de="Nachname" data-en="Last Name" data-fr="Nom" data-ru="Фамилия" data-ar="اسم العائلة"></label><input class="form-input" type="text"></div></div><div class="form-group"><label class="form-label" data-de="E-Mail" data-en="Email" data-fr="Email" data-ru="Email" data-ar="البريد الإلكتروني"></label><input class="form-input" type="email"></div><div class="form-group"><label class="form-label" data-de="Nachricht" data-en="Message" data-fr="Message" data-ru="Сообщение" data-ar="الرسالة"></label><textarea class="form-textarea"></textarea></div><button class="form-submit" data-de="Anfrage senden" data-en="Send Inquiry" data-fr="Envoyer" data-ru="Отправить" data-ar="إرسال"></button></div></div></div></section>
+
+<footer><div class="footer-logo">ZPY</div><div class="footer-copy" data-de="© 2026 Zentrum für Präventivmedizin Yunusah · Düsseldorf" data-en="© 2026 Preventive Medicine Center Yunusah · Düsseldorf" data-fr="© 2026 Centre de Médecine Préventive · Düsseldorf" data-ru="© 2026 Центр профилактической медицины · Дюссельдорф" data-ar="© 2026 مركز الطب الوقائي · دوسلدورف"></div><div class="footer-links"><a href="#" data-de="Impressum" data-en="Imprint" data-fr="Mentions" data-ru="Импрессум" data-ar="بيانات النشر"></a><a href="#" data-de="Datenschutz" data-en="Privacy" data-fr="Confidentialité" data-ru="Конфиденциальность" data-ar="الخصوصية"></a></div></footer>
+
+<script>
+let currentLang = 'de';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.setAttribute('lang', lang);
+  document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+  document.querySelectorAll('.lang-bar button').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.lang-bar button').forEach(btn => { if(btn.textContent.trim().toLowerCase() === lang) btn.classList.add('active'); });
+  document.querySelectorAll('[data-'+lang+']').forEach(el => { el.innerHTML = el.getAttribute('data-'+lang); });
+}
+
+function showSection(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 36, behavior: 'smooth' });
+}
+setLang('de');
+</script>
+</body>
+</html>
