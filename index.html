@@ -8,342 +8,264 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════
-   THEME VARIABLES – BLUE & LUXURY
-═══════════════════════════════════════ */
 :root {
-  --ease: 0.45s cubic-bezier(0.22, 0.92, 0.36, 1);
+  --ease: 0.38s cubic-bezier(0.25,0.46,0.45,0.94);
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans:  'Jost', 'Helvetica Neue', sans-serif;
-  /* Luxury blue palette */
-  --blue-deep:    #0a2540;      /* deep navy */
-  --blue-rich:    #1a4972;      /* rich sapphire */
-  --blue-satin:   #2c628a;      /* elegant medium */
-  --blue-mist:    #eef4fc;      /* airy light */
-  --gold:         #c5a267;      /* refined champagne gold */
-  --gold-light:   #e0c894;
-  --gold-pale:    #faf5e9;
+  --blue: #3a6fa8; --blue-mid: #5285b8;
+  --gold: #b8902a; --gold-l: #d4ab4e;
 }
-
-/* LIGHT MODE – luminous & luxurious */
 [data-theme="light"] {
-  --bg:           #ffffff;
-  --bg2:          #f9fbfe;
-  --bg3:          #f0f5fc;
-  --text:         #152b42;
-  --text-mid:     #2c4c6e;
-  --text-soft:    #7c93aa;
-  --border:       rgba(26, 73, 114, 0.12);
-  --card:         #ffffff;
-  --nav-bg:       rgba(255, 255, 255, 0.98);
-  --nav-border:   rgba(26, 73, 114, 0.12);
-  --nav-shadow:   0 8px 32px rgba(10, 37, 64, 0.06);
-  --hero-bg:      #ffffff;
-  --hero-deco:    rgba(26, 73, 114, 0.02);
-  --hero-circle:  #eef4fc;
-  --section-alt:  #f9fbfe;
-  --usp-hover:    #1a4972;
-  --usp-hover-text:#ffffff;
-  --phil-bg:      #0a2540;
-  --phil-text:    rgba(255, 255, 255, 0.75);
-  --footer-bg:    #0a2540;
-  --footer-text:  rgba(255, 255, 255, 0.35);
-  --toggle-bg:    rgba(26, 73, 114, 0.08);
-  --toggle-icon-show: '☀';
-  --intl-right:   #f0f5fc;
-  --intl-right-val:#1a4972;
-  --hours-bg:     #f9fbfe;
-  --input-bg:     #ffffff;
-  --input-focus:  #eef4fc;
-  --tag-border:   rgba(26, 73, 114, 0.25);
-  --tag-color:    #1a4972;
-  --gold-accent:  #c5a267;
+  --bg:#fff; --bg2:#f8fafc; --bg3:#eef4fb;
+  --text:#1e2d45; --text-mid:#4a5f78; --text-soft:#8a9db8;
+  --border:rgba(58,111,168,0.13); --card:#fff;
+  --nav-bg:rgba(255,255,255,0.97); --nav-shadow:0 2px 24px rgba(30,45,69,0.07);
+  --hero-circle:#eef4fb; --section-alt:#f8fafc;
+  --phil-bg:#3a6fa8; --phil-text:rgba(255,255,255,0.72);
+  --footer-bg:#1e2d45; --footer-text:rgba(255,255,255,0.32);
+  --input-bg:#f8fafc; --tag-border:rgba(58,111,168,0.25); --tag-color:#3a6fa8;
+  --hours-bg:#f8fafc; --intl-right:#eef4fb; --intl-val:#3a6fa8;
 }
-
-/* DARK MODE – deep, nocturnal luxury */
 [data-theme="dark"] {
-  --bg:           #0f1a24;
-  --bg2:          #14222e;
-  --bg3:          #1c2e3e;
-  --text:         #ecf3f9;
-  --text-mid:     #b7cddf;
-  --text-soft:    #7a94ae;
-  --border:       rgba(197, 162, 103, 0.22);
-  --card:         #162633;
-  --nav-bg:       rgba(15, 26, 36, 0.97);
-  --nav-border:   rgba(197, 162, 103, 0.18);
-  --nav-shadow:   0 8px 32px rgba(0,0,0,0.4);
-  --hero-bg:      #0f1a24;
-  --hero-deco:    rgba(197, 162, 103, 0.03);
-  --hero-circle:  #1c2e3e;
-  --section-alt:  #111e28;
-  --usp-hover:    #c5a267;
-  --usp-hover-text:#0f1a24;
-  --phil-bg:      #080f15;
-  --phil-text:    rgba(255, 255, 255, 0.6);
-  --footer-bg:    #080f15;
-  --footer-text:  rgba(255, 255, 255, 0.2);
-  --toggle-bg:    rgba(197, 162, 103, 0.15);
-  --intl-right:   #162633;
-  --intl-right-val:#e0c894;
-  --hours-bg:     #162633;
-  --input-bg:     #162633;
-  --input-focus:  #1c2e3e;
-  --tag-border:   rgba(197, 162, 103, 0.45);
-  --tag-color:    #e0c894;
-  --gold-accent:  #e0c894;
+  --bg:#0e1a2e; --bg2:#131f33; --bg3:#1a2a42;
+  --text:#e8eef8; --text-mid:#9ab0cc; --text-soft:#5a7090;
+  --border:rgba(58,111,168,0.22); --card:#152035;
+  --nav-bg:rgba(14,26,46,0.97); --nav-shadow:0 2px 24px rgba(0,0,0,0.35);
+  --hero-circle:#1a2a42; --section-alt:#111929;
+  --phil-bg:#080e1a; --phil-text:rgba(255,255,255,0.58);
+  --footer-bg:#080e1a; --footer-text:rgba(255,255,255,0.22);
+  --input-bg:#152035; --tag-border:rgba(184,144,42,0.35); --tag-color:#c9a84c;
+  --hours-bg:#152035; --intl-right:#152035; --intl-val:#c9a84c;
 }
+,::before,*::after{box-sizing:border-box;margin:0;padding:0;transition:background-color var(--ease),border-color var(--ease),color var(--ease);}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--text);background:var(--bg);overflow-x:hidden;}
+[lang="ar"]{direction:rtl;}
 
-/* Smooth theme transition */
-*, *::before, *::after {
-  box-sizing: border-box; margin: 0; padding: 0;
-  transition: background-color var(--ease), border-color var(--ease), color var(--ease), box-shadow var(--ease);
-}
-html { scroll-behavior: smooth; }
-body { font-family: var(--sans); color: var(--text); background: var(--bg); overflow-x: hidden; }
-[lang="ar"] { direction: rtl; }
+/* LANG BAR */
+.lang-bar{position:fixed;top:0;left:0;right:0;z-index:1001;background:var(--blue);display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:34px;}
+.lang-bar-left{font-family:var(--serif);font-size:13px;color:rgba(255,255,255,0.5);letter-spacing:1px;}
+.lang-bar-right{display:flex;gap:4px;align-items:center;}
+.lang-bar button{background:none;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.65);font-family:var(--sans);font-size:11px;letter-spacing:1px;padding:3px 10px;cursor:pointer;border-radius:2px;}
+.lang-bar button:hover,.lang-bar button.active{background:var(--gold);border-color:var(--gold);color:#fff;font-weight:500;}
 
-/* ═══════════════════════════════════════
-LANG BAR – gold accents
-═══════════════════════════════════════ */
-.lang-bar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1001;
-  background: var(--blue-rich); display: flex; align-items: center;
-  justify-content: space-between; padding: 0 40px; height: 34px;
-}
-.lang-bar-right { display: flex; gap: 4px; align-items: center; }
-.lang-bar button {
-  background: none; border: 1px solid rgba(255,255,255,0.25);
-  color: rgba(255,255,255,0.7); font-family: var(--sans); font-size: 11px;
-  letter-spacing: 1px; padding: 3px 10px; cursor: pointer;
-  transition: var(--ease); border-radius: 2px;
-}
-.lang-bar button:hover, .lang-bar button.active {
-  background: var(--gold); border-color: var(--gold); color: #0a2540; font-weight: 500;
-}
-.lang-bar-left {
-  font-family: var(--serif); font-size: 13px; color: rgba(255,255,255,0.6);
-  letter-spacing: 1px;
-}
+/* THEME TOGGLE */
+.theme-tog{display:flex;align-items:center;gap:7px;cursor:pointer;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:4px 12px;border-radius:16px;margin-right:8px;}
+.tog-track{width:32px;height:18px;background:rgba(255,255,255,0.25);border-radius:9px;position:relative;flex-shrink:0;}
+[data-theme="dark"] .tog-track{background:var(--gold);}
+.tog-thumb{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform var(--ease);}
+[data-theme="dark"] .tog-thumb{transform:translateX(14px);}
+.tog-lbl{font-size:11px;color:rgba(255,255,255,0.75);letter-spacing:1px;white-space:nowrap;}
 
-/* ═══════════════════════════════════════
-THEME TOGGLE – refined
-═══════════════════════════════════════ */
-.theme-toggle {
-  display: flex; align-items: center; gap: 8px; cursor: pointer;
-  background: var(--toggle-bg); border: 1px solid var(--border);
-  padding: 6px 14px; border-radius: 28px; transition: var(--ease);
-  margin-right: 12px;
-}
-.theme-toggle:hover { border-color: var(--gold); }
-.toggle-track {
-  width: 36px; height: 20px; background: var(--border);
-  border-radius: 10px; position: relative; transition: var(--ease);
-  flex-shrink: 0;
-}
-[data-theme="dark"] .toggle-track { background: var(--gold); }
-.toggle-thumb {
-  position: absolute; top: 2px; left: 2px;
-  width: 16px; height: 16px; border-radius: 50%;
-  background: #fff; transition: var(--ease);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-}
-[data-theme="dark"] .toggle-thumb { transform: translateX(16px); }
-.toggle-label {
-  font-family: var(--sans); font-size: 11px;
-  color: rgba(255,255,255,0.8); letter-spacing: 1px; white-space: nowrap;
-}
-.toggle-icon { font-size: 14px; }
+/* NAV */
+nav{position:fixed;top:34px;left:0;right:0;z-index:1000;background:var(--nav-bg);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:68px;border-bottom:1px solid var(--border);box-shadow:var(--nav-shadow);}
+.nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer;}
+.nav-logo-zpyu{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--blue);letter-spacing:2px;}
+[data-theme="dark"] .nav-logo-zpyu{color:var(--gold-l);}
+.nav-logo-div{width:1px;height:22px;background:var(--border);}
+.nav-logo-sub{font-family:var(--sans);font-size:10px;color:var(--text-mid);letter-spacing:1px;line-height:1.4;text-transform:uppercase;}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
+.nav-links a{font-family:var(--sans);font-size:11px;font-weight:400;color:var(--text-mid);text-decoration:none;letter-spacing:1.4px;text-transform:uppercase;transition:var(--ease);position:relative;padding-bottom:3px;cursor:pointer;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:var(--ease);}
+.nav-links a:hover{color:var(--blue);}
+[data-theme="dark"] .nav-links a:hover{color:var(--gold-l);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:8px 18px;border-radius:2px;font-weight:500!important;}
+[data-theme="dark"] .nav-cta{background:var(--gold)!important;color:#0e1a2e!important;}
+.nav-cta::after{display:none!important;}
 
-/* ═══════════════════════════════════════
-NAV – elegant blue emphasis
-═══════════════════════════════════════ */
-nav {
-  position: fixed; top: 34px; left: 0; right: 0; z-index: 1000;
-  background: var(--nav-bg); backdrop-filter: blur(18px);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 60px; height: 70px;
-  border-bottom: 1px solid var(--nav-border);
-  box-shadow: var(--nav-shadow);
-}
-.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; cursor: pointer; }
-.nav-logo-zpyu { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--blue-satin); letter-spacing: 2px; }
-[data-theme="dark"] .nav-logo-zpyu { color: var(--gold); }
-.nav-logo-div { width: 1px; height: 28px; background: var(--border); }
-.nav-logo-sub { font-family: var(--sans); font-size: 10px; color: var(--text-mid); letter-spacing: 1.2px; line-height: 1.4; text-transform: uppercase; }
-.nav-links { display: flex; gap: 38px; list-style: none; }
-.nav-links a {
-  font-family: var(--sans); font-size: 11.5px; font-weight: 400;
-  color: var(--text-mid); text-decoration: none; letter-spacing: 1.6px;
-  text-transform: uppercase; transition: var(--ease);
-  position: relative; padding-bottom: 5px; cursor: pointer;
-}
-.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: var(--ease); }
-.nav-links a:hover { color: var(--blue-satin); }
-[data-theme="dark"] .nav-links a:hover { color: var(--gold); }
-.nav-links a:hover::after { width: 100%; }
-.nav-cta { background: var(--blue-rich) !important; color: #fff !important; padding: 8px 22px; border-radius: 2px; font-weight: 500 !important; box-shadow: 0 2px 8px rgba(10,37,64,0.2);}
-[data-theme="dark"] .nav-cta { background: var(--gold) !important; color: #0a2540 !important; }
-.nav-cta::after { display: none !important; }
+/* HAMBURGER */
+.hamburger{display:none;background:none;border:none;font-size:24px;color:var(--text-mid);cursor:pointer;padding:8px;line-height:1;}
 
-/* ═══════════════════════════════════════
-SECTIONS
-═══════════════════════════════════════ */
-section { display: none; }
-section.active { display: block; }
+/* SECTIONS */
+section{display:none;}
+section.active{display:block;}
 
-/* ─── HERO ─── with luxury blue gradient circles */
-.hero {
-  min-height: 100vh; background: var(--hero-bg);
-  display: flex; align-items: center;
-  padding: 140px 60px 80px; position: relative; overflow: hidden;
-}
-.hero-circle1 { position: absolute; top: -140px; right: -140px; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, var(--hero-circle), transparent 70%); pointer-events: none; }
-.hero-circle2 { position: absolute; top: 60px; right: 60px; width: 440px; height: 440px; border-radius: 50%; border: 1px solid var(--border); pointer-events: none; opacity: 0.5; }
-.hero-content { max-width: 660px; position: relative; z-index: 1; }
-.hero-eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
-.hero-eyebrow::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
-.hero h1 { font-family: var(--serif); font-size: clamp(42px,5.5vw,72px); font-weight: 300; color: var(--text); line-height: 1.12; margin-bottom: 28px; }
-.hero h1 em { font-style: italic; color: var(--blue-satin); font-weight: 500; }
-[data-theme="dark"] .hero h1 em { color: var(--gold-light); }
-.hero-sub { font-size: 17px; font-weight: 300; color: var(--text-mid); line-height: 1.7; margin-bottom: 46px; max-width: 500px; }
-.hero-btns { display: flex; gap: 18px; flex-wrap: wrap; }
-.btn-p { background: var(--blue-rich); color: #fff; padding: 14px 34px; font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 1.8px; text-transform: uppercase; border: none; border-radius: 2px; cursor: pointer; transition: var(--ease); box-shadow: 0 4px 12px rgba(26,73,114,0.2); }
-.btn-p:hover { background: var(--blue-satin); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(26,73,114,0.3); }
-[data-theme="dark"] .btn-p { background: var(--gold); color: #0f1a24; }
-[data-theme="dark"] .btn-p:hover { background: var(--gold-light); }
-.btn-s { background: transparent; color: var(--blue-satin); padding: 13px 30px; font-family: var(--sans); font-size: 12px; font-weight: 400; letter-spacing: 1.8px; text-transform: uppercase; border: 1px solid var(--border); border-radius: 2px; cursor: pointer; transition: var(--ease); }
-.btn-s:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
-.hero-deco { position: absolute; right: 40px; bottom: 30px; font-family: var(--serif); font-size: 200px; font-weight: 700; color: var(--hero-deco); letter-spacing: -6px; pointer-events: none; user-select: none; line-height: 1; opacity: 0.4; }
+/* HERO */
+.hero{min-height:100vh;background:var(--bg);display:flex;align-items:center;padding:140px 60px 80px;position:relative;overflow:hidden;}
+.hero-c1{position:absolute;top:-140px;right:-140px;width:700px;height:700px;border-radius:50%;background:var(--hero-circle);pointer-events:none;}
+.hero-c2{position:absolute;top:60px;right:60px;width:440px;height:440px;border-radius:50%;border:1px solid var(--border);pointer-events:none;}
+.hero-content{max-width:640px;position:relative;z-index:1;}
+.hero-eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold);}
+.hero h1{font-family:var(--serif);font-size:clamp(40px,5vw,66px);font-weight:300;color:var(--text);line-height:1.15;margin-bottom:28px;}
+.hero h1 em{font-style:italic;color:var(--blue);}
+[data-theme="dark"] .hero h1 em{color:var(--gold-l);}
+.hero-sub{font-size:16px;font-weight:300;color:var(--text-mid);line-height:1.75;margin-bottom:46px;max-width:480px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-p{background:var(--blue);color:#fff;padding:14px 30px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:var(--ease);}
+.btn-p:hover{background:var(--blue-mid);transform:translateY(-2px);}
+[data-theme="dark"] .btn-p{background:var(--gold);color:#0e1a2e;}
+.btn-s{background:transparent;color:var(--blue);padding:13px 30px;font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--border);border-radius:2px;cursor:pointer;transition:var(--ease);}
+.btn-s:hover{border-color:var(--gold);color:var(--gold);}
+.hero-deco{position:absolute;right:50px;bottom:40px;font-family:var(--serif);font-size:200px;font-weight:700;color:rgba(58,111,168,0.04);pointer-events:none;user-select:none;line-height:1;}
 
-/* ─── SHARED SECTION ─── */
-.sec-wrap { padding: 100px 60px; }
-.sec-wrap.alt { background: var(--section-alt); }
-.sec-label { font-family: var(--sans); font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-.sec-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
-.sec-title { font-family: var(--serif); font-size: clamp(32px,4vw,52px); font-weight: 300; color: var(--text); margin-bottom: 56px; line-height: 1.2; }
-.sec-title em { font-style: italic; color: var(--blue-satin); }
-[data-theme="dark"] .sec-title em { color: var(--gold-light); }
+/* SHARED */
+.sw{padding:96px 60px;}
+.sw.alt{background:var(--section-alt);}
+.sec-label{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.sec-label::before{content:'';width:28px;height:1px;background:var(--gold);}
+.sec-title{font-family:var(--serif);font-size:clamp(30px,4vw,50px);font-weight:300;color:var(--text);margin-bottom:56px;line-height:1.2;}
+.sec-title em{font-style:italic;color:var(--blue);}
+[data-theme="dark"] .sec-title em{color:var(--gold-l);}
 
-/* ─── USP GRID – blue luxury cards */
-.usp-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); }
-.usp-card { background: var(--card); padding: 46px 32px; position: relative; overflow: hidden; transition: var(--ease); }
-.usp-card:hover { background: var(--usp-hover); transform: translateY(-4px); box-shadow: 0 24px 44px rgba(10,37,64,0.12); }
-.usp-card:hover .usp-h, .usp-card:hover .usp-p { color: var(--usp-hover-text); }
-.usp-card:hover .usp-icon-box { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.05); }
-.usp-n { position: absolute; top: 12px; right: 18px; font-family: var(--serif); font-size: 72px; font-weight: 700; color: var(--border); line-height: 1; pointer-events: none; opacity: 0.5; }
-.usp-icon-box { width: 50px; height: 50px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 22px; transition: var(--ease); }
-.usp-h { font-family: var(--serif); font-size: 23px; font-weight: 600; color: var(--text); margin-bottom: 12px; transition: var(--ease); }
-.usp-p { font-size: 13px; color: var(--text-mid); line-height: 1.7; font-weight: 300; transition: var(--ease); }
+/* USP */
+.usp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+.usp-card{background:var(--card);padding:42px 28px;position:relative;overflow:hidden;transition:var(--ease);}
+.usp-card:hover{background:var(--blue);transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,0.15);}
+.usp-card:hover .usp-h,.usp-card:hover .usp-p{color:#fff;}
+.usp-n{position:absolute;top:10px;right:14px;font-family:var(--serif);font-size:68px;font-weight:700;color:var(--border);line-height:1;}
+.usp-icon{width:46px;height:46px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:20px;transition:var(--ease);}
+.usp-h{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--text);margin-bottom:10px;transition:var(--ease);}
+.usp-p{font-size:13px;color:var(--text-mid);line-height:1.7;font-weight:300;transition:var(--ease);}
 
-/* ─── PROFILE – elegant blue signature */
-.profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.profile-name { font-family: var(--serif); font-size: clamp(34px,4vw,56px); font-weight: 300; color: var(--text); margin-bottom: 8px; line-height: 1.15; }
-.profile-role { font-size: 13px; color: var(--blue-satin); letter-spacing: 1px; margin-bottom: 28px; font-weight: 400; text-transform: uppercase; }
-[data-theme="dark"] .profile-role { color: var(--gold-light); }
-.profile-body { font-size: 15px; color: var(--text-mid); line-height: 1.8; font-weight: 300; margin-bottom: 28px; }
-.p-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-.p-tag { padding: 6px 16px; border: 1px solid var(--tag-border); color: var(--tag-color); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; border-radius: 1px; background: rgba(197,162,103,0.05);}
-.why-box { background: var(--bg3); border-left: 4px solid var(--gold); padding: 44px; position: relative; box-shadow: 0 8px 20px rgba(0,0,0,0.02);}
-.why-box::before { content: ''; position: absolute; top: 0; left: 0; width: 48px; height: 2px; background: var(--gold); }
-.why-label { font-family: var(--sans); font-size: 10px; letter-spacing: 2.5px; color: var(--gold); text-transform: uppercase; margin-bottom: 28px; font-weight: 500; }
-.why-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; color: var(--text-mid); font-size: 14px; line-height: 1.6; font-weight: 300; }
-.why-item::before { content: '—'; color: var(--gold); flex-shrink: 0; font-weight: 500; }
+/* PROFILE */
+.prof-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.prof-name{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:300;color:var(--text);margin-bottom:6px;line-height:1.15;}
+.prof-role{font-size:13px;color:var(--blue);letter-spacing:.8px;margin-bottom:28px;font-weight:300;}
+[data-theme="dark"] .prof-role{color:var(--gold-l);}
+.prof-body{font-size:15px;color:var(--text-mid);line-height:1.8;font-weight:300;margin-bottom:28px;}
+.p-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.p-tag{padding:5px 14px;border:1px solid var(--tag-border);color:var(--tag-color);font-size:11px;letter-spacing:1px;text-transform:uppercase;border-radius:1px;}
+.why-box{background:var(--bg3);border:1px solid var(--border);padding:42px;position:relative;}
+.why-box::before{content:'';position:absolute;top:0;left:36px;width:48px;height:2px;background:var(--gold);}
+.why-lbl{font-family:var(--sans);font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:26px;font-weight:500;}
+.why-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;color:var(--text-mid);font-size:14px;line-height:1.6;font-weight:300;}
+.why-item::before{content:'-';color:var(--gold);flex-shrink:0;}
 
-/* ─── LEISTUNGEN ─── */
-.l-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); margin-top: 56px; }
-.l-card { background: var(--card); padding: 44px 36px; transition: var(--ease); }
-.l-card:hover { background: var(--bg3); transform: translateY(-2px);}
-.l-num { font-family: var(--serif); font-size: 11px; letter-spacing: 2px; color: var(--gold); margin-bottom: 14px; display: block; }
-.l-title { font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--text); margin-bottom: 24px; line-height: 1.25; }
-.l-list { list-style: none; }
-.l-item { font-size: 13px; color: var(--text-mid); padding: 9px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; font-weight: 300; }
-.l-item::before { content: ''; width: 6px; height: 1px; background: var(--gold); flex-shrink: 0; }
+/* LEISTUNGEN */
+.l-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:56px;}
+.l-card{background:var(--card);padding:42px 32px;transition:var(--ease);}
+.l-card:hover{background:var(--bg3);}
+.l-num{font-family:var(--serif);font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:12px;display:block;}
+.l-title{font-family:var(--serif);font-size:23px;font-weight:600;color:var(--text);margin-bottom:22px;line-height:1.25;}
+.l-list{list-style:none;}
+.l-item{font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;font-weight:300;}
+.l-item::before{content:'';width:5px;height:1px;background:var(--gold);flex-shrink:0;}
 
-/* ─── PHILOSOPHIE – blue & gold statement */
-.phil-sec { background: var(--phil-bg); padding: 130px 60px; position: relative; overflow: hidden; }
-.phil-sec::before { content: '”'; position: absolute; top: -20px; left: 30px; font-family: var(--serif); font-size: 360px; color: rgba(197,162,103,0.06); line-height: 1; pointer-events: none; }
-.phil-inner { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
-.phil-inner .sec-label { justify-content: center; color: var(--gold-light); }
-.phil-inner .sec-label::before { background: var(--gold-light); }
-.phil-title { font-family: var(--serif); font-size: clamp(36px,4.2vw,56px); font-weight: 300; color: #fff; margin-bottom: 44px; line-height: 1.2; }
-.phil-title em { font-style: italic; color: var(--gold-light); }
-.phil-p { font-size: 16px; color: var(--phil-text); line-height: 1.9; font-weight: 300; margin-bottom: 24px; }
-.phil-line { width: 70px; height: 1px; background: var(--gold); margin: 46px auto; }
+/* PHILOSOPHIE */
+.phil{background:var(--phil-bg);padding:118px 60px;position:relative;overflow:hidden;}
+.phil::before{content:'"';position:absolute;top:10px;left:20px;font-family:var(--serif);font-size:320px;color:rgba(255,255,255,0.04);line-height:1;pointer-events:none;}
+.phil-inner{max-width:780px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+.phil-inner .sec-label{justify-content:center;color:var(--gold-l);}
+.phil-inner .sec-label::before{background:var(--gold-l);}
+.phil-title{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:300;color:#fff;margin-bottom:42px;line-height:1.2;}
+.phil-title em{font-style:italic;color:var(--gold-l);}
+.phil-p{font-size:16px;color:var(--phil-text);line-height:1.9;font-weight:300;margin-bottom:22px;}
+.phil-line{width:50px;height:1px;background:rgba(184,144,42,0.45);margin:42px auto;}
 
-/* ─── INTERNATIONAL ─── */
-.intl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.intl-svcs { display: flex; flex-direction: column; gap: 1px; margin-top: 34px; background: var(--border); }
-.intl-s { background: var(--card); padding: 18px 24px; display: flex; align-items: center; gap: 16px; font-size: 14px; color: var(--text-mid); font-weight: 300; transition: var(--ease); border-left: 3px solid transparent; }
-.intl-s:hover { border-left-color: var(--gold); color: var(--text); background: var(--bg3); transform: translateX(5px); }
-.flags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-.flag { padding: 7px 16px; background: var(--card); border: 1px solid var(--border); font-size: 12px; color: var(--text-mid); border-radius: 2px; font-weight: 300; }
-.intl-right { background: var(--intl-right); border: 1px solid var(--border); padding: 56px; display: flex; flex-direction: column; gap: 38px; box-shadow: 0 12px 28px rgba(0,0,0,0.03);}
-.i-stat { padding-bottom: 36px; border-bottom: 1px solid var(--border); }
-.i-stat:last-child { border-bottom: none; padding-bottom: 0; }
-.i-stat-val { font-family: var(--serif); font-size: 56px; font-weight: 300; color: var(--intl-right-val); line-height: 1; letter-spacing: -1px; }
-.i-stat-lbl { font-size: 11px; color: var(--text-soft); letter-spacing: 2px; text-transform: uppercase; margin-top: 6px; }
+/* STANDORTE */
+.standorte-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:56px;}
+.st-card{background:var(--card);padding:44px 36px;transition:var(--ease);}
+.st-badge{display:inline-block;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:1px;margin-bottom:18px;font-weight:500;}
+.st-badge.gold{background:var(--gold);color:#fff;}
+.st-badge.blue{background:var(--blue);color:#fff;}
+.st-name{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--text);margin-bottom:6px;line-height:1.2;}
+.st-addr{font-size:13px;color:var(--text-soft);margin-bottom:20px;line-height:1.6;}
+.st-svcs{list-style:none;margin-bottom:22px;}
+.st-svcs li{font-size:13px;color:var(--text-mid);padding:7px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;font-weight:300;}
+.st-svcs li::before{content:'';width:4px;height:1px;background:var(--gold);flex-shrink:0;}
+.st-hours{border-top:1px solid var(--border);padding-top:18px;margin-top:4px;}
+.st-hours-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.st-hr{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text-mid);font-weight:300;}
+.st-hr:last-child{border-bottom:none;}
+.st-tel{font-size:13px;color:var(--blue);font-weight:400;margin-top:16px;}
+[data-theme="dark"] .st-tel{color:var(--gold-l);}
 
-/* ─── KONTAKT – refined forms */
-.k-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 56px; }
-.k-info { display: flex; flex-direction: column; gap: 28px; }
-.k-item { display: flex; gap: 20px; align-items: flex-start; }
-.k-icon { width: 48px; height: 48px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; background: var(--bg3);}
-.k-lbl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 4px; }
-.k-val { font-size: 15px; color: var(--text); font-weight: 300; line-height: 1.5; }
-.k-hours { background: var(--hours-bg); border: 1px solid var(--border); padding: 32px; border-top: 3px solid var(--gold);}
-.k-hours-t { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 18px; }
-.k-hr { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-mid); font-weight: 300; }
-.k-form { display: flex; flex-direction: column; gap: 14px; }
-.f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.f-grp { display: flex; flex-direction: column; gap: 8px; }
-.f-lbl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 500; }
-.f-in, .f-ta, .f-sel { padding: 13px 16px; border: 1px solid var(--border); background: var(--input-bg); font-family: var(--sans); font-size: 14px; color: var(--text); font-weight: 300; outline: none; transition: var(--ease); width: 100%; appearance: none; border-radius: 0; }
-.f-in:focus, .f-ta:focus, .f-sel:focus { border-color: var(--gold); background: var(--input-focus); box-shadow: 0 0 0 1px rgba(197,162,103,0.2);}
-.f-ta { resize: vertical; min-height: 110px; }
-.f-btn { background: var(--blue-rich); color: #fff; padding: 14px 36px; font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 2.2px; text-transform: uppercase; border: none; cursor: pointer; transition: var(--ease); align-self: flex-start; border-radius: 2px; }
-.f-btn:hover { background: var(--gold); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(197,162,103,0.3); color: #0a2540; }
-[data-theme="dark"] .f-btn { background: var(--gold); color: #0f1a24; }
-[data-theme="dark"] .f-btn:hover { background: var(--gold-light); }
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:56px;}
+.team-card{background:var(--card);padding:44px 36px;}
+.team-avatar{width:76px;height:76px;border-radius:50%;border:2px solid var(--gold);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:26px;font-weight:700;color:var(--gold);margin-bottom:20px;}
+.team-name{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--text);margin-bottom:4px;}
+.team-role{font-size:12px;color:var(--gold);letter-spacing:.8px;margin-bottom:14px;font-weight:400;}
+.team-body{font-size:13px;color:var(--text-mid);line-height:1.7;font-weight:300;}
+.team-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+.team-tag{padding:4px 12px;border:1px solid var(--tag-border);color:var(--tag-color);font-size:10px;letter-spacing:1px;text-transform:uppercase;border-radius:1px;}
 
-/* ─── FOOTER ─── */
-footer { background: var(--footer-bg); padding: 56px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(197,162,103,0.25); }
-.f-logo { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--gold); letter-spacing: 3px; }
-.f-copy { font-size: 12px; color: var(--footer-text); font-weight: 300; }
-.f-links { display: flex; gap: 28px; }
-.f-links a { font-size: 11px; color: var(--footer-text); text-decoration: none; letter-spacing: 1.2px; transition: var(--ease); }
-.f-links a:hover { color: var(--gold); }
+/* INTERNATIONAL */
+.intl-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.intl-svcs{display:flex;flex-direction:column;gap:1px;margin-top:34px;background:var(--border);}
+.intl-s{background:var(--card);padding:17px 20px;display:flex;align-items:center;gap:15px;font-size:14px;color:var(--text-mid);font-weight:300;transition:var(--ease);border-left:3px solid transparent;}
+.intl-s:hover{border-left-color:var(--gold);color:var(--text);background:var(--bg3);}
+.flags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;}
+.flag{padding:6px 14px;background:var(--card);border:1px solid var(--border);font-size:12px;color:var(--text-mid);border-radius:2px;font-weight:300;}
+.intl-right{background:var(--intl-right);border:1px solid var(--border);padding:52px;display:flex;flex-direction:column;gap:34px;}
+.i-stat{padding-bottom:34px;border-bottom:1px solid var(--border);}
+.i-stat:last-child{border-bottom:none;padding-bottom:0;}
+.i-stat-val{font-family:var(--serif);font-size:50px;font-weight:300;color:var(--intl-val);line-height:1;}
+.i-stat-lbl{font-size:11px;color:var(--text-soft);letter-spacing:1.5px;text-transform:uppercase;margin-top:5px;}
 
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp { from { opacity:0; transform:translateY(26px); } to { opacity:1; transform:translateY(0); } }
-.hero-content > * { animation: fadeUp .8s var(--ease) both; }
-.hero-eyebrow{animation-delay:.1s;} .hero h1{animation-delay:.2s;} .hero-sub{animation-delay:.34s;} .hero-btns{animation-delay:.48s;}
+/* KONTAKT */
+.k-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:56px;}
+.k-info{display:flex;flex-direction:column;gap:26px;}
+.k-item{display:flex;gap:18px;align-items:flex-start;}
+.k-icon{width:44px;height:44px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.k-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:3px;}
+.k-val{font-size:15px;color:var(--text);font-weight:300;line-height:1.5;}
+.k-hours{background:var(--hours-bg);border:1px solid var(--border);padding:28px;}
+.k-hours-t{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--text);margin-bottom:16px;}
+.k-hr{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text-mid);font-weight:300;}
+.k-form{display:flex;flex-direction:column;gap:13px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.f-grp{display:flex;flex-direction:column;gap:7px;}
+.f-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500;}
+.f-in,.f-ta,.f-sel{padding:12px 14px;border:1px solid var(--border);background:var(--input-bg);font-family:var(--sans);font-size:14px;color:var(--text);font-weight:300;outline:none;transition:var(--ease);width:100%;appearance:none;border-radius:0;}
+.f-in:focus,.f-ta:focus,.f-sel:focus{border-color:var(--gold);background:var(--bg3);}
+.f-ta{resize:vertical;min-height:108px;}
+.f-btn{background:var(--blue);color:#fff;padding:14px 32px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:var(--ease);align-self:flex-start;border-radius:2px;}
+.f-btn:hover{background:var(--gold);transform:translateY(-2px);}
+[data-theme="dark"] .f-btn{background:var(--gold);color:#0e1a2e;}
 
-/* ─── RESPONSIVE ─── */
-@media(max-width:980px){
-  nav{padding:0 24px;} .nav-links{display:none;}
-  .hero{padding:130px 28px 60px;} .hero-deco{display:none;}
-  .sec-wrap{padding:64px 28px;}
+/* FOOTER */
+footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(58,111,168,0.2);}
+.f-logo{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--gold);letter-spacing:3px;}
+.f-copy{font-size:12px;color:var(--footer-text);font-weight:300;}
+.f-links{display:flex;gap:22px;}
+.f-links a{font-size:11px;color:var(--footer-text);text-decoration:none;letter-spacing:1px;transition:var(--ease);}
+.f-links a:hover{color:var(--gold);}
+
+/* MOBILE */
+@media(max-width:920px){
+  nav{padding:0 16px;}
+  .nav-links{display:none;}
+  .hamburger{display:block;}
+  .nav-mobile-open .nav-links{
+    display:flex;flex-direction:column;
+    position:fixed;top:102px;left:0;right:0;
+    background:var(--nav-bg);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
+    padding:12px 0 20px;gap:0;
+    border-bottom:2px solid var(--gold);
+    z-index:999;box-shadow:0 8px 32px rgba(0,0,0,0.18);
+  }
+  .nav-mobile-open .nav-links li{border-bottom:1px solid var(--border);}
+  .nav-mobile-open .nav-links a{display:block;padding:14px 24px;font-size:13px;}
+  .nav-mobile-open .nav-links .nav-cta{margin:8px 16px 0;text-align:center;padding:12px 16px!important;display:block;}
+  .hero{padding:130px 22px 60px;} .hero-deco{display:none;}
+  .sw{padding:60px 22px;}
   .usp-grid{grid-template-columns:1fr 1fr;}
-  .profile-grid,.intl-grid,.k-grid{grid-template-columns:1fr; gap:44px;}
+  .prof-grid,.intl-grid,.k-grid{grid-template-columns:1fr;gap:36px;}
   .l-grid{grid-template-columns:1fr;}
-  .phil-sec{padding:84px 28px;}
-  footer{padding:40px 28px;}
-  .lang-bar{padding:0 18px;}
+  .standorte-grid,.team-grid{grid-template-columns:1fr;}
+  .st-card,.team-card{padding:32px 22px;}
+  .phil{padding:80px 22px;}
+  footer{padding:36px 22px;flex-direction:column;text-align:center;}
   .f-row{grid-template-columns:1fr;}
 }
-</style>
 
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.hero-content>*{animation:fadeUp .7s ease both;}
+.hero-eyebrow{animation-delay:.1s;}.hero h1{animation-delay:.2s;}.hero-sub{animation-delay:.34s;}.hero-btns{animation-delay:.48s;}
+</style>
 </head>
 <body>
 
 <div class="lang-bar">
   <div class="lang-bar-left">zpyu.de</div>
   <div class="lang-bar-right">
-    <div class="theme-toggle" onclick="toggleTheme()" title="Dunkel/Hell wechseln">
-      <span class="toggle-icon" id="themeIcon">☀️</span>
-      <div class="toggle-track"><div class="toggle-thumb"></div></div>
-      <span class="toggle-label" id="themeLabel">Hell</span>
+    <div class="theme-tog" id="themeTog">
+      <span id="themeIcon">☀️</span>
+      <div class="tog-track"><div class="tog-thumb"></div></div>
+      <span class="tog-lbl" id="themeLbl">Hell</span>
     </div>
     <button class="active" onclick="setLang('de')">DE</button>
     <button onclick="setLang('en')">EN</button>
@@ -353,86 +275,329 @@ footer { background: var(--footer-bg); padding: 56px 60px; display: flex; justif
   </div>
 </div>
 
-<nav>
-  <div class="nav-logo" onclick="show('home')">
+<nav id="mainNav">
+  <div class="nav-logo" onclick="showSec('home')">
     <span class="nav-logo-zpyu">ZPYU</span>
     <span class="nav-logo-div"></span>
     <span class="nav-logo-sub" data-de="Zentrum für<br>Präventivmedizin Yunusah" data-en="Preventive<br>Medicine Center Yunusah" data-fr="Centre de Médecine<br>Préventive Yunusah" data-ru="Центр профилактической<br>медицины Юнусах" data-ar="مركز الطب الوقائي<br>يونوساه"></span>
   </div>
-  <ul class="nav-links">
-    <li><a onclick="show('home')" data-de="Start" data-en="Home" data-fr="Accueil" data-ru="Главная" data-ar="الرئيسية"></a></li>
-    <li><a onclick="show('leistungen')" data-de="Leistungen" data-en="Services" data-fr="Services" data-ru="Услуги" data-ar="الخدمات"></a></li>
-    <li><a onclick="show('philosophie')" data-de="Konzept" data-en="Concept" data-fr="Concept" data-ru="Концепция" data-ar="المفهوم"></a></li>
-    <li><a onclick="show('international')" data-de="International" data-en="International" data-fr="International" data-ru="Иностранным" data-ar="دوليون"></a></li>
-    <li><a class="nav-cta" onclick="show('kontakt')" data-de="Termin buchen" data-en="Book Appointment" data-fr="Prendre RDV" data-ru="Записаться" data-ar="حجز موعد"></a></li>
+  <ul class="nav-links" id="navLinks">
+    <li><a onclick="showSec('home')" data-de="Start" data-en="Home" data-fr="Accueil" data-ru="Главная" data-ar="الرئيسية"></a></li>
+    <li><a onclick="showSec('leistungen')" data-de="Leistungen" data-en="Services" data-fr="Services" data-ru="Услуги" data-ar="الخدمات"></a></li>
+    <li><a onclick="showSec('philosophie')" data-de="Konzept" data-en="Concept" data-fr="Concept" data-ru="Концепция" data-ar="المفهوم"></a></li>
+    <li><a onclick="showSec('standorte')" data-de="Standorte" data-en="Locations" data-fr="Sites" data-ru="Адреса" data-ar="المواقع"></a></li>
+    <li><a onclick="showSec('team')" data-de="Team" data-en="Team" data-fr="Équipe" data-ru="Команда" data-ar="الفريق"></a></li>
+    <li><a onclick="showSec('international')" data-de="International" data-en="International" data-fr="International" data-ru="Иностранным" data-ar="دوليون"></a></li>
+    <li><a class="nav-cta" onclick="showSec('kontakt')" data-de="Termin buchen" data-en="Book Appointment" data-fr="Prendre RDV" data-ru="Записаться" data-ar="حجز موعد"></a></li>
   </ul>
+  <button class="hamburger" id="hambBtn">&#9776;</button>
 </nav>
 
+<!-- HOME -->
 <section id="home" class="active">
   <div class="hero">
-    <div class="hero-circle1"></div><div class="hero-circle2"></div>
+    <div class="hero-c1"></div><div class="hero-c2"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow" data-de="ZPYU – Zentrum für Präventivmedizin Yunusah" data-en="ZPYU – Preventive Medicine Center Yunusah" data-fr="ZPYU – Centre de Médecine Préventive Yunusah" data-ru="ZPYU – Центр Профилактической Медицины Юнусах" data-ar="ZPYU – مركز الطب الوقائي يونوساه"></div>
+      <div class="hero-eyebrow" data-de="ZPYU - Zentrum für Präventivmedizin Yunusah" data-en="ZPYU - Preventive Medicine Center Yunusah" data-fr="ZPYU - Centre de Médecine Préventive Yunusah" data-ru="ZPYU - Центр Профилактической Медицины Юнусах" data-ar="ZPYU - مركز الطب الوقائي يونوساه"></div>
       <h1 data-de="Wir behandeln Gesundheit,<br><em>bevor Krankheit entsteht.</em>" data-en="We care for your health<br><em>before illness occurs.</em>" data-fr="Nous soignons votre santé<br><em>avant la maladie.</em>" data-ru="Мы заботимся о здоровье<br><em>до появления болезни.</em>" data-ar="نعتني بصحتك<br><em>قبل أن يظهر المرض.</em>"></h1>
-      <p class="hero-sub" data-de="Hausärztliche Versorgung kombiniert mit moderner Präventiv- und Stoffwechselmedizin." data-en="General medical care combined with modern preventive and metabolic medicine." data-fr="Soins médicaux généraux combinés à la médecine préventive et métabolique moderne." data-ru="Общая медицинская помощь в сочетании с современной профилактической медициной." data-ar="رعاية طبية عامة مدمجة مع الطب الوقائي وطب التمثيل الغذائي الحديث."></p>
-      <div class="hero-btns"><button class="btn-p" onclick="show('kontakt')" data-de="Termin buchen" data-en="Book Appointment" data-fr="Prendre Rendez-vous" data-ru="Записаться на приём" data-ar="احجز موعداً"></button><button class="btn-s" onclick="show('leistungen')" data-de="Leistungen ansehen" data-en="View Services" data-fr="Voir les Services" data-ru="Наши услуги" data-ar="عرض الخدمات"></button></div>
+      <p class="hero-sub" data-de="Hausärztliche Versorgung kombiniert mit moderner Präventiv- und Stoffwechselmedizin." data-en="General medical care combined with modern preventive and metabolic medicine." data-fr="Soins médicaux généraux combinés à la médecine préventive et métabolique." data-ru="Общая медицинская помощь в сочетании с профилактической медициной." data-ar="رعاية طبية عامة مدمجة مع الطب الوقائي وطب التمثيل الغذائي."></p>
+      <div class="hero-btns">
+        <button class="btn-p" onclick="showSec('kontakt')" data-de="Termin buchen" data-en="Book Appointment" data-fr="Prendre Rendez-vous" data-ru="Записаться" data-ar="احجز موعداً"></button>
+        <button class="btn-s" onclick="showSec('leistungen')" data-de="Leistungen ansehen" data-en="View Services" data-fr="Voir les Services" data-ru="Наши услуги" data-ar="عرض الخدمات"></button>
+      </div>
     </div>
     <div class="hero-deco">ZPYU</div>
   </div>
-  <div class="sec-wrap alt"><div class="sec-label" data-de="Unser Ansatz" data-en="Our Approach" data-fr="Notre Approche" data-ru="Наш подход" data-ar="نهجنا"></div><h2 class="sec-title" data-de="Medizin, die <em>vorausdenkt</em>" data-en="Medicine that <em>thinks ahead</em>" data-fr="Une médecine qui <em>anticipe</em>" data-ru="Медицина, которая <em>думает наперёд</em>" data-ar="طب <em>يفكر مسبقاً</em>"></h2>
-  <div class="usp-grid"><div class="usp-card"><span class="usp-n">01</span><div class="usp-icon-box">🛡</div><div class="usp-h" data-de="Prävention" data-en="Prevention" data-fr="Prévention" data-ru="Профилактика" data-ar="الوقاية"></div><p class="usp-p" data-de="Früherkennung und gezielte Prävention statt reaktiver Behandlung." data-en="Early detection and targeted prevention rather than reactive treatment." data-fr="Détection précoce et prévention ciblée." data-ru="Раннее выявление и целенаправленная профилактика." data-ar="الكشف المبكر والوقاية الموجهة."></p></div><div class="usp-card"><span class="usp-n">02</span><div class="usp-icon-box">🔄</div><div class="usp-h" data-de="Stoffwechsel" data-en="Metabolism" data-fr="Métabolisme" data-ru="Метаболизм" data-ar="التمثيل الغذائي"></div><p class="usp-p" data-de="Den Stoffwechsel als zentrales Regulationssystem verstehen und optimieren." data-en="Understanding and optimising metabolism as the central regulatory system." data-fr="Comprendre et optimiser le métabolisme." data-ru="Понимание и оптимизация метаболизма." data-ar="فهم وتحسين التمثيل الغذائي."></p></div><div class="usp-card"><span class="usp-n">03</span><div class="usp-icon-box">🧬</div><div class="usp-h" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></div><p class="usp-p" data-de="Hormonelle Regulation als Schlüssel zu langfristiger Gesundheit." data-en="Hormonal regulation as the key to long-term health." data-fr="La régulation hormonale, clé d'une santé durable." data-ru="Гормональная регуляция — ключ к здоровью." data-ar="التنظيم الهرموني مفتاح الصحة."></p></div><div class="usp-card"><span class="usp-n">04</span><div class="usp-icon-box">🔍</div><div class="usp-h" data-de="Früherkennung" data-en="Early Detection" data-fr="Dépistage Précoce" data-ru="Ранняя диагностика" data-ar="الكشف المبكر"></div><p class="usp-p" data-de="Erweiterte Diagnostik und Risikoanalysen für personalisierte Prävention." data-en="Advanced diagnostics and risk analyses for personalised prevention." data-fr="Diagnostics avancés et analyses de risque." data-ru="Расширенная диагностика для профилактики." data-ar="تشخيص متقدم لوقاية شخصية."></p></div></div></div>
-  <div class="sec-wrap"><div class="profile-grid"><div><div class="sec-label" data-de="Kurzprofil" data-en="Profile" data-fr="Profil" data-ru="Профиль" data-ar="الملف الشخصي"></div><h2 class="profile-name">MD Fattah<br>Yunusah</h2><div class="profile-role" data-de="Facharzt für Allgemeinmedizin & Allgemeinchirurgie" data-en="Specialist in General Medicine & General Surgery" data-fr="Spécialiste en Médecine Générale & Chirurgie" data-ru="Специалист по общей медицине и хирургии" data-ar="متخصص في الطب العام والجراحة العامة"></div><p class="profile-body" data-de="Mit einem klaren Fokus auf Prävention, Stoffwechsel und endokrine Regulation bietet die Praxis eine medizinische Versorgung, die über den Standard hinausgeht." data-en="With a clear focus on prevention, metabolism, and endocrine regulation, the practice offers medical care that goes beyond the standard." data-fr="Avec un focus sur la prévention, le métabolisme et la régulation endocrine, une prise en charge qui dépasse les standards." data-ru="С чётким фокусом на профилактику, метаболизм и эндокринную регуляцию." data-ar="مع تركيز واضح على الوقاية والتمثيل الغذائي والتنظيم الهرموني."></p><div class="p-tags"><span class="p-tag" data-de="Präventivmedizin" data-en="Preventive Medicine" data-fr="Médecine Préventive" data-ru="Профилактика" data-ar="الوقاية"></span><span class="p-tag" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></span><span class="p-tag" data-de="Stoffwechselmedizin" data-en="Metabolic Medicine" data-fr="Médecine Métabolique" data-ru="Метаболизм" data-ar="التمثيل الغذائي"></span><span class="p-tag" data-de="Allgemeinmedizin" data-en="General Medicine" data-fr="Médecine Générale" data-ru="Общая медицина" data-ar="الطب العام"></span></div></div><div class="why-box"><div class="why-label" data-de="Warum ZPYU?" data-en="Why ZPYU?" data-fr="Pourquoi ZPYU?" data-ru="Почему ZPYU?" data-ar="لماذا ZPYU؟"></div><div class="why-item" data-de="Früherkennung statt Spättherapie" data-en="Early detection, not late treatment" data-fr="Dépistage précoce, pas traitement tardif" data-ru="Раннее выявление, не позднее лечение" data-ar="الكشف المبكر وليس العلاج المتأخر"></div><div class="why-item" data-de="Systemmedizinischer Ansatz" data-en="Systems medicine approach" data-fr="Approche en médecine systémique" data-ru="Подход системной медицины" data-ar="نهج الطب الجهازي"></div><div class="why-item" data-de="Individuelle Betreuung" data-en="Individualised care" data-fr="Accompagnement individualisé" data-ru="Индивидуальный уход" data-ar="رعاية فردية"></div><div class="why-item" data-de="Kombination aus Klinik- und Praxisexpertise" data-en="Combined clinical & practice expertise" data-fr="Expertise clinique et cabinet combinée" data-ru="Клинический и практический опыт" data-ar="خبرة سريرية وعملية مدمجة"></div></div></div></div>
+
+  <div class="sw alt">
+    <div class="sec-label" data-de="Unser Ansatz" data-en="Our Approach" data-fr="Notre Approche" data-ru="Наш подход" data-ar="نهجنا"></div>
+    <h2 class="sec-title" data-de="Medizin, die <em>vorausdenkt</em>" data-en="Medicine that <em>thinks ahead</em>" data-fr="Une médecine qui <em>anticipe</em>" data-ru="Медицина, которая <em>думает наперёд</em>" data-ar="طب <em>يفكر مسبقاً</em>"></h2>
+    <div class="usp-grid">
+      <div class="usp-card"><span class="usp-n">01</span><div class="usp-icon">🛡</div><div class="usp-h" data-de="Prävention" data-en="Prevention" data-fr="Prévention" data-ru="Профилактика" data-ar="الوقاية"></div><p class="usp-p" data-de="Früherkennung und gezielte Prävention statt reaktiver Behandlung." data-en="Early detection and targeted prevention rather than reactive treatment." data-fr="Détection précoce et prévention ciblée." data-ru="Раннее выявление и целенаправленная профилактика." data-ar="الكشف المبكر والوقاية الموجهة."></p></div>
+      <div class="usp-card"><span class="usp-n">02</span><div class="usp-icon">🔄</div><div class="usp-h" data-de="Stoffwechsel" data-en="Metabolism" data-fr="Métabolisme" data-ru="Метаболизм" data-ar="التمثيل الغذائي"></div><p class="usp-p" data-de="Den Stoffwechsel als zentrales Regulationssystem verstehen und optimieren." data-en="Understanding and optimising metabolism as the central regulatory system." data-fr="Comprendre et optimiser le métabolisme." data-ru="Понимание и оптимизация метаболизма." data-ar="فهم وتحسين التمثيل الغذائي."></p></div>
+      <div class="usp-card"><span class="usp-n">03</span><div class="usp-icon">🧬</div><div class="usp-h" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></div><p class="usp-p" data-de="Hormonelle Regulation als Schlüssel zu langfristiger Gesundheit." data-en="Hormonal regulation as the key to long-term health." data-fr="La régulation hormonale, clé d'une santé durable." data-ru="Гормональная регуляция — ключ к здоровью." data-ar="التنظيم الهرموني مفتاح الصحة."></p></div>
+      <div class="usp-card"><span class="usp-n">04</span><div class="usp-icon">🔍</div><div class="usp-h" data-de="Früherkennung" data-en="Early Detection" data-fr="Dépistage Précoce" data-ru="Ранняя диагностика" data-ar="الكشف المبكر"></div><p class="usp-p" data-de="Erweiterte Diagnostik und Risikoanalysen für personalisierte Prävention." data-en="Advanced diagnostics and risk analyses for personalised prevention." data-fr="Diagnostics avancés et analyses de risque." data-ru="Расширенная диагностика для профилактики." data-ar="تشخيص متقدم لوقاية شخصية."></p></div>
+    </div>
+  </div>
+
+  <div class="sw">
+    <div class="prof-grid">
+      <div>
+        <div class="sec-label" data-de="Kurzprofil" data-en="Profile" data-fr="Profil" data-ru="Профиль" data-ar="الملف الشخصي"></div>
+        <h2 class="prof-name">MD Fattah<br>Yunusah</h2>
+        <div class="prof-role" data-de="Facharzt für Allgemeinmedizin & Allgemeinchirurgie" data-en="Specialist in General Medicine & General Surgery" data-fr="Spécialiste en Médecine Générale & Chirurgie" data-ru="Специалист по общей медицине и хирургии" data-ar="متخصص في الطب العام والجراحة العامة"></div>
+        <p class="prof-body" data-de="Mit einem klaren Fokus auf Prävention, Stoffwechsel und endokrine Regulation bietet die Praxis eine medizinische Versorgung, die über den Standard hinausgeht." data-en="With a clear focus on prevention, metabolism, and endocrine regulation, the practice offers medical care that goes beyond the standard." data-fr="Avec un focus sur la prévention, le métabolisme et la régulation endocrine." data-ru="С чётким фокусом на профилактику, метаболизм и эндокринную регуляцию." data-ar="مع تركيز واضح على الوقاية والتمثيل الغذائي والتنظيم الهرموني."></p>
+        <div class="p-tags">
+          <span class="p-tag" data-de="Präventivmedizin" data-en="Preventive Medicine" data-fr="Médecine Préventive" data-ru="Профилактика" data-ar="الوقاية"></span>
+          <span class="p-tag" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></span>
+          <span class="p-tag" data-de="Stoffwechselmedizin" data-en="Metabolic Medicine" data-fr="Médecine Métabolique" data-ru="Метаболизм" data-ar="التمثيل الغذائي"></span>
+          <span class="p-tag" data-de="Allgemeinmedizin" data-en="General Medicine" data-fr="Médecine Générale" data-ru="Общая медицина" data-ar="الطب العام"></span>
+        </div>
+      </div>
+      <div class="why-box">
+        <div class="why-lbl" data-de="Warum ZPYU?" data-en="Why ZPYU?" data-fr="Pourquoi ZPYU?" data-ru="Почему ZPYU?" data-ar="لماذا ZPYU؟"></div>
+        <div class="why-item" data-de="Früherkennung statt Spättherapie" data-en="Early detection, not late treatment" data-fr="Dépistage précoce, pas traitement tardif" data-ru="Раннее выявление, не позднее лечение" data-ar="الكشف المبكر وليس العلاج المتأخر"></div>
+        <div class="why-item" data-de="Systemmedizinischer Ansatz" data-en="Systems medicine approach" data-fr="Approche en médecine systémique" data-ru="Подход системной медицины" data-ar="نهج الطب الجهازي"></div>
+        <div class="why-item" data-de="Individuelle Betreuung" data-en="Individualised care" data-fr="Accompagnement individualisé" data-ru="Индивидуальный уход" data-ar="رعاية فردية"></div>
+        <div class="why-item" data-de="Kombination aus Klinik- und Praxisexpertise" data-en="Combined clinical & practice expertise" data-fr="Expertise clinique et cabinet combinée" data-ru="Клинический и практический опыт" data-ar="خبرة سريرية وعملية مدمجة"></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="leistungen"><div class="sec-wrap alt"><div class="sec-label" data-de="Unser Angebot" data-en="Our Services" data-fr="Nos Services" data-ru="Услуги" data-ar="خدماتنا"></div><h2 class="sec-title" data-de="Leistungen" data-en="Services" data-fr="Prestations" data-ru="Услуги" data-ar="الخدمات"></h2><div class="l-grid"><div class="l-card"><span class="l-num">01</span><div class="l-title" data-de="Hausärztliche Versorgung" data-en="General Medical Care" data-fr="Soins Médicaux Généraux" data-ru="Общая медицинская помощь" data-ar="الرعاية الطبية العامة"></div><ul class="l-list"><li class="l-item" data-de="Akut- und Langzeitbetreuung" data-en="Acute and long-term care" data-fr="Soins aigus et chroniques" data-ru="Острая и длительная помощь" data-ar="رعاية حادة وطويلة الأمد"></li><li class="l-item" data-de="Check-ups & Vorsorge" data-en="Check-ups & prevention" data-fr="Bilans & prévention" data-ru="Чек-апы и профилактика" data-ar="فحوصات دورية ووقاية"></li><li class="l-item" data-de="Chronikerbetreuung" data-en="Chronic disease management" data-fr="Maladies chroniques" data-ru="Хронические заболевания" data-ar="إدارة الأمراض المزمنة"></li></ul></div><div class="l-card"><span class="l-num">02</span><div class="l-title" data-de="Präventivmedizin" data-en="Preventive Medicine" data-fr="Médecine Préventive" data-ru="Профилактische медицина" data-ar="الطب الوقائي"></div><ul class="l-list"><li class="l-item" data-de="Erweiterte Vorsorge" data-en="Advanced prevention" data-fr="Prévention avancée" data-ru="Расширенная профилактика" data-ar="وقاية متقدمة"></li><li class="l-item" data-de="Risikoanalysen" data-en="Risk analyses" data-fr="Analyses de risque" data-ru="Анализ рисков" data-ar="تحليل المخاطر"></li><li class="l-item" data-de="Individualisierte Prävention" data-en="Individualised strategies" data-fr="Stratégies individualisées" data-ru="Индивидуальная профилактика" data-ar="وقاية شخصية"></li></ul></div><div class="l-card"><span class="l-num">03</span><div class="l-title" data-de="Stoffwechselmedizin" data-en="Metabolic Medicine" data-fr="Médecine Métabolique" data-ru="Метаболическая медицина" data-ar="طب التمثيل الغذائي"></div><ul class="l-list"><li class="l-item" data-de="Insulinresistenz-Diagnostik" data-en="Insulin resistance" data-fr="Résistance à l'insuline" data-ru="Инсулинорезистентность" data-ar="مقاومة الأنسولين"></li><li class="l-item" data-de="Metabolisches Syndrom" data-en="Metabolic syndrome" data-fr="Syndrome métabolique" data-ru="Метаболический синдром" data-ar="المتلازمة الاستقلابية"></li><li class="l-item" data-de="Gewicht & Adipositas" data-en="Weight & obesity" data-fr="Poids & obésité" data-ru="Вес и ожирение" data-ar="الوزن والسمنة"></li></ul></div><div class="l-card"><span class="l-num">04</span><div class="l-title" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="طب الغدد الصماء"></div><ul class="l-list"><li class="l-item" data-de="Schilddrüsendiagnostik" data-en="Thyroid diagnostics" data-fr="Thyroïde" data-ru="Щитовидная железа" data-ar="الغدة الدرقية"></li><li class="l-item" data-de="Hormonelle Dysregulation" data-en="Hormonal dysregulation" data-fr="Dysrégulation hormonale" data-ru="Гормональная дисрегуляция" data-ar="اضطراب هرموني"></li><li class="l-item" data-de="Andrologie & Gyn-Endokrinologie" data-en="Andrology & Gyn-Endocrinology" data-fr="Andrologie & endocrinologie gyn." data-ru="Андрология и гинекология" data-ar="طب الذكورة والنساء"></li></ul></div><div class="l-card"><span class="l-num">05</span><div class="l-title" data-de="Erweiterte Diagnostik" data-en="Advanced Diagnostics" data-fr="Diagnostics Avancés" data-ru="Расширенная диагностика" data-ar="التشخيص المتقدم"></div><ul class="l-list"><li class="l-item" data-de="Laboranalysen" data-en="Laboratory analyses" data-fr="Analyses de laboratoire" data-ru="Лабораторные анализы" data-ar="التحاليل المخبرية"></li><li class="l-item" data-de="Metabolische Marker" data-en="Metabolic markers" data-fr="Marqueurs métaboliques" data-ru="Метаболические маркеры" data-ar="المؤشرات الاستقلابية"></li><li class="l-item" data-de="Advanced Panels (IGeL)" data-en="Advanced panels (private)" data-fr="Panels avancés (privé)" data-ru="Расширенные панели" data-ar="فحوصات متقدمة"></li></ul></div></div></div></section>
+<!-- LEISTUNGEN -->
+<section id="leistungen">
+  <div class="sw alt">
+    <div class="sec-label" data-de="Unser Angebot" data-en="Our Services" data-fr="Nos Services" data-ru="Услуги" data-ar="خدماتنا"></div>
+    <h2 class="sec-title" data-de="Leistungen" data-en="Services" data-fr="Prestations" data-ru="Услуги" data-ar="الخدمات"></h2>
+    <div class="l-grid">
+      <div class="l-card"><span class="l-num">01</span><div class="l-title" data-de="Hausärztliche Versorgung" data-en="General Medical Care" data-fr="Soins Médicaux Généraux" data-ru="Общая медицинская помощь" data-ar="الرعاية الطبية العامة"></div><ul class="l-list"><li class="l-item" data-de="Akut- und Langzeitbetreuung" data-en="Acute and long-term care" data-fr="Soins aigus et chroniques" data-ru="Острая и длительная помощь" data-ar="رعاية حادة وطويلة الأمد"></li><li class="l-item" data-de="Check-ups & Vorsorge" data-en="Check-ups & prevention" data-fr="Bilans & prévention" data-ru="Чек-апы и профилактика" data-ar="فحوصات دورية ووقاية"></li><li class="l-item" data-de="Chronikerbetreuung" data-en="Chronic disease management" data-fr="Maladies chroniques" data-ru="Хронические заболевания" data-ar="إدارة الأمراض المزمنة"></li></ul></div>
+      <div class="l-card"><span class="l-num">02</span><div class="l-title" data-de="Präventivmedizin" data-en="Preventive Medicine" data-fr="Médecine Préventive" data-ru="Профилактическая медицина" data-ar="الطب الوقائي"></div><ul class="l-list"><li class="l-item" data-de="Erweiterte Vorsorge" data-en="Advanced prevention" data-fr="Prévention avancée" data-ru="Расширенная профилактика" data-ar="وقاية متقدمة"></li><li class="l-item" data-de="Risikoanalysen" data-en="Risk analyses" data-fr="Analyses de risque" data-ru="Анализ рисков" data-ar="تحليل المخاطر"></li><li class="l-item" data-de="Individualisierte Prävention" data-en="Individualised strategies" data-fr="Stratégies individualisées" data-ru="Индивидуальная профилактика" data-ar="وقاية شخصية"></li></ul></div>
+      <div class="l-card"><span class="l-num">03</span><div class="l-title" data-de="Stoffwechselmedizin" data-en="Metabolic Medicine" data-fr="Médecine Métabolique" data-ru="Метаболическая медицина" data-ar="طب التمثيل الغذائي"></div><ul class="l-list"><li class="l-item" data-de="Insulinresistenz-Diagnostik" data-en="Insulin resistance" data-fr="Résistance à l'insuline" data-ru="Инсулинорезистентность" data-ar="مقاومة الأنسولين"></li><li class="l-item" data-de="Metabolisches Syndrom" data-en="Metabolic syndrome" data-fr="Syndrome métabolique" data-ru="Метаболический синдром" data-ar="المتلازمة الاستقلابية"></li><li class="l-item" data-de="Gewicht & Adipositas" data-en="Weight & obesity" data-fr="Poids & obésité" data-ru="Вес и ожирение" data-ar="الوزن والسمنة"></li></ul></div>
+      <div class="l-card"><span class="l-num">04</span><div class="l-title" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="طب الغدد الصماء"></div><ul class="l-list"><li class="l-item" data-de="Schilddrüsendiagnostik" data-en="Thyroid diagnostics" data-fr="Thyroïde" data-ru="Щитовидная железа" data-ar="الغدة الدرقية"></li><li class="l-item" data-de="Hormonelle Dysregulation" data-en="Hormonal dysregulation" data-fr="Dysrégulation hormonale" data-ru="Гормональная дисрегуляция" data-ar="اضطراب هرموني"></li><li class="l-item" data-de="Andrologie & Gyn-Endokrinologie" data-en="Andrology & Gyn-Endocrinology" data-fr="Andrologie & endocrinologie gyn." data-ru="Андрология и гинекология" data-ar="طب الذكورة والنساء"></li></ul></div>
+      <div class="l-card"><span class="l-num">05</span><div class="l-title" data-de="Erweiterte Diagnostik" data-en="Advanced Diagnostics" data-fr="Diagnostics Avancés" data-ru="Расширенная диагностика" data-ar="التشخيص المتقدم"></div><ul class="l-list"><li class="l-item" data-de="Laboranalysen" data-en="Laboratory analyses" data-fr="Analyses de laboratoire" data-ru="Лабораторные анализы" data-ar="التحاليل المخبرية"></li><li class="l-item" data-de="Metabolische Marker" data-en="Metabolic markers" data-fr="Marqueurs métaboliques" data-ru="Метаболические маркеры" data-ar="المؤشرات الاستقلابية"></li><li class="l-item" data-de="Advanced Panels (IGeL)" data-en="Advanced panels (private)" data-fr="Panels avancés (privé)" data-ru="Расширенные панели" data-ar="فحوصات متقدمة"></li></ul></div>
+    </div>
+  </div>
+</section>
 
-<section id="philosophie"><div class="phil-sec"><div class="phil-inner"><div class="sec-label" data-de="Unser Konzept" data-en="Our Concept" data-fr="Notre Concept" data-ru="Концепция" data-ar="مفهومنا"></div><h2 class="phil-title" data-de="Medizin neu gedacht –<br><em>Prävention als System</em>" data-en="Medicine reimagined –<br><em>Prevention as a System</em>" data-fr="La médecine repensée –<br><em>La prévention comme système</em>" data-ru="Медицина по-новому –<br><em>Профилактика как система</em>" data-ar="طب جديد –<br><em>الوقاية كنظام</em>"></h2><div class="phil-line"></div><p class="phil-p" data-de="Die klassische Medizin setzt häufig erst an, wenn Erkrankungen bereits manifest sind. Im Zentrum für Präventivmedizin Yunusah liegt der Fokus auf der frühzeitigen Erkennung und gezielten Steuerung biologischer Systeme, bevor irreversible Schäden entstehen." data-en="Conventional medicine often intervenes only once disease has already manifested. At ZPYU, the focus is on early recognition and targeted management of biological systems before irreversible damage occurs." data-fr="La médecine conventionnelle n'intervient souvent que lorsque la maladie s'est manifestée. Au ZPYU, l'accent est mis sur la reconnaissance précoce avant que des dommages irréversibles ne surviennent." data-ru="Классическая медицина нередко вмешивается лишь тогда, когда болезнь уже проявилась. В ZPYU акцент делается на раннем выявлении до необратимых нарушений." data-ar="كثيراً ما تتدخل الطب التقليدي فقط بعد ظهور المرض. في ZPYU يتمحور التركيز حول التعرف المبكر قبل حدوث أضرار لا رجعة فيها."></p><p class="phil-p" data-de="Der Stoffwechsel steht dabei im Mittelpunkt – als zentrales Regulationssystem, das Energie, Hormone, Immunfunktion und langfristige Gesundheit koordiniert." data-en="Metabolism is at the centre – as the primary regulatory system coordinating energy, hormones, immune function, and long-term health." data-fr="Le métabolisme est au centre – système de régulation coordonnant énergie, hormones, immunité et santé à long terme." data-ru="Метаболизм в центре — система, координирующая энергию, гормоны, иммунитет и долгосрочное здоровье." data-ar="يقع التمثيل الغذائي في القلب – النظام التنظيمي الأساسي الذي ينسق الطاقة والهرمونات والمناعة."></p></div></div></section>
+<!-- PHILOSOPHIE -->
+<section id="philosophie">
+  <div class="phil">
+    <div class="phil-inner">
+      <div class="sec-label" data-de="Unser Konzept" data-en="Our Concept" data-fr="Notre Concept" data-ru="Концепция" data-ar="مفهومنا"></div>
+      <h2 class="phil-title" data-de="Medizin neu gedacht -<br><em>Prävention als System</em>" data-en="Medicine reimagined -<br><em>Prevention as a System</em>" data-fr="La médecine repensée -<br><em>La prévention comme système</em>" data-ru="Медицина по-новому -<br><em>Профилактика как система</em>" data-ar="طب جديد -<br><em>الوقاية كنظام</em>"></h2>
+      <div class="phil-line"></div>
+      <p class="phil-p" data-de="Die klassische Medizin setzt häufig erst an, wenn Erkrankungen bereits manifest sind. Im ZPYU liegt der Fokus auf der frühzeitigen Erkennung und gezielten Steuerung biologischer Systeme, bevor irreversible Schäden entstehen." data-en="Conventional medicine often intervenes only once disease has already manifested. At ZPYU, the focus is on early recognition and targeted management of biological systems before irreversible damage occurs." data-fr="La médecine conventionnelle n'intervient souvent que lorsque la maladie s'est manifestée. Au ZPYU, l'accent est mis sur la reconnaissance précoce avant que des dommages irréversibles ne surviennent." data-ru="Классическая медицина нередко вмешивается лишь тогда, когда болезнь уже проявилась. В ZPYU акцент делается на раннем выявлении до необратимых нарушений." data-ar="كثيراً ما تتدخل الطب التقليدي فقط بعد ظهور المرض. في ZPYU يتمحور التركيز حول التعرف المبكر قبل حدوث أضرار لا رجعة فيها."></p>
+      <p class="phil-p" data-de="Der Stoffwechsel steht dabei im Mittelpunkt - als zentrales Regulationssystem, das Energie, Hormone, Immunfunktion und langfristige Gesundheit koordiniert." data-en="Metabolism is at the centre - as the primary regulatory system coordinating energy, hormones, immune function, and long-term health." data-fr="Le métabolisme est au centre - système de régulation coordonnant énergie, hormones, immunité et santé à long terme." data-ru="Метаболизм в центре - система, координирующая энергию, гормоны, иммунитет и долгосрочное здоровье." data-ar="يقع التمثيل الغذائي في القلب - النظام التنظيمي الأساسي الذي ينسق الطاقة والهرمونات والمناعة."></p>
+    </div>
+  </div>
+</section>
 
-<section id="international"><div class="sec-wrap"><div class="intl-grid"><div><div class="sec-label" data-de="Weltweit willkommen" data-en="Welcome Worldwide" data-fr="Bienvenue du Monde" data-ru="Добро пожаловать" data-ar="مرحباً من العالم"></div><h2 class="sec-title" data-de="Internationale Patienten" data-en="International Patients" data-fr="Patients Internationaux" data-ru="Иностранные пациенты" data-ar="المرضى الدوليون"></h2><p style="font-size:15px;color:var(--text-mid);line-height:1.8;font-weight:300;margin-bottom:26px;" data-de="Wir bieten Konsultationen und Diagnostik für internationale Patienten, die eine hochwertige Präventiv- und Stoffwechselmedizin in Deutschland suchen." data-en="We offer consultations and diagnostics for international patients seeking advanced preventive and metabolic care in Germany." data-fr="Nous proposons consultations et diagnostics aux patients internationaux en Allemagne." data-ru="Консультации и диагностика для иностранных пациентов в Германии." data-ar="نقدم استشارات للمرضى الدوليين الباحثين عن رعاية وقائية في ألمانيا."></p><div class="intl-svcs"><div class="intl-s"><span>🌐</span><span data-de="Konsultationen auf Englisch, Arabisch, Französisch und Russisch" data-en="Consultations in English, Arabic, French & Russian" data-fr="Consultations en anglais, arabe, français et russe" data-ru="Консультации на 5 языках" data-ar="استشارات بخمس لغات"></span></div><div class="intl-s"><span>🔬</span><span data-de="Erweiterte Diagnostik & metabolische Marker" data-en="Advanced diagnostics & metabolic markers" data-fr="Diagnostics avancés & marqueurs métaboliques" data-ru="Расширенная диагностика" data-ar="تشخيص متقدم"></span></div><div class="intl-s"><span>📋</span><span data-de="Individualisierte Präventionspläne" data-en="Individualised prevention plans" data-fr="Plans de prévention individualisés" data-ru="Индивидуальные планы профилактики" data-ar="خطط وقاية شخصية"></span></div><div class="intl-s"><span>📍</span><span data-de="Düsseldorf – Zentral in Europa" data-en="Düsseldorf – Central Europe" data-fr="Düsseldorf – Centre de l'Europe" data-ru="Дюссельдорф – в центре Европы" data-ar="دوسلدورف – قلب أوروبا"></span></div></div><div class="flags"><span class="flag">🇩🇪 Deutsch</span><span class="flag">🇬🇧 English</span><span class="flag">🇫🇷 Français</span><span class="flag">🇷🇺 Русский</span><span class="flag">🇸🇦 العربية</span></div></div><div class="intl-right"><div class="i-stat"><div class="i-stat-val">5</div><div class="i-stat-lbl" data-de="Sprachen" data-en="Languages" data-fr="Langues" data-ru="Языков" data-ar="لغات"></div></div><div class="i-stat"><div class="i-stat-val" data-de="Juli '26" data-en="July '26" data-fr="Juillet '26" data-ru="Июль '26" data-ar="يوليو '26"></div><div class="i-stat-lbl" data-de="Eröffnung" data-en="Opening" data-fr="Ouverture" data-ru="Открытие" data-ar="الافتتاح"></div></div><div class="i-stat"><div class="i-stat-val">Düsseldorf</div><div class="i-stat-lbl">Hansaallee 179</div></div></div></div></div></section>
+<!-- STANDORTE -->
+<section id="standorte">
+  <div class="sw">
+    <div class="sec-label" data-de="Unsere Standorte" data-en="Our Locations" data-fr="Nos Sites" data-ru="Наши адреса" data-ar="مواقعنا"></div>
+    <h2 class="sec-title" data-de="Zwei Standorte.<br><em>Zwei Versorgungsebenen.</em>" data-en="Two locations.<br><em>Two levels of care.</em>" data-fr="Deux sites.<br><em>Deux niveaux de soins.</em>" data-ru="Два адреса.<br><em>Два уровня помощи.</em>" data-ar="موقعان.<br><em>مستويان من الرعاية.</em>"></h2>
+    <div class="standorte-grid">
 
-<section id="kontakt"><div class="sec-wrap alt"><div class="sec-label" data-de="Sprechen Sie uns an" data-en="Get in Touch" data-fr="Contactez-nous" data-ru="Свяжитесь" data-ar="تواصل معنا"></div><h2 class="sec-title" data-de="Kontakt & Termin" data-en="Contact & Appointment" data-fr="Contact & Rendez-vous" data-ru="Контакт и запись" data-ar="التواصل والمواعيد"></h2><div class="k-grid"><div class="k-info"><div class="k-item"><div class="k-icon">📍</div><div><div class="k-lbl" data-de="Adresse" data-en="Address" data-fr="Adresse" data-ru="Адрес" data-ar="العنوان"></div><div class="k-val">Hansaallee 179<br>40549 Düsseldorf</div></div></div><div class="k-item"><div class="k-icon">📞</div><div><div class="k-lbl" data-de="Telefon" data-en="Phone" data-fr="Téléphone" data-ru="Телефон" data-ar="الهاتف"></div><div class="k-val" data-de="Folgt in Kürze" data-en="Coming soon" data-fr="Bientôt disponible" data-ru="Скоро" data-ar="قريباً"></div></div></div><div class="k-item"><div class="k-icon">✉</div><div><div class="k-lbl">E-Mail</div><div class="k-val">info@zpyu.de</div></div></div><div class="k-item"><div class="k-icon">🌐</div><div><div class="k-lbl">Web</div><div class="k-val">www.zpyu.de</div></div></div><div class="k-hours"><div class="k-hours-t" data-de="Öffnungszeiten" data-en="Opening Hours" data-fr="Horaires" data-ru="Часы работы" data-ar="ساعات العمل"></div><div class="k-hr"><span data-de="Mo – Do" data-en="Mon – Thu" data-fr="Lun – Jeu" data-ru="Пн – Чт" data-ar="الاثنين–الخميس"></span><span>08:00 – 18:00</span></div><div class="k-hr"><span data-de="Freitag" data-en="Friday" data-fr="Vendredi" data-ru="Пятница" data-ar="الجمعة"></span><span>08:00 – 14:00</span></div><div class="k-hr"><span data-de="Online-Termin" data-en="Online booking" data-fr="Réservation en ligne" data-ru="Онлайн-запись" data-ar="الحجز الإلكتروني"></span><span>24 / 7</span></div></div></div><div class="k-form"><div class="f-row"><div class="f-grp"><label class="f-lbl" data-de="Vorname" data-en="First Name" data-fr="Prénom" data-ru="Имя" data-ar="الاسم الأول"></label><input class="f-in" type="text"></div><div class="f-grp"><label class="f-lbl" data-de="Nachname" data-en="Last Name" data-fr="Nom" data-ru="Фамилия" data-ar="اسم العائلة"></label><input class="f-in" type="text"></div></div><div class="f-grp"><label class="f-lbl">E-Mail</label><input class="f-in" type="email"></div><div class="f-grp"><label class="f-lbl" data-de="Anliegen" data-en="Subject" data-fr="Objet" data-ru="Тема" data-ar="الموضوع"></label><select class="f-sel"><option data-de="Bitte wählen …" data-en="Please select …" data-fr="Veuillez choisir …" data-ru="Выберите …" data-ar="اختر …"></option><option data-de="Ersttermin" data-en="First appointment" data-fr="Premier RDV" data-ru="Первый приём" data-ar="الموعد الأول"></option><option data-de="Präventionsberatung" data-en="Prevention consultation" data-fr="Consultation prévention" data-ru="Профилактика" data-ar="استشارة وقائية"></option><option data-de="Internationale Anfrage" data-en="International enquiry" data-fr="Demande internationale" data-ru="Международный запрос" data-ar="استفسار دولي"></option></select></div><div class="f-grp"><label class="f-lbl" data-de="Nachricht" data-en="Message" data-fr="Message" data-ru="Сообщение" data-ar="الرسالة"></label><textarea class="f-ta"></textarea></div><button class="f-btn" data-de="Anfrage senden" data-en="Send Enquiry" data-fr="Envoyer" data-ru="Отправить" data-ar="إرسال"></button></div></div></div></section>
+      <!-- HANSAALLEE -->
+      <div class="st-card">
+        <span class="st-badge gold" data-de="Premium Prävention" data-en="Preventive Medicine Centre" data-fr="Centre de Médecine Préventive" data-ru="Центр профилактики" data-ar="مركز الوقاية المتميز"></span>
+        <div class="st-name">ZPYU Hansaallee</div>
+        <div class="st-addr">Hansaallee 179<br>40549 Düsseldorf</div>
+        <ul class="st-svcs">
+          <li data-de="Advanced Metabolic Consultations" data-en="Advanced Metabolic Consultations" data-fr="Consultations métaboliques avancées" data-ru="Расширенные метаболические консультации" data-ar="استشارات استقلابية متقدمة"></li>
+          <li data-de="Endokrinologie & Hormondiagnostik" data-en="Endocrinology & Hormonal Diagnostics" data-fr="Endocrinologie & diagnostics hormonaux" data-ru="Эндокринология и гормональная диагностика" data-ar="طب الغدد الصماء والتشخيص الهرموني"></li>
+          <li data-de="Infusionstherapien" data-en="Infusion Therapies" data-fr="Thérapies par perfusion" data-ru="Инфузионные терапии" data-ar="علاجات التسريب"></li>
+          <li data-de="Executive Check-ups" data-en="Executive Check-ups" data-fr="Bilans Executive" data-ru="Executive обследования" data-ar="فحوصات تنفيذية"></li>
+          <li data-de="Internationale Patienten" data-en="International Patients" data-fr="Patients Internationaux" data-ru="Иностранные пациенты" data-ar="المرضى الدوليون"></li>
+        </ul>
+        <div class="st-hours">
+          <div class="st-hours-lbl" data-de="Öffnungszeiten" data-en="Opening Hours" data-fr="Horaires" data-ru="Часы работы" data-ar="ساعات العمل"></div>
+          <div class="st-hr"><span data-de="Mo - Do" data-en="Mon - Thu" data-fr="Lun - Jeu" data-ru="Пн - Чт" data-ar="الاثنين-الخميس"></span><span>08:30 - 17:00</span></div>
+          <div class="st-hr"><span data-de="Freitag" data-en="Friday" data-fr="Vendredi" data-ru="Пятница" data-ar="الجمعة"></span><span>08:30 - 14:30</span></div>
+          <div class="st-hr"><span data-de="Online-Termin" data-en="Online booking" data-fr="Réservation en ligne" data-ru="Онлайн-запись" data-ar="الحجز الإلكتروني"></span><span>24 / 7</span></div>
+        </div>
+        <div class="st-tel">info@zpyu.de &nbsp;·&nbsp; www.zpyu.de</div>
+      </div>
 
-<footer><div class="f-logo">ZPYU</div><div class="f-copy" data-de="© 2026 Zentrum für Präventivmedizin Yunusah · zpyu.de · Düsseldorf" data-en="© 2026 ZPYU Preventive Medicine Center · zpyu.de · Düsseldorf" data-fr="© 2026 ZPYU Centre de Médecine Préventive · zpyu.de · Düsseldorf" data-ru="© 2026 ZPYU Центр профилактической медицины · zpyu.de · Дюссельдорф" data-ar="© 2026 مركز ZPYU للطب الوقائي · zpyu.de · دوسلدورف"></div><div class="f-links"><a href="#" data-de="Impressum" data-en="Imprint" data-fr="Mentions légales" data-ru="Выходные данные" data-ar="بيانات النشر"></a><a href="#" data-de="Datenschutz" data-en="Privacy" data-fr="Confidentialité" data-ru="Конфиденциальность" data-ar="الخصوصية"></a></div></footer>
+      <!-- GRAFENBERGER ALLEE -->
+      <div class="st-card">
+        <span class="st-badge blue" data-de="Hausärztliche Versorgung" data-en="Primary Care" data-fr="Médecine Générale" data-ru="Общая медицина" data-ar="الرعاية الأولية"></span>
+        <div class="st-name" data-de="Grafenberger Allee" data-en="Grafenberger Allee" data-fr="Grafenberger Allee" data-ru="Графенбергер Аллее" data-ar="جرافنبرغر ألي"></div>
+        <div class="st-addr">Grafenberger Allee 134<br>40237 Düsseldorf</div>
+        <ul class="st-svcs">
+          <li data-de="Hausärztliche Versorgung" data-en="General Medical Care" data-fr="Soins Médicaux Généraux" data-ru="Общая медицинская помощь" data-ar="الرعاية الطبية العامة"></li>
+          <li data-de="Akut- und Langzeitbetreuung" data-en="Acute & Long-term Care" data-fr="Soins aigus et chroniques" data-ru="Острая и длительная помощь" data-ar="رعاية حادة وطويلة الأمد"></li>
+          <li data-de="Chronikerbetreuung & KV-Versorgung" data-en="Chronic Disease Management" data-fr="Suivi des maladies chroniques" data-ru="Ведение хронических заболеваний" data-ar="إدارة الأمراض المزمنة"></li>
+          <li data-de="Check-ups & Vorsorge" data-en="Check-ups & Prevention" data-fr="Bilans de santé & prévention" data-ru="Чек-апы и профилактика" data-ar="فحوصات دورية ووقاية"></li>
+        </ul>
+        <div class="st-hours">
+          <div class="st-hours-lbl" data-de="Öffnungszeiten" data-en="Opening Hours" data-fr="Horaires" data-ru="Часы работы" data-ar="ساعات العمل"></div>
+          <div class="st-hr"><span data-de="Mo + Do" data-en="Mon + Thu" data-fr="Lun + Jeu" data-ru="Пн + Чт" data-ar="الاثنين + الخميس"></span><span>08:30 - 13:30 &nbsp;|&nbsp; 15:00 - 17:00</span></div>
+          <div class="st-hr"><span data-de="Di + Mi" data-en="Tue + Wed" data-fr="Mar + Mer" data-ru="Вт + Ср" data-ar="الثلاثاء + الأربعاء"></span><span>08:30 - 14:30</span></div>
+          <div class="st-hr"><span data-de="Fr / Sa / So" data-en="Fri / Sat / Sun" data-fr="Ven / Sam / Dim" data-ru="Пт / Сб / Вс" data-ar="الجمعة / السبت / الأحد"></span><span data-de="Geschlossen" data-en="Closed" data-fr="Fermé" data-ru="Закрыто" data-ar="مغلق"></span></div>
+        </div>
+        <div class="st-tel">0211 6993093</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="sw alt">
+    <div class="sec-label" data-de="Unser Team" data-en="Our Team" data-fr="Notre Équipe" data-ru="Наша команда" data-ar="فريقنا"></div>
+    <h2 class="sec-title" data-de="Die Menschen<br>hinter <em>ZPYU</em>" data-en="The people<br>behind <em>ZPYU</em>" data-fr="Les personnes<br>derrière <em>ZPYU</em>" data-ru="Люди<br>за <em>ZPYU</em>" data-ar="الأشخاص<br>خلف <em>ZPYU</em>"></h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">FY</div>
+        <div class="team-name">MD Fattah Yunusah</div>
+        <div class="team-role" data-de="Gründer & Leitender Arzt · Hansaallee" data-en="Founder & Lead Physician · Hansaallee" data-fr="Fondateur & Médecin Principal · Hansaallee" data-ru="Основатель и главный врач" data-ar="المؤسس والطبيب الرئيسي"></div>
+        <p class="team-body" data-de="Facharzt für Allgemeinmedizin und Allgemeinchirurgie mit Schwerpunkt Präventivmedizin, Endokrinologie und Stoffwechselmedizin." data-en="Specialist in General Medicine and General Surgery, with a focus on Preventive Medicine, Endocrinology and Metabolic Medicine." data-fr="Spécialiste en Médecine Générale et Chirurgie Générale, orientation Médecine Préventive, Endocrinologie et Médecine Métabolique." data-ru="Специалист по общей медицине и хирургии с акцентом на профилактике, эндокринологии и метаболической медицине." data-ar="متخصص في الطب العام والجراحة العامة مع تركيز على الطب الوقائي وطب الغدد الصماء."></p>
+        <div class="team-tags">
+          <span class="team-tag" data-de="Präventivmedizin" data-en="Preventive Medicine" data-fr="Médecine Préventive" data-ru="Профилактика" data-ar="الوقاية"></span>
+          <span class="team-tag" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></span>
+          <span class="team-tag" data-de="Stoffwechsel" data-en="Metabolism" data-fr="Métabolisme" data-ru="Метаболизм" data-ar="التمثيل الغذائي"></span>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="font-size:32px;">+</div>
+        <div class="team-name" data-de="Weitere Teammitglieder" data-en="Further Team Members" data-fr="Autres membres" data-ru="Другие члены команды" data-ar="أعضاء الفريق الآخرون"></div>
+        <div class="team-role" data-de="Ab Eröffnung Juli 2026" data-en="From opening July 2026" data-fr="Dès l'ouverture juillet 2026" data-ru="С открытия июль 2026" data-ar="من افتتاح يوليو 2026"></div>
+        <p class="team-body" data-de="Unser Team wird in Kürze vollständig vorgestellt. Wir freuen uns, Ihnen ab Juli 2026 ein erfahrenes, mehrsprachiges Team vorstellen zu dürfen." data-en="Our full team will be introduced shortly. We look forward to presenting an experienced, multilingual team from July 2026." data-fr="Notre équipe complète sera présentée prochainement dès juillet 2026." data-ru="Наша полная команда будет представлена в ближайшее время." data-ar="سيتم تقديم فريقنا الكامل قريباً من يوليو 2026."></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNATIONAL -->
+<section id="international">
+  <div class="sw">
+    <div class="intl-grid">
+      <div>
+        <div class="sec-label" data-de="Weltweit willkommen" data-en="Welcome Worldwide" data-fr="Bienvenue du Monde" data-ru="Добро пожаловать" data-ar="مرحباً من العالم"></div>
+        <h2 class="sec-title" data-de="Internationale Patienten" data-en="International Patients" data-fr="Patients Internationaux" data-ru="Иностранные пациенты" data-ar="المرضى الدوليون"></h2>
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.8;font-weight:300;margin-bottom:26px;" data-de="Wir bieten Konsultationen für internationale Patienten, die hochwertige Präventiv- und Stoffwechselmedizin in Deutschland suchen." data-en="We offer consultations for international patients seeking advanced preventive and metabolic care in Germany." data-fr="Nous proposons des consultations pour les patients internationaux cherchant des soins préventifs en Allemagne." data-ru="Консультации для иностранных пациентов, ищущих профилактическую медицину в Германии." data-ar="نقدم استشارات للمرضى الدوليين الباحثين عن رعاية وقائية في ألمانيا."></p>
+        <div class="intl-svcs">
+          <div class="intl-s"><span>🌐</span><span data-de="Konsultationen auf Englisch, Arabisch, Französisch und Russisch" data-en="Consultations in English, Arabic, French & Russian" data-fr="Consultations en anglais, arabe, français et russe" data-ru="Консультации на 5 языках" data-ar="استشارات بخمس لغات"></span></div>
+          <div class="intl-s"><span>🔬</span><span data-de="Erweiterte Diagnostik & metabolische Marker" data-en="Advanced diagnostics & metabolic markers" data-fr="Diagnostics avancés & marqueurs métaboliques" data-ru="Расширенная диагностика" data-ar="تشخيص متقدم"></span></div>
+          <div class="intl-s"><span>📋</span><span data-de="Individualisierte Präventionspläne" data-en="Individualised prevention plans" data-fr="Plans de prévention individualisés" data-ru="Индивидуальные планы профилактики" data-ar="خطط وقاية شخصية"></span></div>
+          <div class="intl-s"><span>📍</span><span data-de="Düsseldorf - Zentral in Europa" data-en="Düsseldorf - Central Europe" data-fr="Düsseldorf - Centre de l'Europe" data-ru="Дюссельдорф - в центре Европы" data-ar="دوسلدورف - قلب أوروبا"></span></div>
+        </div>
+        <div class="flags">
+          <span class="flag">🇩🇪 Deutsch</span><span class="flag">🇬🇧 English</span><span class="flag">🇫🇷 Français</span><span class="flag">🇷🇺 Русский</span><span class="flag">🇸🇦 العربية</span>
+        </div>
+      </div>
+      <div class="intl-right">
+        <div class="i-stat"><div class="i-stat-val">5</div><div class="i-stat-lbl" data-de="Sprachen" data-en="Languages" data-fr="Langues" data-ru="Языков" data-ar="لغات"></div></div>
+        <div class="i-stat"><div class="i-stat-val" data-de="Juli '26" data-en="July '26" data-fr="Juillet '26" data-ru="Июль '26" data-ar="يوليو '26"></div><div class="i-stat-lbl" data-de="Eröffnung" data-en="Opening" data-fr="Ouverture" data-ru="Открытие" data-ar="الافتتاح"></div></div>
+        <div class="i-stat"><div class="i-stat-val">Düsseldorf</div><div class="i-stat-lbl" data-de="2 Standorte" data-en="2 Locations" data-fr="2 Sites" data-ru="2 адреса" data-ar="موقعان"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="sw alt">
+    <div class="sec-label" data-de="Sprechen Sie uns an" data-en="Get in Touch" data-fr="Contactez-nous" data-ru="Свяжитесь" data-ar="تواصل معنا"></div>
+    <h2 class="sec-title" data-de="Kontakt & Termin" data-en="Contact & Appointment" data-fr="Contact & Rendez-vous" data-ru="Контакт и запись" data-ar="التواصل والمواعيد"></h2>
+    <div class="k-grid">
+      <div class="k-info">
+        <div class="k-item"><div class="k-icon">📍</div><div><div class="k-lbl" data-de="Adresse" data-en="Address" data-fr="Adresse" data-ru="Адрес" data-ar="العنوان"></div><div class="k-val">Hansaallee 179<br>40549 Düsseldorf</div></div></div>
+        <div class="k-item"><div class="k-icon">📞</div><div><div class="k-lbl" data-de="Telefon" data-en="Phone" data-fr="Téléphone" data-ru="Телефон" data-ar="الهاتف"></div><div class="k-val" data-de="Folgt in Kürze" data-en="Coming soon" data-fr="Bientôt disponible" data-ru="Скоро" data-ar="قريباً"></div></div></div>
+        <div class="k-item"><div class="k-icon">✉</div><div><div class="k-lbl">E-Mail</div><div class="k-val">info@zpyu.de</div></div></div>
+        <div class="k-item"><div class="k-icon">🌐</div><div><div class="k-lbl">Web</div><div class="k-val">www.zpyu.de</div></div></div>
+        <div class="k-hours">
+          <div class="k-hours-t" data-de="Öffnungszeiten" data-en="Opening Hours" data-fr="Horaires" data-ru="Часы работы" data-ar="ساعات العمل"></div>
+          <div class="k-hr"><span data-de="Mo - Do" data-en="Mon - Thu" data-fr="Lun - Jeu" data-ru="Пн - Чт" data-ar="الاثنين-الخميس"></span><span>08:30 - 17:00</span></div>
+          <div class="k-hr"><span data-de="Freitag" data-en="Friday" data-fr="Vendredi" data-ru="Пятница" data-ar="الجمعة"></span><span>08:30 - 14:30</span></div>
+          <div class="k-hr"><span data-de="Online-Termin" data-en="Online booking" data-fr="Réservation en ligne" data-ru="Онлайн-запись" data-ar="الحجز الإلكتروني"></span><span>24 / 7</span></div>
+        </div>
+      </div>
+      <div class="k-form">
+        <div class="f-row">
+          <div class="f-grp"><label class="f-lbl" data-de="Vorname" data-en="First Name" data-fr="Prénom" data-ru="Имя" data-ar="الاسم الأول"></label><input class="f-in" type="text"></div>
+          <div class="f-grp"><label class="f-lbl" data-de="Nachname" data-en="Last Name" data-fr="Nom" data-ru="Фамилия" data-ar="اسم العائلة"></label><input class="f-in" type="text"></div>
+        </div>
+        <div class="f-grp"><label class="f-lbl">E-Mail</label><input class="f-in" type="email"></div>
+        <div class="f-grp">
+          <label class="f-lbl" data-de="Anliegen" data-en="Subject" data-fr="Objet" data-ru="Тема" data-ar="الموضوع"></label>
+          <select class="f-sel">
+            <option data-de="Bitte wählen..." data-en="Please select..." data-fr="Veuillez choisir..." data-ru="Выберите..." data-ar="اختر..."></option>
+            <option data-de="Ersttermin Hansaallee" data-en="First appointment Hansaallee" data-fr="Premier RDV Hansaallee" data-ru="Первый приём Hansaallee" data-ar="الموعد الأول هانساأليه"></option>
+            <option data-de="Ersttermin Grafenberger Allee" data-en="First appointment Grafenberger Allee" data-fr="Premier RDV Grafenberger Allee" data-ru="Первый приём Grafenberger Allee" data-ar="الموعد الأول جرافنبرغر"></option>
+            <option data-de="Internationale Anfrage" data-en="International enquiry" data-fr="Demande internationale" data-ru="Международный запрос" data-ar="استفسار دولي"></option>
+          </select>
+        </div>
+        <div class="f-grp"><label class="f-lbl" data-de="Nachricht" data-en="Message" data-fr="Message" data-ru="Сообщение" data-ar="الرسالة"></label><textarea class="f-ta"></textarea></div>
+        <button class="f-btn" data-de="Anfrage senden" data-en="Send Enquiry" data-fr="Envoyer" data-ru="Отправить" data-ar="إرسال"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">ZPYU</div>
+  <div class="f-copy" data-de="© 2026 ZPYU Metabolic & Preventive Medicine Center · Düsseldorf" data-en="© 2026 ZPYU Metabolic & Preventive Medicine Center · Düsseldorf" data-fr="© 2026 ZPYU Centre de Médecine Préventive · Düsseldorf" data-ru="© 2026 ZPYU Центр профилактической медицины · Дюссельдорф" data-ar="© 2026 مركز ZPYU للطب الوقائي · دوسلدورف"></div>
+  <div class="f-links">
+    <a href="#" data-de="Impressum" data-en="Imprint" data-fr="Mentions légales" data-ru="Выходные данные" data-ar="بيانات النشر"></a>
+    <a href="#" data-de="Datenschutz" data-en="Privacy" data-fr="Confidentialité" data-ru="Конфиденциальность" data-ar="الخصوصية"></a>
+  </div>
+</footer>
 
 <script>
-function toggleTheme(){
-  const html=document.documentElement;
-  const isDark=html.getAttribute('data-theme')==='dark';
-  html.setAttribute('data-theme', isDark?'light':'dark');
-  document.getElementById('themeIcon').textContent = isDark?'☀️':'🌙';
-  document.getElementById('themeLabel').textContent = isDark?'Hell':'Dunkel';
-  localStorage.setItem('zpyu-theme', isDark?'light':'dark');
-}
-(function(){
-  const saved=localStorage.getItem('zpyu-theme');
-  if(saved==='dark'){
-    document.documentElement.setAttribute('data-theme','dark');
-    document.getElementById('themeIcon').textContent='🌙';
-    document.getElementById('themeLabel').textContent='Dunkel';
-  }
-})();
+var currentLang = 'de';
 
-let lang='de';
-function setLang(l){
-  lang=l;
-  document.documentElement.setAttribute('lang',l);
-  document.documentElement.setAttribute('dir',l==='ar'?'rtl':'ltr');
-  document.querySelectorAll('.lang-bar button').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.lang-bar button').forEach(b=>{
-    if(b.textContent.trim().toLowerCase()===l) b.classList.add('active');
-  });
-  document.querySelectorAll('[data-'+l+']').forEach(el=>{
-    const v=el.getAttribute('data-'+l);
-    if(!v) return;
-    if(el.tagName==='OPTION'||el.tagName==='LABEL') el.textContent=v;
-    else el.innerHTML=v;
-  });
+// THEME
+document.getElementById('themeTog').addEventListener('click', function() {
+  var html = document.documentElement;
+  var dark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', dark ? 'light' : 'dark');
+  document.getElementById('themeIcon').textContent = dark ? '☀️' : '🌙';
+  document.getElementById('themeLbl').textContent = dark ? 'Hell' : 'Dunkel';
+  try { localStorage.setItem('zpyu-theme', dark ? 'light' : 'dark'); } catch(e) {}
+});
+
+// Restore theme
+try {
+  var saved = localStorage.getItem('zpyu-theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('themeIcon').textContent = '🌙';
+    document.getElementById('themeLbl').textContent = 'Dunkel';
+  }
+} catch(e) {}
+
+// LANG
+function setLang(l) {
+  currentLang = l;
+  document.documentElement.setAttribute('lang', l);
+  document.documentElement.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+  var btns = document.querySelectorAll('.lang-bar button');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].classList.remove('active');
+    if (btns[i].textContent.trim().toLowerCase() === l) btns[i].classList.add('active');
+  }
+  var els = document.querySelectorAll('[data-' + l + ']');
+  for (var i = 0; i < els.length; i++) {
+    var v = els[i].getAttribute('data-' + l);
+    if (!v) continue;
+    if (els[i].tagName === 'OPTION' || els[i].tagName === 'LABEL') {
+      els[i].textContent = v;
+    } else {
+      els[i].innerHTML = v;
+    }
+  }
 }
-function show(id){
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-  const t=document.getElementById(id);
-  if(t){ t.classList.add('active'); window.scrollTo({top:34,behavior:'smooth'}); }
+
+// SHOW SECTION
+function showSec(id) {
+  var secs = document.querySelectorAll('section');
+  for (var i = 0; i < secs.length; i++) secs[i].classList.remove('active');
+  var t = document.getElementById(id);
+  if (t) t.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // close mobile menu
+  document.getElementById('mainNav').classList.remove('nav-mobile-open');
 }
+
+// HAMBURGER
+document.getElementById('hambBtn').addEventListener('click', function(e) {
+  e.stopPropagation();
+  document.getElementById('mainNav').classList.toggle('nav-mobile-open');
+});
+
+// Close on outside click
+document.addEventListener('click', function(e) {
+  var nav = document.getElementById('mainNav');
+  if (nav.classList.contains('nav-mobile-open') && !nav.contains(e.target)) {
+    nav.classList.remove('nav-mobile-open');
+  }
+});
+
 setLang('de');
 </script>
 </body>
