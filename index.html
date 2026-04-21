@@ -37,7 +37,7 @@
   --input-bg:#152035; --tag-border:rgba(184,144,42,0.35); --tag-color:#c9a84c;
   --hours-bg:#152035; --intl-right:#152035; --intl-val:#c9a84c;
 }
-,::before,*::after{box-sizing:border-box;margin:0;padding:0;transition:background-color var(--ease),border-color var(--ease),color var(--ease);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;transition:background-color var(--ease),border-color var(--ease),color var(--ease);}
 html{scroll-behavior:smooth;}
 body{font-family:var(--sans);color:var(--text);background:var(--bg);overflow-x:hidden;}
 [lang="ar"]{direction:rtl;}
@@ -255,6 +255,66 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
 .hero-content>*{animation:fadeUp .7s ease both;}
 .hero-eyebrow{animation-delay:.1s;}.hero h1{animation-delay:.2s;}.hero-sub{animation-delay:.34s;}.hero-btns{animation-delay:.48s;}
+
+/* ── PRAXIS SLIDER ── */
+.slider-wrap{position:relative;overflow:hidden;border-radius:0;margin-top:24px;}
+.slider-track{display:flex;transition:transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);}
+.slide{min-width:100%;position:relative;aspect-ratio:16/9;background:var(--bg3);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;}
+.slide img{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;}
+.slide-placeholder{position:relative;z-index:1;text-align:center;pointer-events:none;}
+.slide-ph-icon{font-size:42px;opacity:0.35;display:block;margin-bottom:8px;}
+.slide-ph-label{font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-soft);opacity:0.7;}
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(30,45,69,0.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(184,144,42,0.3);color:#fff;width:38px;height:38px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;padding:0;line-height:1;}
+.slider-btn:hover{background:var(--gold);}
+.slider-prev{left:12px;}
+.slider-next{right:12px;}
+.slider-dots{display:flex;justify-content:center;gap:7px;padding:10px 0 4px;}
+.slider-dot{width:6px;height:6px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background 0.2s,transform 0.2s;}
+.slider-dot.active{background:var(--gold);transform:scale(1.3);}
+
+/* ── TEAM GRID 3-COL for larger groups ── */
+.team-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+@media(max-width:920px){.team-grid-3{grid-template-columns:1fr 1fr;}}
+@media(max-width:580px){.team-grid-3{grid-template-columns:1fr;}}
+.team-card.placeholder{opacity:0.62;}
+.team-card.placeholder .team-avatar{border-style:dashed;color:var(--text-soft);}
+.team-card.placeholder .team-name{color:var(--text-soft);}
+.team-role-loc{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;font-weight:500;}
+
+
+/* ── MODAL (Impressum / Datenschutz) ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(14,26,46,0.82);z-index:2000;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow-y:auto;padding:40px 20px;}
+.modal-overlay.open{display:flex;align-items:flex-start;justify-content:center;}
+.modal-box{background:var(--bg);max-width:760px;width:100%;padding:52px;position:relative;border-top:3px solid var(--gold);box-shadow:0 24px 80px rgba(0,0,0,0.35);}
+.modal-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-soft);transition:var(--ease);}
+.modal-close:hover{color:var(--gold);}
+.modal-box h1{font-family:var(--serif);font-size:30px;font-weight:300;color:var(--text);margin-bottom:8px;}
+.modal-box .modal-sub{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:32px;}
+.modal-box h2{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--text);margin:28px 0 10px;padding-top:20px;border-top:1px solid var(--border);}
+.modal-box h2:first-of-type{border-top:none;margin-top:0;}
+.modal-box p{font-size:14px;color:var(--text-mid);line-height:1.8;font-weight:300;margin-bottom:12px;}
+.modal-box a{color:var(--blue);text-decoration:none;}
+.modal-box a:hover{text-decoration:underline;}
+.modal-box ul{margin:8px 0 12px 20px;}
+.modal-box ul li{font-size:14px;color:var(--text-mid);line-height:1.8;font-weight:300;margin-bottom:4px;}
+@media(max-width:920px){.modal-box{padding:32px 22px;}}
+
+
+/* ── ROUTE BUTTON ── */
+.route-btn {
+  display:inline-flex;align-items:center;gap:10px;
+  margin-top:18px;padding:11px 22px;
+  background:transparent;border:1px solid var(--border);
+  color:var(--text-mid);font-family:var(--sans);font-size:11px;
+  letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;
+  transition:var(--ease);border-radius:2px;cursor:pointer;
+}
+.route-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+[data-theme="dark"] .route-btn:hover{background:var(--gold);color:#0e1a2e;border-color:var(--gold);}
+.route-btn svg{flex-shrink:0;transition:var(--ease);}
+.route-btn:hover svg path{stroke:#fff;}
+[data-theme="dark"] .route-btn:hover svg path{stroke:#0e1a2e;}
+
 </style>
 </head>
 <body>
@@ -299,11 +359,11 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
     <div class="hero-c1"></div><div class="hero-c2"></div>
     <div class="hero-content">
       <div class="hero-eyebrow" data-de="ZPYU - Zentrum für Präventivmedizin Yunusah" data-en="ZPYU - Preventive Medicine Center Yunusah" data-fr="ZPYU - Centre de Médecine Préventive Yunusah" data-ru="ZPYU - Центр Профилактической Медицины Юнусах" data-ar="ZPYU - مركز الطب الوقائي يونوساه"></div>
-      <h1 data-de="Wir behandeln Gesundheit,<br><em>bevor Krankheit entsteht.</em>" data-en="We care for your health<br><em>before illness occurs.</em>" data-fr="Nous soignons votre santé<br><em>avant la maladie.</em>" data-ru="Мы заботимся о здоровье<br><em>до появления болезни.</em>" data-ar="نعتني بصحتك<br><em>قبل أن يظهر المرض.</em>"></h1>
-      <p class="hero-sub" data-de="Hausärztliche Versorgung kombiniert mit moderner Präventiv- und Stoffwechselmedizin." data-en="General medical care combined with modern preventive and metabolic medicine." data-fr="Soins médicaux généraux combinés à la médecine préventive et métabolique." data-ru="Общая медицинская помощь в сочетании с профилактической медициной." data-ar="رعاية طبية عامة مدمجة مع الطب الوقائي وطب التمثيل الغذائي."></p>
+      <h1 data-de="Wir behandeln Gesundheit,<br><em>bevor Krankheit entsteht.</em>" data-en="<em>The best treatment</em><br>is prevention." data-fr="L'excellence médicale<br><em>au service de votre santé.</em>" data-ru="Мы заботимся о здоровье<br><em>до появления болезни.</em>" data-ar="نعتني بصحتك<br><em>قبل أن يظهر المرض.</em>"></h1>
+      <p class="hero-sub" data-de="Hausärztliche Versorgung kombiniert mit moderner Präventiv- und Stoffwechselmedizin." data-en="Complete medical care with a focus on prevention and metabolic health." data-fr="Soins médicaux généraux combinés à la médecine préventive et métabolique." data-ru="Общая медицинская помощь в сочетании с профилактической медициной." data-ar="رعاية طبية عامة مدمجة مع الطب الوقائي وطب التمثيل الغذائي."></p>
       <div class="hero-btns">
-        <button class="btn-p" onclick="showSec('kontakt')" data-de="Termin buchen" data-en="Book Appointment" data-fr="Prendre Rendez-vous" data-ru="Записаться" data-ar="احجز موعداً"></button>
-        <button class="btn-s" onclick="showSec('leistungen')" data-de="Leistungen ansehen" data-en="View Services" data-fr="Voir les Services" data-ru="Наши услуги" data-ar="عرض الخدمات"></button>
+        <button class="btn-p" onclick="showSec('kontakt')" data-de="Termin buchen" data-en="Book Appointment" data-fr="Solliciter un rendez-vous" data-ru="Записаться" data-ar="احجز موعداً"></button>
+        <button class="btn-s" onclick="showSec('leistungen')" data-de="Leistungen ansehen" data-en="View Services" data-fr="Nos prestations" data-ru="Наши услуги" data-ar="عرض الخدمات"></button>
       </div>
     </div>
     <div class="hero-deco">ZPYU</div>
@@ -311,12 +371,12 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
 
   <div class="sw alt">
     <div class="sec-label" data-de="Unser Ansatz" data-en="Our Approach" data-fr="Notre Approche" data-ru="Наш подход" data-ar="نهجنا"></div>
-    <h2 class="sec-title" data-de="Medizin, die <em>vorausdenkt</em>" data-en="Medicine that <em>thinks ahead</em>" data-fr="Une médecine qui <em>anticipe</em>" data-ru="Медицина, которая <em>думает наперёд</em>" data-ar="طب <em>يفكر مسبقاً</em>"></h2>
+    <h2 class="sec-title" data-de="Medizin, die <em>vorausdenkt</em>" data-en="Smart medicine.<br><em>Proactive care.</em>" data-fr="Une médecine d'anticipation<br><em>au service de votre santé</em>" data-ru="Медицина, которая <em>думает наперёд</em>" data-ar="طب <em>يفكر مسبقاً</em>"></h2>
     <div class="usp-grid">
-      <div class="usp-card"><span class="usp-n">01</span><div class="usp-icon">🛡</div><div class="usp-h" data-de="Prävention" data-en="Prevention" data-fr="Prévention" data-ru="Профилактика" data-ar="الوقاية"></div><p class="usp-p" data-de="Früherkennung und gezielte Prävention statt reaktiver Behandlung." data-en="Early detection and targeted prevention rather than reactive treatment." data-fr="Détection précoce et prévention ciblée." data-ru="Раннее выявление и целенаправленная профилактика." data-ar="الكشف المبكر والوقاية الموجهة."></p></div>
-      <div class="usp-card"><span class="usp-n">02</span><div class="usp-icon">🔄</div><div class="usp-h" data-de="Stoffwechsel" data-en="Metabolism" data-fr="Métabolisme" data-ru="Метаболизм" data-ar="التمثيل الغذائي"></div><p class="usp-p" data-de="Den Stoffwechsel als zentrales Regulationssystem verstehen und optimieren." data-en="Understanding and optimising metabolism as the central regulatory system." data-fr="Comprendre et optimiser le métabolisme." data-ru="Понимание и оптимизация метаболизма." data-ar="فهم وتحسين التمثيل الغذائي."></p></div>
-      <div class="usp-card"><span class="usp-n">03</span><div class="usp-icon">🧬</div><div class="usp-h" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></div><p class="usp-p" data-de="Hormonelle Regulation als Schlüssel zu langfristiger Gesundheit." data-en="Hormonal regulation as the key to long-term health." data-fr="La régulation hormonale, clé d'une santé durable." data-ru="Гормональная регуляция — ключ к здоровью." data-ar="التنظيم الهرموني مفتاح الصحة."></p></div>
-      <div class="usp-card"><span class="usp-n">04</span><div class="usp-icon">🔍</div><div class="usp-h" data-de="Früherkennung" data-en="Early Detection" data-fr="Dépistage Précoce" data-ru="Ранняя диагностика" data-ar="الكشف المبكر"></div><p class="usp-p" data-de="Erweiterte Diagnostik und Risikoanalysen für personalisierte Prävention." data-en="Advanced diagnostics and risk analyses for personalised prevention." data-fr="Diagnostics avancés et analyses de risque." data-ru="Расширенная диагностика для профилактики." data-ar="تشخيص متقدم لوقاية شخصية."></p></div>
+      <div class="usp-card"><span class="usp-n">01</span><div class="usp-icon">🛡</div><div class="usp-h" data-de="Prävention" data-en="Prevention" data-fr="Prévention" data-ru="Профилактика" data-ar="الوقاية"></div><p class="usp-p" data-de="Früherkennung und gezielte Prävention statt reaktiver Behandlung." data-en="Prevention focused on early detection and targeted care, not reactive treatment." data-fr="Détection précoce et prévention ciblée." data-ru="Раннее выявление и целенаправленная профилактика." data-ar="الكشف المبكر والوقاية الموجهة."></p></div>
+      <div class="usp-card"><span class="usp-n">02</span><div class="usp-icon">🔄</div><div class="usp-h" data-de="Stoffwechsel" data-en="Metabolism" data-fr="Métabolisme" data-ru="Метаболизм" data-ar="التمثيل الغذائي"></div><p class="usp-p" data-de="Den Stoffwechsel als zentrales Regulationssystem verstehen und optimieren." data-en="We focus on your metabolism - the system that drives your overall health." data-fr="Comprendre et optimiser le métabolisme." data-ru="Понимание и оптимизация метаболизма." data-ar="فهم وتحسين التمثيل الغذائي."></p></div>
+      <div class="usp-card"><span class="usp-n">03</span><div class="usp-icon">🧬</div><div class="usp-h" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></div><p class="usp-p" data-de="Hormonelle Regulation als Schlüssel zu langfristiger Gesundheit." data-en="Unlocking long-term health through precise hormonal regulation." data-fr="La régulation hormonale, clé d'une santé durable." data-ru="Гормональная регуляция — ключ к здоровью." data-ar="التنظيم الهرموني مفتاح الصحة."></p></div>
+      <div class="usp-card"><span class="usp-n">04</span><div class="usp-icon">🔍</div><div class="usp-h" data-de="Früherkennung" data-en="Early Detection" data-fr="Dépistage Précoce" data-ru="Ранняя диагностика" data-ar="الكشف المبكر"></div><p class="usp-p" data-de="Erweiterte Diagnostik und Risikoanalysen für personalisierte Prävention." data-en="Early detection through advanced diagnostics and individualized risk assessment." data-fr="Diagnostics avancés et analyses de risque." data-ru="Расширенная диагностика для профилактики." data-ar="تشخيص متقدم لوقاية شخصية."></p></div>
     </div>
   </div>
 
@@ -326,7 +386,7 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
         <div class="sec-label" data-de="Kurzprofil" data-en="Profile" data-fr="Profil" data-ru="Профиль" data-ar="الملف الشخصي"></div>
         <h2 class="prof-name">MD Fattah<br>Yunusah</h2>
         <div class="prof-role" data-de="Facharzt für Allgemeinmedizin & Allgemeinchirurgie" data-en="Specialist in General Medicine & General Surgery" data-fr="Spécialiste en Médecine Générale & Chirurgie" data-ru="Специалист по общей медицине и хирургии" data-ar="متخصص في الطب العام والجراحة العامة"></div>
-        <p class="prof-body" data-de="Mit einem klaren Fokus auf Prävention, Stoffwechsel und endokrine Regulation bietet die Praxis eine medizinische Versorgung, die über den Standard hinausgeht." data-en="With a clear focus on prevention, metabolism, and endocrine regulation, the practice offers medical care that goes beyond the standard." data-fr="Avec un focus sur la prévention, le métabolisme et la régulation endocrine." data-ru="С чётким фокусом на профилактику, метаболизм и эндокринную регуляцию." data-ar="مع تركيز واضح على الوقاية والتمثيل الغذائي والتنظيم الهرموني."></p>
+        <p class="prof-body" data-de="Mit einem klaren Fokus auf Prävention, Stoffwechsel und endokrine Regulation bietet die Praxis eine medizinische Versorgung, die über den Standard hinausgeht." data-en="We focus on prevention, metabolism, and hormone balance to give you care beyond the ordinary." data-fr="Une expertise dédiée à la prévention, au métabolisme et à la régulation endocrinienne." data-ru="С чётким фокусом на профилактику, метаболизм и эндокринную регуляцию." data-ar="مع تركيز واضح على الوقاية والتمثيل الغذائي والتنظيم الهرموني."></p>
         <div class="p-tags">
           <span class="p-tag" data-de="Präventivmedizin" data-en="Preventive Medicine" data-fr="Médecine Préventive" data-ru="Профилактика" data-ar="الوقاية"></span>
           <span class="p-tag" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></span>
@@ -336,10 +396,10 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
       </div>
       <div class="why-box">
         <div class="why-lbl" data-de="Warum ZPYU?" data-en="Why ZPYU?" data-fr="Pourquoi ZPYU?" data-ru="Почему ZPYU?" data-ar="لماذا ZPYU؟"></div>
-        <div class="why-item" data-de="Früherkennung statt Spättherapie" data-en="Early detection, not late treatment" data-fr="Dépistage précoce, pas traitement tardif" data-ru="Раннее выявление, не позднее лечение" data-ar="الكشف المبكر وليس العلاج المتأخر"></div>
+        <div class="why-item" data-de="Früherkennung statt Spättherapie" data-en="Find it early. Treat it better." data-fr="Une approche proactive fondée sur le dépistage précoce, pour prévenir toute évolution tardive" data-ru="Раннее выявление, не позднее лечение" data-ar="الكشف المبكر وليس العلاج المتأخر"></div>
         <div class="why-item" data-de="Systemmedizinischer Ansatz" data-en="Systems medicine approach" data-fr="Approche en médecine systémique" data-ru="Подход системной медицины" data-ar="نهج الطب الجهازي"></div>
         <div class="why-item" data-de="Individuelle Betreuung" data-en="Individualised care" data-fr="Accompagnement individualisé" data-ru="Индивидуальный уход" data-ar="رعاية فردية"></div>
-        <div class="why-item" data-de="Kombination aus Klinik- und Praxisexpertise" data-en="Combined clinical & practice expertise" data-fr="Expertise clinique et cabinet combinée" data-ru="Клинический и практический опыт" data-ar="خبرة سريرية وعملية مدمجة"></div>
+        <div class="why-item" data-de="Kombination aus Klinik- und Praxisexpertise" data-en="Combined clinical & practice expertise" data-fr="Une double excellence au service de votre santé : expertise clinique et expertise de cabinet" data-ru="Клинический и практический опыт" data-ar="خبرة سريرية وعملية مدمجة"></div>
       </div>
     </div>
   </div>
@@ -352,10 +412,10 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
     <h2 class="sec-title" data-de="Leistungen" data-en="Services" data-fr="Prestations" data-ru="Услуги" data-ar="الخدمات"></h2>
     <div class="l-grid">
       <div class="l-card"><span class="l-num">01</span><div class="l-title" data-de="Hausärztliche Versorgung" data-en="General Medical Care" data-fr="Soins Médicaux Généraux" data-ru="Общая медицинская помощь" data-ar="الرعاية الطبية العامة"></div><ul class="l-list"><li class="l-item" data-de="Akut- und Langzeitbetreuung" data-en="Acute and long-term care" data-fr="Soins aigus et chroniques" data-ru="Острая и длительная помощь" data-ar="رعاية حادة وطويلة الأمد"></li><li class="l-item" data-de="Check-ups & Vorsorge" data-en="Check-ups & prevention" data-fr="Bilans & prévention" data-ru="Чек-апы и профилактика" data-ar="فحوصات دورية ووقاية"></li><li class="l-item" data-de="Chronikerbetreuung" data-en="Chronic disease management" data-fr="Maladies chroniques" data-ru="Хронические заболевания" data-ar="إدارة الأمراض المزمنة"></li></ul></div>
-      <div class="l-card"><span class="l-num">02</span><div class="l-title" data-de="Präventivmedizin" data-en="Preventive Medicine" data-fr="Médecine Préventive" data-ru="Профилактическая медицина" data-ar="الطب الوقائي"></div><ul class="l-list"><li class="l-item" data-de="Erweiterte Vorsorge" data-en="Advanced prevention" data-fr="Prévention avancée" data-ru="Расширенная профилактика" data-ar="وقاية متقدمة"></li><li class="l-item" data-de="Risikoanalysen" data-en="Risk analyses" data-fr="Analyses de risque" data-ru="Анализ рисков" data-ar="تحليل المخاطر"></li><li class="l-item" data-de="Individualisierte Prävention" data-en="Individualised strategies" data-fr="Stratégies individualisées" data-ru="Индивидуальная профилактика" data-ar="وقاية شخصية"></li></ul></div>
-      <div class="l-card"><span class="l-num">03</span><div class="l-title" data-de="Stoffwechselmedizin" data-en="Metabolic Medicine" data-fr="Médecine Métabolique" data-ru="Метаболическая медицина" data-ar="طب التمثيل الغذائي"></div><ul class="l-list"><li class="l-item" data-de="Insulinresistenz-Diagnostik" data-en="Insulin resistance" data-fr="Résistance à l'insuline" data-ru="Инсулинорезистентность" data-ar="مقاومة الأنسولين"></li><li class="l-item" data-de="Metabolisches Syndrom" data-en="Metabolic syndrome" data-fr="Syndrome métabolique" data-ru="Метаболический синдром" data-ar="المتلازمة الاستقلابية"></li><li class="l-item" data-de="Gewicht & Adipositas" data-en="Weight & obesity" data-fr="Poids & obésité" data-ru="Вес и ожирение" data-ar="الوزن والسمنة"></li></ul></div>
-      <div class="l-card"><span class="l-num">04</span><div class="l-title" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="طب الغدد الصماء"></div><ul class="l-list"><li class="l-item" data-de="Schilddrüsendiagnostik" data-en="Thyroid diagnostics" data-fr="Thyroïde" data-ru="Щитовидная железа" data-ar="الغدة الدرقية"></li><li class="l-item" data-de="Hormonelle Dysregulation" data-en="Hormonal dysregulation" data-fr="Dysrégulation hormonale" data-ru="Гормональная дисрегуляция" data-ar="اضطراب هرموني"></li><li class="l-item" data-de="Andrologie & Gyn-Endokrinologie" data-en="Andrology & Gyn-Endocrinology" data-fr="Andrologie & endocrinologie gyn." data-ru="Андрология и гинекология" data-ar="طب الذكورة والنساء"></li></ul></div>
-      <div class="l-card"><span class="l-num">05</span><div class="l-title" data-de="Erweiterte Diagnostik" data-en="Advanced Diagnostics" data-fr="Diagnostics Avancés" data-ru="Расширенная диагностика" data-ar="التشخيص المتقدم"></div><ul class="l-list"><li class="l-item" data-de="Laboranalysen" data-en="Laboratory analyses" data-fr="Analyses de laboratoire" data-ru="Лабораторные анализы" data-ar="التحاليل المخبرية"></li><li class="l-item" data-de="Metabolische Marker" data-en="Metabolic markers" data-fr="Marqueurs métaboliques" data-ru="Метаболические маркеры" data-ar="المؤشرات الاستقلابية"></li><li class="l-item" data-de="Advanced Panels (IGeL)" data-en="Advanced panels (private)" data-fr="Panels avancés (privé)" data-ru="Расширенные панели" data-ar="فحوصات متقدمة"></li></ul></div>
+      <div class="l-card"><span class="l-num">02</span><div class="l-title" data-de="Präventivmedizin" data-en="Preventive Medicine" data-fr="Médecine Préventive" data-ru="Профилактическая медицина" data-ar="الطب الوقائي"></div><ul class="l-list"><li class="l-item" data-de="Erweiterte Vorsorge" data-en="Advanced prevention strategies" data-fr="Prévention avancée" data-ru="Расширенная профилактика" data-ar="وقاية متقدمة"></li><li class="l-item" data-de="Risikoanalysen" data-en="Personalized risk assessment and analysis" data-fr="Analyses de risque" data-ru="Анализ рисков" data-ar="تحليل المخاطر"></li><li class="l-item" data-de="Individualisierte Prävention" data-en="Individualized health optimization plans" data-fr="Stratégies individualisées" data-ru="Индивидуальная профилактика" data-ar="وقاية شخصية"></li></ul></div>
+      <div class="l-card"><span class="l-num">03</span><div class="l-title" data-de="Stoffwechselmedizin" data-en="Metabolic Medicine" data-fr="Médecine Métabolique" data-ru="Метаболическая медицина" data-ar="طب التمثيل الغذائي"></div><ul class="l-list"><li class="l-item" data-de="Insulinresistenz-Diagnostik" data-en="Assessment and management of insulin resistance" data-fr="Résistance à l'insuline" data-ru="Инсулинорезистентность" data-ar="مقاومة الأنسولين"></li><li class="l-item" data-de="Metabolisches Syndrom" data-en="Metabolic syndrome evaluation and treatment" data-fr="Syndrome métabolique" data-ru="Метаболический синдром" data-ar="المتلازمة الاستقلابية"></li><li class="l-item" data-de="Gewicht & Adipositas" data-en="Weight & obesity" data-fr="Poids & obésité" data-ru="Вес и ожирение" data-ar="الوزن والسمنة"></li></ul></div>
+      <div class="l-card"><span class="l-num">04</span><div class="l-title" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="طب الغدد الصماء"></div><ul class="l-list"><li class="l-item" data-de="Schilddrüsendiagnostik" data-en="Thyroid function diagnostics and management" data-fr="Thyroïde" data-ru="Щитовидная железа" data-ar="الغدة الدرقية"></li><li class="l-item" data-de="Hormonelle Dysregulation" data-en="Hormonal imbalance and dysregulation care" data-fr="Dysrégulation hormonale" data-ru="Гормональная дисрегуляция" data-ar="اضطراب هرموني"></li><li class="l-item" data-de="Andrologie & Gyn-Endokrinologie" data-en="Andrology & Gyn-Endocrinology" data-fr="Andrologie & endocrinologie gyn." data-ru="Андрология и гинекология" data-ar="طب الذكورة والنساء"></li></ul></div>
+      <div class="l-card"><span class="l-num">05</span><div class="l-title" data-de="Erweiterte Diagnostik" data-en="Advanced Diagnostics" data-fr="Diagnostics Avancés" data-ru="Расширенная диагностика" data-ar="التشخيص المتقدم"></div><ul class="l-list"><li class="l-item" data-de="Laboranalysen" data-en="Comprehensive laboratory testing" data-fr="Analyses de laboratoire" data-ru="Лабораторные анализы" data-ar="التحاليل المخبرية"></li><li class="l-item" data-de="Metabolische Marker" data-en="Metabolic and biomarker profiling" data-fr="Marqueurs métaboliques" data-ru="Метаболические маркеры" data-ar="المؤشرات الاستقلابية"></li><li class="l-item" data-de="Advanced Panels (IGeL)" data-en="Advanced diagnostic panels (private services)" data-fr="Panels avancés (privé)" data-ru="Расширенные панели" data-ar="فحوصات متقدمة"></li></ul></div>
     </div>
   </div>
 </section>
@@ -365,10 +425,10 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
   <div class="phil">
     <div class="phil-inner">
       <div class="sec-label" data-de="Unser Konzept" data-en="Our Concept" data-fr="Notre Concept" data-ru="Концепция" data-ar="مفهومنا"></div>
-      <h2 class="phil-title" data-de="Medizin neu gedacht -<br><em>Prävention als System</em>" data-en="Medicine reimagined -<br><em>Prevention as a System</em>" data-fr="La médecine repensée -<br><em>La prévention comme système</em>" data-ru="Медицина по-новому -<br><em>Профилактика как система</em>" data-ar="طب جديد -<br><em>الوقاية كنظام</em>"></h2>
+      <h2 class="phil-title" data-de="Medizin neu gedacht -<br><em>Prävention als System</em>" data-en="Medicine reimagined -<br><em>Prevention as a System</em>" data-fr="Une médecine réinventée,<br><em>fondée sur une prévention systémique</em>" data-ru="Медицина по-новому -<br><em>Профилактика как система</em>" data-ar="طب جديد -<br><em>الوقاية كنظام</em>"></h2>
       <div class="phil-line"></div>
-      <p class="phil-p" data-de="Die klassische Medizin setzt häufig erst an, wenn Erkrankungen bereits manifest sind. Im ZPYU liegt der Fokus auf der frühzeitigen Erkennung und gezielten Steuerung biologischer Systeme, bevor irreversible Schäden entstehen." data-en="Conventional medicine often intervenes only once disease has already manifested. At ZPYU, the focus is on early recognition and targeted management of biological systems before irreversible damage occurs." data-fr="La médecine conventionnelle n'intervient souvent que lorsque la maladie s'est manifestée. Au ZPYU, l'accent est mis sur la reconnaissance précoce avant que des dommages irréversibles ne surviennent." data-ru="Классическая медицина нередко вмешивается лишь тогда, когда болезнь уже проявилась. В ZPYU акцент делается на раннем выявлении до необратимых нарушений." data-ar="كثيراً ما تتدخل الطب التقليدي فقط بعد ظهور المرض. في ZPYU يتمحور التركيز حول التعرف المبكر قبل حدوث أضرار لا رجعة فيها."></p>
-      <p class="phil-p" data-de="Der Stoffwechsel steht dabei im Mittelpunkt - als zentrales Regulationssystem, das Energie, Hormone, Immunfunktion und langfristige Gesundheit koordiniert." data-en="Metabolism is at the centre - as the primary regulatory system coordinating energy, hormones, immune function, and long-term health." data-fr="Le métabolisme est au centre - système de régulation coordonnant énergie, hormones, immunité et santé à long terme." data-ru="Метаболизм в центре - система, координирующая энергию, гормоны, иммунитет и долгосрочное здоровье." data-ar="يقع التمثيل الغذائي في القلب - النظام التنظيمي الأساسي الذي ينسق الطاقة والهرمونات والمناعة."></p>
+      <p class="phil-p" data-de="Die klassische Medizin setzt häufig erst an, wenn Erkrankungen bereits manifest sind. Im ZPYU liegt der Fokus auf der frühzeitigen Erkennung und gezielten Steuerung biologischer Systeme, bevor irreversible Schäden entstehen." data-en="Conventional medicine often intervenes only after disease has already developed. At ZPYU, we focus on early identification and targeted intervention within key biological systems - aiming to prevent irreversible damage before it occurs." data-fr="La médecine conventionnelle intervient très souvent à un stade avancé de la maladie. Au ZPYU, nous misons sur l'identification précoce des déséquilibres, avant l'apparition de dommages irréversibles." data-ru="Классическая медицина нередко вмешивается лишь тогда, когда болезнь уже проявилась. В ZPYU акцент делается на раннем выявлении до необратимых нарушений." data-ar="كثيراً ما تتدخل الطب التقليدي فقط بعد ظهور المرض. في ZPYU يتمحور التركيز حول التعرف المبكر قبل حدوث أضرار لا رجعة فيها."></p>
+      <p class="phil-p" data-de="Der Stoffwechsel steht dabei im Mittelpunkt - als zentrales Regulationssystem, das Energie, Hormone, Immunfunktion und langfristige Gesundheit koordiniert." data-en="Metabolism is placed at the center of care, as the body's primary regulatory system governing energy balance, hormonal function, immune response, and long-term health outcomes." data-fr="Le métabolisme au coeur d'une régulation intégrée, garant de l'équilibre énergétique, hormonal, immunitaire et la santé à long terme." data-ru="Метаболизм в центре - система, координирующая энергию, гормоны, иммунитет и долгосрочное здоровье." data-ar="يقع التمثيل الغذائي في القلب - النظام التنظيمي الأساسي الذي ينسق الطاقة والهرمونات والمناعة."></p>
     </div>
   </div>
 </section>
@@ -377,7 +437,7 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
 <section id="standorte">
   <div class="sw">
     <div class="sec-label" data-de="Unsere Standorte" data-en="Our Locations" data-fr="Nos Sites" data-ru="Наши адреса" data-ar="مواقعنا"></div>
-    <h2 class="sec-title" data-de="Zwei Standorte.<br><em>Zwei Versorgungsebenen.</em>" data-en="Two locations.<br><em>Two levels of care.</em>" data-fr="Deux sites.<br><em>Deux niveaux de soins.</em>" data-ru="Два адреса.<br><em>Два уровня помощи.</em>" data-ar="موقعان.<br><em>مستويان من الرعاية.</em>"></h2>
+    <h2 class="sec-title" data-de="Zwei Standorte.<br><em>Zwei Versorgungsebenen.</em>" data-en="Two locations.<br><em>Two levels of care.</em>" data-fr="Deux sites,<br><em>une double expertise au service de votre santé</em>" data-ru="Два адреса.<br><em>Два уровня помощи.</em>" data-ar="موقعان.<br><em>مستويان من الرعاية.</em>"></h2>
     <div class="standorte-grid">
 
       <!-- HANSAALLEE -->
@@ -391,6 +451,8 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
           <li data-de="Infusionstherapien" data-en="Infusion Therapies" data-fr="Thérapies par perfusion" data-ru="Инфузионные терапии" data-ar="علاجات التسريب"></li>
           <li data-de="Executive Check-ups" data-en="Executive Check-ups" data-fr="Bilans Executive" data-ru="Executive обследования" data-ar="فحوصات تنفيذية"></li>
           <li data-de="Internationale Patienten" data-en="International Patients" data-fr="Patients Internationaux" data-ru="Иностранные пациенты" data-ar="المرضى الدوليون"></li>
+          <li data-de="Hausärztliche Versorgung &amp; KV-Versorgung" data-en="General Medical Care &amp; Statutory Care" data-fr="Soins généraux &amp; remboursés" data-ru="Общая медицинская помощь" data-ar="الرعاية الطبية العامة"></li>
+          <li data-de="Akut- und Langzeitbetreuung" data-en="Acute &amp; Long-term Care" data-fr="Soins aigus et chroniques" data-ru="Острая и длительная помощь" data-ar="رعاية حادة وطويلة الأمد"></li>
         </ul>
         <div class="st-hours">
           <div class="st-hours-lbl" data-de="Öffnungszeiten" data-en="Opening Hours" data-fr="Horaires" data-ru="Часы работы" data-ar="ساعات العمل"></div>
@@ -398,19 +460,69 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
           <div class="st-hr"><span data-de="Freitag" data-en="Friday" data-fr="Vendredi" data-ru="Пятница" data-ar="الجمعة"></span><span>08:30 - 14:30</span></div>
           <div class="st-hr"><span data-de="Online-Termin" data-en="Online booking" data-fr="Réservation en ligne" data-ru="Онлайн-запись" data-ar="الحجز الإلكتروني"></span><span>24 / 7</span></div>
         </div>
-        <div class="st-tel">info@zpyu.de &nbsp;·&nbsp; www.zpyu.de</div>
+        <div class="st-tel" data-de="Telefon folgt in Kürze" data-en="Phone coming soon" data-fr="Téléphone bientôt disponible" data-ru="Телефон скоро" data-ar="الهاتف قريباً"></div>
+        <div class="st-tel">contacthansa@zpyu.de &nbsp;·&nbsp; www.zpyu.de</div>
+        <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&destination=Hansaallee+179,+40549+Düsseldorf" target="_blank" rel="noopener noreferrer"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> <span data-de="Route planen" data-en="Get directions" data-fr="Itinéraire" data-ru="Маршрут" data-ar="الاتجاهات">Route planen</span></a>
+
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:20px 0 8px;" data-de="Eindrücke" data-en="Impressions" data-fr="Aperçu" data-ru="Фотографии" data-ar="انطباعات"></div>
+        <div class="slider-wrap" id="slider-hansaallee">
+      <div class="slider-track">
+        <div class="slide">
+          <div class="slide-placeholder">
+            <span class="slide-ph-icon">🏥</span>
+            <span class="slide-ph-label" data-de="Empfang & Anmeldung" data-en="Reception & Reception" data-fr="Accueil & Réception">Empfang & Anmeldung</span>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-placeholder">
+            <span class="slide-ph-icon">🏥</span>
+            <span class="slide-ph-label" data-de="Wartebereich" data-en="Waiting Area" data-fr="Salle d'attente">Wartebereich</span>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-placeholder">
+            <span class="slide-ph-icon">🏥</span>
+            <span class="slide-ph-label" data-de="Behandlungszimmer 1" data-en="Treatment Room 1" data-fr="Salle de traitement 1">Behandlungszimmer 1</span>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-placeholder">
+            <span class="slide-ph-icon">🏥</span>
+            <span class="slide-ph-label" data-de="Behandlungszimmer 2" data-en="Treatment Room 2" data-fr="Salle de traitement 2">Behandlungszimmer 2</span>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-placeholder">
+            <span class="slide-ph-icon">🏥</span>
+            <span class="slide-ph-label" data-de="Labor & Diagnostik" data-en="Laboratory & Diagnostics" data-fr="Laboratoire & Diagnostics">Labor & Diagnostik</span>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-placeholder">
+            <span class="slide-ph-icon">🏥</span>
+            <span class="slide-ph-label" data-de="Infusionsraum" data-en="Infusion Room" data-fr="Salle de perfusion">Infusionsraum</span>
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn slider-prev" aria-label="Previous">&#8249;</button>
+      <button class="slider-btn slider-next" aria-label="Next">&#8250;</button>
+      <div class="slider-dots"><button class="slider-dot  active" aria-label="Slide 1"></button><button class="slider-dot" aria-label="Slide 2"></button><button class="slider-dot" aria-label="Slide 3"></button><button class="slider-dot" aria-label="Slide 4"></button><button class="slider-dot" aria-label="Slide 5"></button><button class="slider-dot" aria-label="Slide 6"></button></div>
+    </div>
       </div>
 
       <!-- GRAFENBERGER ALLEE -->
       <div class="st-card">
         <span class="st-badge blue" data-de="Hausärztliche Versorgung" data-en="Primary Care" data-fr="Médecine Générale" data-ru="Общая медицина" data-ar="الرعاية الأولية"></span>
-        <div class="st-name" data-de="Grafenberger Allee" data-en="Grafenberger Allee" data-fr="Grafenberger Allee" data-ru="Графенбергер Аллее" data-ar="جرافنبرغر ألي"></div>
+        <div class="st-name" data-de="ZPYU Grafenberger Allee" data-en="ZPYU Grafenberger Allee" data-fr="ZPYU Grafenberger Allee" data-ru="ZPYU Графенбергер Аллее" data-ar="ZPYU جرافنبرغر ألي"></div>
         <div class="st-addr">Grafenberger Allee 134<br>40237 Düsseldorf</div>
         <ul class="st-svcs">
           <li data-de="Hausärztliche Versorgung" data-en="General Medical Care" data-fr="Soins Médicaux Généraux" data-ru="Общая медицинская помощь" data-ar="الرعاية الطبية العامة"></li>
           <li data-de="Akut- und Langzeitbetreuung" data-en="Acute & Long-term Care" data-fr="Soins aigus et chroniques" data-ru="Острая и длительная помощь" data-ar="رعاية حادة وطويلة الأمد"></li>
           <li data-de="Chronikerbetreuung & KV-Versorgung" data-en="Chronic Disease Management" data-fr="Suivi des maladies chroniques" data-ru="Ведение хронических заболеваний" data-ar="إدارة الأمراض المزمنة"></li>
           <li data-de="Check-ups & Vorsorge" data-en="Check-ups & Prevention" data-fr="Bilans de santé & prévention" data-ru="Чек-апы и профилактика" data-ar="فحوصات دورية ووقاية"></li>
+          <li data-de="Manuelle Medizin / Chirotherapie / Ernährungsmedizin" data-en="Manual Medicine / Chirotherapy / Nutritional Medicine" data-fr="Médecine manuelle / Chirothérapie / Nutrition médicale" data-ru="Мануальная медицина / Хиротерапия / Нутрициология" data-ar="الطب اليدوي / العلاج اليدوي / طب التغذية"></li>
+          <li data-de="Akupunktur, Neuraltherapie, Ozon-Therapie" data-en="Acupuncture, Neural Therapy, Ozone Therapy" data-fr="Acupuncture, Thérapie neurale, Ozonothérapie" data-ru="Акупунктура, нейральная терапия, озонотерапия" data-ar="الإبر الصينية، العلاج العصبي، العلاج بالأوزون"></li>
+          <li data-de="Lifestyle Coaching / Rhythmus Coaching" data-en="Lifestyle Coaching / Rhythm Coaching" data-fr="Coaching de vie / Coaching du rythme" data-ru="Лайфстайл-коучинг / Ритм-коучинг" data-ar="تدريب أسلوب الحياة / تدريب الإيقاع"></li>
         </ul>
         <div class="st-hours">
           <div class="st-hours-lbl" data-de="Öffnungszeiten" data-en="Opening Hours" data-fr="Horaires" data-ru="Часы работы" data-ar="ساعات العمل"></div>
@@ -418,7 +530,47 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
           <div class="st-hr"><span data-de="Di + Mi" data-en="Tue + Wed" data-fr="Mar + Mer" data-ru="Вт + Ср" data-ar="الثلاثاء + الأربعاء"></span><span>08:30 - 14:30</span></div>
           <div class="st-hr"><span data-de="Fr / Sa / So" data-en="Fri / Sat / Sun" data-fr="Ven / Sam / Dim" data-ru="Пт / Сб / Вс" data-ar="الجمعة / السبت / الأحد"></span><span data-de="Geschlossen" data-en="Closed" data-fr="Fermé" data-ru="Закрыто" data-ar="مغلق"></span></div>
         </div>
-        <div class="st-tel">0211 6993093</div>
+        <div class="st-tel">contactgrafen@zpyu.de &nbsp;·&nbsp; 0211 6993093</div>
+        <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&destination=Grafenberger+Allee+134,+40237+Düsseldorf" target="_blank" rel="noopener noreferrer"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> <span data-de="Route planen" data-en="Get directions" data-fr="Itinéraire" data-ru="Маршрут" data-ar="الاتجاهات">Route planen</span></a>
+
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:20px 0 8px;" data-de="Eindrücke" data-en="Impressions" data-fr="Aperçu" data-ru="Фотографии" data-ar="انطباعات"></div>
+        <div class="slider-wrap" id="slider-grafenberger">
+      <div class="slider-track">
+        <div class="slide">
+          <div class="slide-placeholder">
+            <span class="slide-ph-icon">🏥</span>
+            <span class="slide-ph-label" data-de="Empfang & Anmeldung" data-en="Reception" data-fr="Accueil">Empfang & Anmeldung</span>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-placeholder">
+            <span class="slide-ph-icon">🏥</span>
+            <span class="slide-ph-label" data-de="Wartebereich" data-en="Waiting Area" data-fr="Salle d'attente">Wartebereich</span>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-placeholder">
+            <span class="slide-ph-icon">🏥</span>
+            <span class="slide-ph-label" data-de="Behandlungszimmer 1" data-en="Treatment Room 1" data-fr="Salle de traitement 1">Behandlungszimmer 1</span>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-placeholder">
+            <span class="slide-ph-icon">🏥</span>
+            <span class="slide-ph-label" data-de="Behandlungszimmer 2" data-en="Treatment Room 2" data-fr="Salle de traitement 2">Behandlungszimmer 2</span>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-placeholder">
+            <span class="slide-ph-icon">🏥</span>
+            <span class="slide-ph-label" data-de="Behandlungszimmer 3" data-en="Treatment Room 3" data-fr="Salle de traitement 3">Behandlungszimmer 3</span>
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn slider-prev" aria-label="Previous">&#8249;</button>
+      <button class="slider-btn slider-next" aria-label="Next">&#8250;</button>
+      <div class="slider-dots"><button class="slider-dot  active" aria-label="Slide 1"></button><button class="slider-dot" aria-label="Slide 2"></button><button class="slider-dot" aria-label="Slide 3"></button><button class="slider-dot" aria-label="Slide 4"></button><button class="slider-dot" aria-label="Slide 5"></button></div>
+    </div>
       </div>
 
     </div>
@@ -429,27 +581,171 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
 <section id="team">
   <div class="sw alt">
     <div class="sec-label" data-de="Unser Team" data-en="Our Team" data-fr="Notre Équipe" data-ru="Наша команда" data-ar="فريقنا"></div>
-    <h2 class="sec-title" data-de="Die Menschen<br>hinter <em>ZPYU</em>" data-en="The people<br>behind <em>ZPYU</em>" data-fr="Les personnes<br>derrière <em>ZPYU</em>" data-ru="Люди<br>за <em>ZPYU</em>" data-ar="الأشخاص<br>خلف <em>ZPYU</em>"></h2>
-    <div class="team-grid">
+    <h2 class="sec-title" data-de="Die Menschen<br>hinter <em>ZPYU</em>" data-en="The people<br>behind <em>ZPYU</em>" data-fr="L'équipe<br>derrière <em>ZPYU</em>" data-ru="Люди<br>за <em>ZPYU</em>" data-ar="الأشخاص<br>خلف <em>ZPYU</em>"></h2>
+
+    <!-- HANSAALLEE -->
+    <div style="padding:12px 0 12px;border-bottom:1px solid var(--border);margin-bottom:20px;">
+      <div class="sec-label" style="margin-bottom:4px;" data-de="Hansaallee 179 · Premium Prävention" data-en="Hansaallee 179 · Preventive Medicine Centre" data-fr="Hansaallee 179 · Centre Préventif" data-ru="Hansaallee 179 · Центр профилактики" data-ar="هانساأليه 179 · مركز الوقاية"></div>
+      <p style="font-size:12px;color:var(--text-soft);font-weight:300;" data-de="Platzhalter werden nach Eröffnung mit Fotos und vollständigen Profilen befüllt." data-en="Placeholders will be filled with photos and full profiles after opening." data-fr="Les espaces réservés seront complétés après l'ouverture."></p>
+    </div>
+    <div class="team-grid-3">
       <div class="team-card">
         <div class="team-avatar">FY</div>
-        <div class="team-name">MD Fattah Yunusah</div>
-        <div class="team-role" data-de="Gründer & Leitender Arzt · Hansaallee" data-en="Founder & Lead Physician · Hansaallee" data-fr="Fondateur & Médecin Principal · Hansaallee" data-ru="Основатель и главный врач" data-ar="المؤسس والطبيب الرئيسي"></div>
-        <p class="team-body" data-de="Facharzt für Allgemeinmedizin und Allgemeinchirurgie mit Schwerpunkt Präventivmedizin, Endokrinologie und Stoffwechselmedizin." data-en="Specialist in General Medicine and General Surgery, with a focus on Preventive Medicine, Endocrinology and Metabolic Medicine." data-fr="Spécialiste en Médecine Générale et Chirurgie Générale, orientation Médecine Préventive, Endocrinologie et Médecine Métabolique." data-ru="Специалист по общей медицине и хирургии с акцентом на профилактике, эндокринологии и метаболической медицине." data-ar="متخصص في الطب العام والجراحة العامة مع تركيز على الطب الوقائي وطب الغدد الصماء."></p>
-        <div class="team-tags">
-          <span class="team-tag" data-de="Präventivmedizin" data-en="Preventive Medicine" data-fr="Médecine Préventive" data-ru="Профилактика" data-ar="الوقاية"></span>
-          <span class="team-tag" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></span>
-          <span class="team-tag" data-de="Stoffwechsel" data-en="Metabolism" data-fr="Métabolisme" data-ru="Метаболизм" data-ar="التمثيل الغذائي"></span>
-        </div>
+        <div class="team-role-loc" data-de="Hansaallee 179" data-en="Hansaallee 179" data-fr="Hansaallee 179"></div>
+        <div class="team-name" data-de="MD Fattah Yunusah" data-en="MD Fattah Yunusah" data-fr="MD Fattah Yunusah"></div>
+        <div class="team-role" data-de="Gründer & Leitender Arzt" data-en="Founder & Lead Physician" data-fr="Fondateur & Médecin Principal"></div>
+        <p class="team-body" data-de="Facharzt für Allgemeinmedizin und Allgemeinchirurgie mit Schwerpunkt Präventivmedizin, Endokrinologie und Stoffwechselmedizin." data-en="Specialist in General Medicine and General Surgery, with a focus on Preventive Medicine, Endocrinology and Metabolic Medicine." data-fr="Spécialiste en Médecine Générale et Chirurgie Générale, avec une approche centrée sur la Médecine Préventive, Endocrinologie et Médecine Métabolique."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Präventivmedizin" data-en="Preventive Medicine" data-fr="Médecine Préventive" data-ru="Профилактика" data-ar="الوقاية"></span><span class="team-tag" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></span><span class="team-tag" data-de="Stoffwechsel" data-en="Metabolism" data-fr="Métabolisme" data-ru="Метаболизм" data-ar="التمثيل الغذائي"></span></div>
       </div>
-      <div class="team-card">
-        <div class="team-avatar" style="font-size:32px;">+</div>
-        <div class="team-name" data-de="Weitere Teammitglieder" data-en="Further Team Members" data-fr="Autres membres" data-ru="Другие члены команды" data-ar="أعضاء الفريق الآخرون"></div>
-        <div class="team-role" data-de="Ab Eröffnung Juli 2026" data-en="From opening July 2026" data-fr="Dès l'ouverture juillet 2026" data-ru="С открытия июль 2026" data-ar="من افتتاح يوليو 2026"></div>
-        <p class="team-body" data-de="Unser Team wird in Kürze vollständig vorgestellt. Wir freuen uns, Ihnen ab Juli 2026 ein erfahrenes, mehrsprachiges Team vorstellen zu dürfen." data-en="Our full team will be introduced shortly. We look forward to presenting an experienced, multilingual team from July 2026." data-fr="Notre équipe complète sera présentée prochainement dès juillet 2026." data-ru="Наша полная команда будет представлена в ближайшее время." data-ar="سيتم تقديم فريقنا الكامل قريباً من يوليو 2026."></p>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Hansaallee 179" data-en="Hansaallee 179" data-fr="Hansaallee 179"></div>
+        <div class="team-name" data-de="Arzt 2 (Endokrinologie)" data-en="Physician 2 (Endocrinology)" data-fr="Médecin 2 (Endocrinologie)"></div>
+        <div class="team-role" data-de="Facharzt · Hansaallee" data-en="Specialist Physician · Hansaallee" data-fr="Médecin Spécialiste · Hansaallee"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="الغدد الصماء"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Hansaallee 179" data-en="Hansaallee 179" data-fr="Hansaallee 179"></div>
+        <div class="team-name" data-de="Arzt 3 – Weiterbildungsassistent" data-en="Physician 3 – Registrar" data-fr="Médecin 3 – Interne"></div>
+        <div class="team-role" data-de="Weiterbildungsassistent · Hansaallee" data-en="Medical Registrar · Hansaallee" data-fr="Interne · Hansaallee"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Allgemeinmedizin" data-en="General Medicine" data-fr="Médecine Générale" data-ru="Общая медицина" data-ar="الطب العام"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Hansaallee 179" data-en="Hansaallee 179" data-fr="Hansaallee 179"></div>
+        <div class="team-name" data-de="PTA 1" data-en="PTA 1" data-fr="PTA 1"></div>
+        <div class="team-role" data-de="Pharmazeutisch-technische Assistenz" data-en="Pharmaceutical-Technical Assistant" data-fr="Assistante pharmaco-technique"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Diagnostik" data-en="Diagnostics" data-fr="Diagnostics" data-ru="Диагностика" data-ar="التشخيص"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Hansaallee 179" data-en="Hansaallee 179" data-fr="Hansaallee 179"></div>
+        <div class="team-name" data-de="PTA 2" data-en="PTA 2" data-fr="PTA 2"></div>
+        <div class="team-role" data-de="Pharmazeutisch-technische Assistenz" data-en="Pharmaceutical-Technical Assistant" data-fr="Assistante pharmaco-technique"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Diagnostik" data-en="Diagnostics" data-fr="Diagnostics" data-ru="Диагностика" data-ar="التشخيص"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Hansaallee 179" data-en="Hansaallee 179" data-fr="Hansaallee 179"></div>
+        <div class="team-name" data-de="MFA Anmeldung 1" data-en="Receptionist 1" data-fr="MFA Accueil 1"></div>
+        <div class="team-role" data-de="Medizinische Fachangestellte · Anmeldung" data-en="Medical Assistant · Reception" data-fr="Assistante médicale · Accueil"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Patientenbetreuung" data-en="Patient Care" data-fr="Soins patients" data-ru="Уход за пациентами" data-ar="رعاية المرضى"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Hansaallee 179" data-en="Hansaallee 179" data-fr="Hansaallee 179"></div>
+        <div class="team-name" data-de="MFA Anmeldung 2" data-en="Receptionist 2" data-fr="MFA Accueil 2"></div>
+        <div class="team-role" data-de="Medizinische Fachangestellte · Anmeldung" data-en="Medical Assistant · Reception" data-fr="Assistante médicale · Accueil"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Patientenbetreuung" data-en="Patient Care" data-fr="Soins patients" data-ru="Уход за пациентами" data-ar="رعاية المرضى"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Hansaallee 179" data-en="Hansaallee 179" data-fr="Hansaallee 179"></div>
+        <div class="team-name" data-de="MFA Blutentnahme" data-en="Phlebotomy Assistant" data-fr="MFA Prélèvements"></div>
+        <div class="team-role" data-de="Medizinische Fachangestellte · Blutentnahme" data-en="Medical Assistant · Phlebotomy" data-fr="Assistante médicale · Prélèvements"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Labor" data-en="Laboratory" data-fr="Laboratoire" data-ru="Лаборатория" data-ar="المختبر"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Hansaallee 179" data-en="Hansaallee 179" data-fr="Hansaallee 179"></div>
+        <div class="team-name" data-de="Auszubildende MFA" data-en="MFA Trainee" data-fr="MFA en formation"></div>
+        <div class="team-role" data-de="Auszubildende · Medizinische Fachangestellte" data-en="Medical Assistant Trainee" data-fr="MFA en cours de formation"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Ausbildung" data-en="Training" data-fr="Formation" data-ru="Обучение" data-ar="التدريب"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Hansaallee 179" data-en="Hansaallee 179" data-fr="Hansaallee 179"></div>
+        <div class="team-name" data-de="Laborassistenz" data-en="Laboratory Assistant" data-fr="Assistante de laboratoire"></div>
+        <div class="team-role" data-de="Laborassistenz · Teilzeit" data-en="Lab Assistant · Part-time" data-fr="Assistante de lab · Temps partiel"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Labor" data-en="Laboratory" data-fr="Laboratoire" data-ru="Лаборатория" data-ar="المختبر"></span></div>
       </div>
     </div>
+
+    <!-- GRAFENBERGER ALLEE -->
+    <div style="padding:28px 0 12px;border-top:2px solid var(--border);margin-top:32px;border-bottom:1px solid var(--border);margin-bottom:20px;">
+      <div class="sec-label" style="margin-bottom:4px;" data-de="Grafenberger Allee 134 · Hausärztliche Versorgung" data-en="Grafenberger Allee 134 · Primary Care" data-fr="Grafenberger Allee 134 · Médecine Générale" data-ru="Grafenberger Allee 134 · Общая медицина" data-ar="جرافنبرغر ألي 134 · الرعاية الأولية"></div>
+      <p style="font-size:12px;color:var(--text-soft);font-weight:300;" data-de="Platzhalter werden nach Eröffnung mit Fotos und vollständigen Profilen befüllt." data-en="Placeholders will be filled with photos and full profiles after opening." data-fr="Les espaces réservés seront complétés après l'ouverture."></p>
+    </div>
+    <div class="team-grid-3">
+      <div class="team-card">
+        <div class="team-avatar">J</div>
+        <div class="team-role-loc" data-de="Grafenberger Allee 134" data-en="Grafenberger Allee 134" data-fr="Grafenberger Allee 134"></div>
+        <div class="team-name" data-de="Dr. Jatta" data-en="Dr. Jatta" data-fr="Dr. Jatta"></div>
+        <div class="team-role" data-de="Arzt · Grafenberger Allee" data-en="Physician · Grafenberger Allee" data-fr="Médecin · Grafenberger Allee"></div>
+        <p class="team-body" data-de="Erfahrener Arzt mit Schwerpunkten in Manueller Medizin, Ernährungsmedizin, Chirotherapie, Akupunktur, Neuraltherapie und Ozon-Therapie." data-en="Experienced physician specialising in Manual Medicine, Nutritional Medicine, Chirotherapy, Acupuncture, Neural Therapy and Ozone Therapy." data-fr="Médecin expérimenté, spécialisé en Médecine Manuelle, Nutrition, Chirothérapie, Acupuncture, Thérapie neurale et Ozonothérapie."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Manuelle Medizin" data-en="Manual Medicine" data-fr="Médecine Manuelle" data-ru="Мануальная медицина" data-ar="الطب اليدوي"></span><span class="team-tag" data-de="Akupunktur" data-en="Acupuncture" data-fr="Acupuncture" data-ru="Акупунктура" data-ar="الإبر الصينية"></span><span class="team-tag" data-de="Ozon-Therapie" data-en="Ozone Therapy" data-fr="Ozonothérapie" data-ru="Озонотерапия" data-ar="الأوزون"></span></div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">FY</div>
+        <div class="team-role-loc" data-de="Grafenberger Allee 134" data-en="Grafenberger Allee 134" data-fr="Grafenberger Allee 134"></div>
+        <div class="team-name" data-de="MD Fattah Yunusah (Teilzeit)" data-en="MD Fattah Yunusah (Part-time)" data-fr="MD Fattah Yunusah (Mi-temps)"></div>
+        <div class="team-role" data-de="Arzt · Grafenberger Allee (Teilzeit)" data-en="Physician · Grafenberger Allee (Part-time)" data-fr="Médecin · Grafenberger Allee (Mi-temps)"></div>
+        <p class="team-body" data-de="Präventivmedizin, Endokrinologie und Stoffwechselmedizin. Tätig an beiden ZPYU-Standorten." data-en="Preventive Medicine, Endocrinology and Metabolic Medicine. Active at both ZPYU locations." data-fr="Médecine Préventive, Endocrinologie et Médecine Métabolique. Actif dans les deux sites ZPYU."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Prävention" data-en="Prevention" data-fr="Prévention" data-ru="Профилактика" data-ar="الوقاية"></span><span class="team-tag" data-de="Beide Standorte" data-en="Both Locations" data-fr="Deux sites" data-ru="Оба адреса" data-ar="الموقعان"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Grafenberger Allee 134" data-en="Grafenberger Allee 134" data-fr="Grafenberger Allee 134"></div>
+        <div class="team-name" data-de="Arzt 3 – Weiterbildungsassistent" data-en="Physician 3 – Registrar" data-fr="Médecin 3 – Interne"></div>
+        <div class="team-role" data-de="Weiterbildungsassistent · Grafenberger Allee" data-en="Medical Registrar · Grafenberger Allee" data-fr="Interne · Grafenberger Allee"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Allgemeinmedizin" data-en="General Medicine" data-fr="Médecine Générale" data-ru="Общая медицина" data-ar="الطب العام"></span></div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">DC</div>
+        <div class="team-role-loc" data-de="Grafenberger Allee 134" data-en="Grafenberger Allee 134" data-fr="Grafenberger Allee 134"></div>
+        <div class="team-name" data-de="David Luca Carduck" data-en="David Luca Carduck" data-fr="David Luca Carduck"></div>
+        <div class="team-role" data-de="Gesundheitsberater & Praxisassistenz" data-en="Health Coach & Practice Support" data-fr="Conseiller en santé & assistance"></div>
+        <p class="team-body" data-de="Seit Jahren fester Bestandteil der Praxis Grafenberger Allee. Schwerpunkte: funktionelle Atmung (Oxygen Advantage®), natürliche Bewegungsmuster, Ernährungsbegleitung, Darmsanierung und Stressregulation. Prävention vor Symptombehandlung." data-en="Long-established member of the Grafenberger Allee practice. Focus areas: functional breathing (Oxygen Advantage®), natural movement, nutritional guidance, gut health, and stress regulation. Prevention before symptom treatment." data-fr="Membre établi du cabinet depuis plusieurs années. Domaines : respiration fonctionnelle (Oxygen Advantage®), mouvement naturel, accompagnement nutritionnel, santé intestinale et régulation du stress."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Atemtraining" data-en="Breathing" data-fr="Respiration" data-ru="Дыхание" data-ar="التنفس"></span><span class="team-tag" data-de="Bewegung" data-en="Movement" data-fr="Mouvement" data-ru="Движение" data-ar="الحركة"></span><span class="team-tag" data-de="Prävention" data-en="Prevention" data-fr="Prévention" data-ru="Профилактика" data-ar="الوقاية"></span><span class="team-tag" data-de="Ernährung" data-en="Nutrition" data-fr="Nutrition" data-ru="Питание" data-ar="التغذية"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Grafenberger Allee 134" data-en="Grafenberger Allee 134" data-fr="Grafenberger Allee 134"></div>
+        <div class="team-name" data-de="MFA Anmeldung 1" data-en="Receptionist 1" data-fr="MFA Accueil 1"></div>
+        <div class="team-role" data-de="Medizinische Fachangestellte · Anmeldung" data-en="Medical Assistant · Reception" data-fr="Assistante médicale · Accueil"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Patientenbetreuung" data-en="Patient Care" data-fr="Soins patients" data-ru="Уход за пациентами" data-ar="رعاية المرضى"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Grafenberger Allee 134" data-en="Grafenberger Allee 134" data-fr="Grafenberger Allee 134"></div>
+        <div class="team-name" data-de="MFA Anmeldung 2" data-en="Receptionist 2" data-fr="MFA Accueil 2"></div>
+        <div class="team-role" data-de="Medizinische Fachangestellte · Anmeldung" data-en="Medical Assistant · Reception" data-fr="Assistante médicale · Accueil"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Patientenbetreuung" data-en="Patient Care" data-fr="Soins patients" data-ru="Уход за пациентами" data-ar="رعاية المرضى"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Grafenberger Allee 134" data-en="Grafenberger Allee 134" data-fr="Grafenberger Allee 134"></div>
+        <div class="team-name" data-de="MFA 3 (Teilzeit)" data-en="MFA 3 (Part-time)" data-fr="MFA 3 (Temps partiel)"></div>
+        <div class="team-role" data-de="Medizinische Fachangestellte · Teilzeit" data-en="Medical Assistant · Part-time" data-fr="Assistante médicale · Temps partiel"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Patientenbetreuung" data-en="Patient Care" data-fr="Soins patients" data-ru="Уход за пациентами" data-ar="رعاية المرضى"></span></div>
+      </div>
+      <div class="team-card placeholder">
+        <div class="team-avatar">?</div>
+        <div class="team-role-loc" data-de="Grafenberger Allee 134" data-en="Grafenberger Allee 134" data-fr="Grafenberger Allee 134"></div>
+        <div class="team-name" data-de="Auszubildende MFA" data-en="MFA Trainee" data-fr="MFA en formation"></div>
+        <div class="team-role" data-de="Auszubildende · Medizinische Fachangestellte" data-en="Medical Assistant Trainee" data-fr="MFA en cours de formation"></div>
+        <p class="team-body" data-de="Folgt in Kürze." data-en="Coming soon." data-fr="Bientôt disponible."></p>
+        <div class="team-tags"><span class="team-tag" data-de="Ausbildung" data-en="Training" data-fr="Formation" data-ru="Обучение" data-ar="التدريب"></span></div>
+      </div>
+    </div>
+
   </div>
+</section>
+
 </section>
 
 <!-- INTERNATIONAL -->
