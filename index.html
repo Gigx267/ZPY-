@@ -41,14 +41,12 @@
 html{scroll-behavior:smooth;}
 body{font-family:var(--sans);color:var(--text);background:var(--bg);overflow-x:hidden;}
 [lang="ar"]{direction:rtl;}
-
 /* LANG BAR */
 .lang-bar{position:fixed;top:0;left:0;right:0;z-index:1001;background:var(--blue);display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:34px;}
 .lang-bar-left{font-family:var(--serif);font-size:13px;color:rgba(255,255,255,0.5);letter-spacing:1px;}
 .lang-bar-right{display:flex;gap:4px;align-items:center;}
 .lang-bar button{background:none;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.65);font-family:var(--sans);font-size:11px;letter-spacing:1px;padding:3px 10px;cursor:pointer;border-radius:2px;}
 .lang-bar button:hover,.lang-bar button.active{background:var(--gold);border-color:var(--gold);color:#fff;font-weight:500;}
-
 /* THEME TOGGLE */
 .theme-tog{display:flex;align-items:center;gap:7px;cursor:pointer;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:4px 12px;border-radius:16px;margin-right:8px;}
 .tog-track{width:32px;height:18px;background:rgba(255,255,255,0.25);border-radius:9px;position:relative;flex-shrink:0;}
@@ -56,7 +54,6 @@ body{font-family:var(--sans);color:var(--text);background:var(--bg);overflow-x:h
 .tog-thumb{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform var(--ease);}
 [data-theme="dark"] .tog-thumb{transform:translateX(14px);}
 .tog-lbl{font-size:11px;color:rgba(255,255,255,0.75);letter-spacing:1px;white-space:nowrap;}
-
 /* NAV */
 nav{position:fixed;top:34px;left:0;right:0;z-index:1000;background:var(--nav-bg);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:68px;border-bottom:1px solid var(--border);box-shadow:var(--nav-shadow);}
 .nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer;}
@@ -73,14 +70,11 @@ nav{position:fixed;top:34px;left:0;right:0;z-index:1000;background:var(--nav-bg)
 .nav-cta{background:var(--blue)!important;color:#fff!important;padding:8px 18px;border-radius:2px;font-weight:500!important;}
 [data-theme="dark"] .nav-cta{background:var(--gold)!important;color:#0e1a2e!important;}
 .nav-cta::after{display:none!important;}
-
 /* HAMBURGER */
 .hamburger{display:none;background:none;border:none;font-size:24px;color:var(--text-mid);cursor:pointer;padding:8px;line-height:1;}
-
 /* SECTIONS */
 section{display:none;}
 section.active{display:block;}
-
 /* HERO */
 .hero{min-height:100vh;background:var(--bg);display:flex;align-items:center;padding:140px 60px 80px;position:relative;overflow:hidden;}
 .hero-c1{position:absolute;top:-140px;right:-140px;width:700px;height:700px;border-radius:50%;background:var(--hero-circle);pointer-events:none;}
@@ -99,7 +93,6 @@ section.active{display:block;}
 .btn-s{background:transparent;color:var(--blue);padding:13px 30px;font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--border);border-radius:2px;cursor:pointer;transition:var(--ease);}
 .btn-s:hover{border-color:var(--gold);color:var(--gold);}
 .hero-deco{position:absolute;right:50px;bottom:40px;font-family:var(--serif);font-size:200px;font-weight:700;color:rgba(58,111,168,0.04);pointer-events:none;user-select:none;line-height:1;}
-
 /* SHARED */
 .sw{padding:96px 60px;}
 .sw.alt{background:var(--section-alt);}
@@ -108,7 +101,6 @@ section.active{display:block;}
 .sec-title{font-family:var(--serif);font-size:clamp(30px,4vw,50px);font-weight:300;color:var(--text);margin-bottom:56px;line-height:1.2;}
 .sec-title em{font-style:italic;color:var(--blue);}
 [data-theme="dark"] .sec-title em{color:var(--gold-l);}
-
 /* USP */
 .usp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
 .usp-card{background:var(--card);padding:42px 28px;position:relative;overflow:hidden;transition:var(--ease);}
@@ -118,7 +110,6 @@ section.active{display:block;}
 .usp-icon{width:46px;height:46px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:20px;transition:var(--ease);}
 .usp-h{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--text);margin-bottom:10px;transition:var(--ease);}
 .usp-p{font-size:13px;color:var(--text-mid);line-height:1.7;font-weight:300;transition:var(--ease);}
-
 /* PROFILE */
 .prof-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .prof-name{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:300;color:var(--text);margin-bottom:6px;line-height:1.15;}
@@ -132,7 +123,6 @@ section.active{display:block;}
 .why-lbl{font-family:var(--sans);font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:26px;font-weight:500;}
 .why-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;color:var(--text-mid);font-size:14px;line-height:1.6;font-weight:300;}
 .why-item::before{content:'-';color:var(--gold);flex-shrink:0;}
-
 /* LEISTUNGEN */
 .l-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:56px;}
 .l-card{background:var(--card);padding:42px 32px;transition:var(--ease);}
@@ -142,7 +132,6 @@ section.active{display:block;}
 .l-list{list-style:none;}
 .l-item{font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;font-weight:300;}
 .l-item::before{content:'';width:5px;height:1px;background:var(--gold);flex-shrink:0;}
-
 /* PHILOSOPHIE */
 .phil{background:var(--phil-bg);padding:118px 60px;position:relative;overflow:hidden;}
 .phil::before{content:'"';position:absolute;top:10px;left:20px;font-family:var(--serif);font-size:320px;color:rgba(255,255,255,0.04);line-height:1;pointer-events:none;}
@@ -153,7 +142,6 @@ section.active{display:block;}
 .phil-title em{font-style:italic;color:var(--gold-l);}
 .phil-p{font-size:16px;color:var(--phil-text);line-height:1.9;font-weight:300;margin-bottom:22px;}
 .phil-line{width:50px;height:1px;background:rgba(184,144,42,0.45);margin:42px auto;}
-
 /* STANDORTE */
 .standorte-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:56px;}
 .st-card{background:var(--card);padding:44px 36px;transition:var(--ease);}
@@ -171,7 +159,6 @@ section.active{display:block;}
 .st-hr:last-child{border-bottom:none;}
 .st-tel{font-size:13px;color:var(--blue);font-weight:400;margin-top:16px;}
 [data-theme="dark"] .st-tel{color:var(--gold-l);}
-
 /* TEAM */
 .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:56px;}
 .team-card{background:var(--card);padding:44px 36px;}
@@ -181,7 +168,6 @@ section.active{display:block;}
 .team-body{font-size:13px;color:var(--text-mid);line-height:1.7;font-weight:300;}
 .team-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
 .team-tag{padding:4px 12px;border:1px solid var(--tag-border);color:var(--tag-color);font-size:10px;letter-spacing:1px;text-transform:uppercase;border-radius:1px;}
-
 /* INTERNATIONAL */
 .intl-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .intl-svcs{display:flex;flex-direction:column;gap:1px;margin-top:34px;background:var(--border);}
@@ -194,7 +180,6 @@ section.active{display:block;}
 .i-stat:last-child{border-bottom:none;padding-bottom:0;}
 .i-stat-val{font-family:var(--serif);font-size:50px;font-weight:300;color:var(--intl-val);line-height:1;}
 .i-stat-lbl{font-size:11px;color:var(--text-soft);letter-spacing:1.5px;text-transform:uppercase;margin-top:5px;}
-
 /* KONTAKT */
 .k-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:56px;}
 .k-info{display:flex;flex-direction:column;gap:26px;}
@@ -215,7 +200,6 @@ section.active{display:block;}
 .f-btn{background:var(--blue);color:#fff;padding:14px 32px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:var(--ease);align-self:flex-start;border-radius:2px;}
 .f-btn:hover{background:var(--gold);transform:translateY(-2px);}
 [data-theme="dark"] .f-btn{background:var(--gold);color:#0e1a2e;}
-
 /* FOOTER */
 footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(58,111,168,0.2);}
 .f-logo{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--gold);letter-spacing:3px;}
@@ -223,7 +207,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
 .f-links{display:flex;gap:22px;}
 .f-links a{font-size:11px;color:var(--footer-text);text-decoration:none;letter-spacing:1px;transition:var(--ease);}
 .f-links a:hover{color:var(--gold);}
-
 /* MOBILE */
 @media(max-width:920px){
   nav{padding:0 16px;}
@@ -251,11 +234,9 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
   footer{padding:36px 22px;flex-direction:column;text-align:center;}
   .f-row{grid-template-columns:1fr;}
 }
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
 .hero-content>*{animation:fadeUp .7s ease both;}
 .hero-eyebrow{animation-delay:.1s;}.hero h1{animation-delay:.2s;}.hero-sub{animation-delay:.34s;}.hero-btns{animation-delay:.48s;}
-
 /* ── PRAXIS SLIDER ── */
 .slider-wrap{position:relative;overflow:hidden;border-radius:0;margin-top:24px;}
 .slider-track{display:flex;transition:transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);}
@@ -271,7 +252,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
 .slider-dots{display:flex;justify-content:center;gap:7px;padding:10px 0 4px;}
 .slider-dot{width:6px;height:6px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background 0.2s,transform 0.2s;}
 .slider-dot.active{background:var(--gold);transform:scale(1.3);}
-
 /* ── TEAM GRID 3-COL for larger groups ── */
 .team-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
 @media(max-width:920px){.team-grid-3{grid-template-columns:1fr 1fr;}}
@@ -280,8 +260,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
 .team-card.placeholder .team-avatar{border-style:dashed;color:var(--text-soft);}
 .team-card.placeholder .team-name{color:var(--text-soft);}
 .team-role-loc{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;font-weight:500;}
-
-
 /* ── MODAL (Impressum / Datenschutz) ── */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(14,26,46,0.82);z-index:2000;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow-y:auto;padding:40px 20px;}
 .modal-overlay.open{display:flex;align-items:flex-start;justify-content:center;}
@@ -298,8 +276,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
 .modal-box ul{margin:8px 0 12px 20px;}
 .modal-box ul li{font-size:14px;color:var(--text-mid);line-height:1.8;font-weight:300;margin-bottom:4px;}
 @media(max-width:920px){.modal-box{padding:32px 22px;}}
-
-
 /* ── ROUTE BUTTON ── */
 .route-btn {
   display:inline-flex;align-items:center;gap:10px;
@@ -314,11 +290,9 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
 .route-btn svg{flex-shrink:0;transition:var(--ease);}
 .route-btn:hover svg path{stroke:#fff;}
 [data-theme="dark"] .route-btn:hover svg path{stroke:#0e1a2e;}
-
 </style>
 </head>
 <body>
-
 <div class="lang-bar">
   <div class="lang-bar-left">zpyu.de</div>
   <div class="lang-bar-right">
@@ -334,7 +308,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
     <button onclick="setLang('ar')">AR</button>
   </div>
 </div>
-
 <nav id="mainNav">
   <div class="nav-logo" onclick="showSec('home')">
     <span class="nav-logo-zpyu">ZPYU</span>
@@ -352,7 +325,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
   </ul>
   <button class="hamburger" id="hambBtn">&#9776;</button>
 </nav>
-
 <!-- HOME -->
 <section id="home" class="active">
   <div class="hero">
@@ -368,7 +340,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
     </div>
     <div class="hero-deco">ZPYU</div>
   </div>
-
   <div class="sw alt">
     <div class="sec-label" data-de="Unser Ansatz" data-en="Our Approach" data-fr="Notre Approche" data-ru="Наш подход" data-ar="نهجنا"></div>
     <h2 class="sec-title" data-de="Medizin, die <em>vorausdenkt</em>" data-en="Smart medicine.<br><em>Proactive care.</em>" data-fr="Une médecine d'anticipation<br><em>au service de votre santé</em>" data-ru="Медицина, которая <em>думает наперёд</em>" data-ar="طب <em>يفكر مسبقاً</em>"></h2>
@@ -379,7 +350,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
       <div class="usp-card"><span class="usp-n">04</span><div class="usp-icon">🔍</div><div class="usp-h" data-de="Früherkennung" data-en="Early Detection" data-fr="Dépistage Précoce" data-ru="Ранняя диагностика" data-ar="الكشف المبكر"></div><p class="usp-p" data-de="Erweiterte Diagnostik und Risikoanalysen für personalisierte Prävention." data-en="Early detection through advanced diagnostics and individualized risk assessment." data-fr="Diagnostics avancés et analyses de risque." data-ru="Расширенная диагностика для профилактики." data-ar="تشخيص متقدم لوقاية شخصية."></p></div>
     </div>
   </div>
-
   <div class="sw">
     <div class="prof-grid">
       <div>
@@ -404,7 +374,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
     </div>
   </div>
 </section>
-
 <!-- LEISTUNGEN -->
 <section id="leistungen">
   <div class="sw alt">
@@ -413,13 +382,13 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
     <div class="l-grid">
       <div class="l-card"><span class="l-num">01</span><div class="l-title" data-de="Hausärztliche Versorgung" data-en="General Medical Care" data-fr="Soins Médicaux Généraux" data-ru="Общая медицинская помощь" data-ar="الرعاية الطبية العامة"></div><ul class="l-list"><li class="l-item" data-de="Akut- und Langzeitbetreuung" data-en="Acute and long-term care" data-fr="Soins aigus et chroniques" data-ru="Острая и длительная помощь" data-ar="رعاية حادة وطويلة الأمد"></li><li class="l-item" data-de="Check-ups & Vorsorge" data-en="Check-ups & prevention" data-fr="Bilans & prévention" data-ru="Чек-апы и профилактика" data-ar="فحوصات دورية ووقاية"></li><li class="l-item" data-de="Chronikerbetreuung" data-en="Chronic disease management" data-fr="Maladies chroniques" data-ru="Хронические заболевания" data-ar="إدارة الأمراض المزمنة"></li></ul></div>
       <div class="l-card"><span class="l-num">02</span><div class="l-title" data-de="Präventivmedizin" data-en="Preventive Medicine" data-fr="Médecine Préventive" data-ru="Профилактическая медицина" data-ar="الطب الوقائي"></div><ul class="l-list"><li class="l-item" data-de="Erweiterte Vorsorge" data-en="Advanced prevention strategies" data-fr="Prévention avancée" data-ru="Расширенная профилактика" data-ar="وقاية متقدمة"></li><li class="l-item" data-de="Risikoanalysen" data-en="Personalized risk assessment and analysis" data-fr="Analyses de risque" data-ru="Анализ рисков" data-ar="تحليل المخاطر"></li><li class="l-item" data-de="Individualisierte Prävention" data-en="Individualized health optimization plans" data-fr="Stratégies individualisées" data-ru="Индивидуальная профилактика" data-ar="وقاية شخصية"></li></ul></div>
-      <div class="l-card"><span class="l-num">03</span><div class="l-title" data-de="Stoffwechselmedizin" data-en="Metabolic Medicine" data-fr="Médecine Métabolique" data-ru="Метаболическая медицина" data-ar="طب التمثيل الغذائي"></div><ul class="l-list"><li class="l-item" data-de="Insulinresistenz-Diagnostik" data-en="Assessment and management of insulin resistance" data-fr="Résistance à l'insuline" data-ru="Инсулинорезистентность" data-ar="مقاومة الأنسولين"></li><li class="l-item" data-de="Metabolisches Syndrom" data-en="Metabolic syndrome evaluation and treatment" data-fr="Syndrome métabolique" data-ru="Метаболический синдром" data-ar="المتلازمة الاستقلابية"></li><li class="l-item" data-de="Gewicht & Adipositas" data-en="Weight & obesity" data-fr="Poids & obésité" data-ru="Вес и ожирение" data-ar="الوزن والسمنة"></li></ul></div>
+      <div class="l-card"><span class="l-num">03</span><div class="l-title" data-de="Stoffwechselmedizin" data-en="Metabolic Medicine" data-fr="Médecine Métabolique" data-ru="Метаболическая медицина" data-ar="طب التمثيل الغذائي"></div><ul class="l-list"><li class="l-item" data-de="Insulinresistenz-Diagnostik" data-en="Assessment and management of insulin resistance" data-fr="Résistance à l'insuline" data-ru="Инсулинорезистентность" data-ar="مقاومة الأنسولين"></li><li class="l-item" data-de="Metabolisches Syndrom" data-en="Metabolic syndrome evaluation and treatment" data-fr="Syndrome métabolique" data-ru="Метаболический синдром" data-ar="المتلازمة الاستقلابية"></li><li class="l-item" data-de="Gewicht & Adipositas" data-en="Weight & obesity" data-fr="Poids & obésité" data-ru="Вес и ожирение" data-ar="الوزن والسمنة"></li>
+          <li class="l-item" data-de="GLP-1 Therapiebegleitung (Semaglutid / Tirzepatid)" data-en="GLP-1 therapy accompaniment (semaglutide / tirzepatide)" data-fr="Accompagnement GLP-1 (sémaglutide / tirzépatide)" data-ru="Сопровождение терапии GLP-1" data-ar="مرافقة علاج GLP-1"></li></ul></div>
       <div class="l-card"><span class="l-num">04</span><div class="l-title" data-de="Endokrinologie" data-en="Endocrinology" data-fr="Endocrinologie" data-ru="Эндокринология" data-ar="طب الغدد الصماء"></div><ul class="l-list"><li class="l-item" data-de="Schilddrüsendiagnostik" data-en="Thyroid function diagnostics and management" data-fr="Thyroïde" data-ru="Щитовидная железа" data-ar="الغدة الدرقية"></li><li class="l-item" data-de="Hormonelle Dysregulation" data-en="Hormonal imbalance and dysregulation care" data-fr="Dysrégulation hormonale" data-ru="Гормональная дисрегуляция" data-ar="اضطراب هرموني"></li><li class="l-item" data-de="Andrologie & Gyn-Endokrinologie" data-en="Andrology & Gyn-Endocrinology" data-fr="Andrologie & endocrinologie gyn." data-ru="Андрология и гинекология" data-ar="طب الذكورة والنساء"></li></ul></div>
       <div class="l-card"><span class="l-num">05</span><div class="l-title" data-de="Erweiterte Diagnostik" data-en="Advanced Diagnostics" data-fr="Diagnostics Avancés" data-ru="Расширенная диагностика" data-ar="التشخيص المتقدم"></div><ul class="l-list"><li class="l-item" data-de="Laboranalysen" data-en="Comprehensive laboratory testing" data-fr="Analyses de laboratoire" data-ru="Лабораторные анализы" data-ar="التحاليل المخبرية"></li><li class="l-item" data-de="Metabolische Marker" data-en="Metabolic and biomarker profiling" data-fr="Marqueurs métaboliques" data-ru="Метаболические маркеры" data-ar="المؤشرات الاستقلابية"></li><li class="l-item" data-de="Advanced Panels (IGeL)" data-en="Advanced diagnostic panels (private services)" data-fr="Panels avancés (privé)" data-ru="Расширенные панели" data-ar="فحوصات متقدمة"></li></ul></div>
     </div>
   </div>
 </section>
-
 <!-- PHILOSOPHIE -->
 <section id="philosophie">
   <div class="phil">
@@ -432,14 +401,12 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
     </div>
   </div>
 </section>
-
 <!-- STANDORTE -->
 <section id="standorte">
   <div class="sw">
     <div class="sec-label" data-de="Unsere Standorte" data-en="Our Locations" data-fr="Nos Sites" data-ru="Наши адреса" data-ar="مواقعنا"></div>
     <h2 class="sec-title" data-de="Zwei Standorte.<br><em>Zwei Versorgungsebenen.</em>" data-en="Two locations.<br><em>Two levels of care.</em>" data-fr="Deux sites,<br><em>une double expertise au service de votre santé</em>" data-ru="Два адреса.<br><em>Два уровня помощи.</em>" data-ar="موقعان.<br><em>مستويان من الرعاية.</em>"></h2>
     <div class="standorte-grid">
-
       <!-- HANSAALLEE -->
       <div class="st-card">
         <span class="st-badge gold" data-de="Premium Prävention" data-en="Preventive Medicine Centre" data-fr="Centre de Médecine Préventive" data-ru="Центр профилактики" data-ar="مركز الوقاية المتميز"></span>
@@ -462,8 +429,7 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
         </div>
         <div class="st-tel" data-de="Telefon folgt in Kürze" data-en="Phone coming soon" data-fr="Téléphone bientôt disponible" data-ru="Телефон скоро" data-ar="الهاتف قريباً"></div>
         <div class="st-tel">contacthansa@zpyu.de &nbsp;·&nbsp; www.zpyu.de</div>
-        <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&destination=Hansaallee+179,+40549+Düsseldorf" target="_blank" rel="noopener noreferrer"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> <span data-de="Route planen" data-en="Get directions" data-fr="Itinéraire" data-ru="Маршрут" data-ar="الاتجاهات">Route planen</span></a>
-
+        <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&destination=Hansaallee+179,+40549+Düsseldorf" target="_blank" rel="noopener noreferrer"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> <span data-de="Route planen" data-en="Get directions" data-fr="Itinéraire" data-ru="Маршрут" data-ar="الاتجاهات">Route planen</span></a>        
         <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:20px 0 8px;" data-de="Eindrücke" data-en="Impressions" data-fr="Aperçu" data-ru="Фотографии" data-ar="انطباعات"></div>
         <div class="slider-wrap" id="slider-hansaallee">
       <div class="slider-track">
@@ -509,7 +475,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
       <div class="slider-dots"><button class="slider-dot  active" aria-label="Slide 1"></button><button class="slider-dot" aria-label="Slide 2"></button><button class="slider-dot" aria-label="Slide 3"></button><button class="slider-dot" aria-label="Slide 4"></button><button class="slider-dot" aria-label="Slide 5"></button><button class="slider-dot" aria-label="Slide 6"></button></div>
     </div>
       </div>
-
       <!-- GRAFENBERGER ALLEE -->
       <div class="st-card">
         <span class="st-badge blue" data-de="Hausärztliche Versorgung" data-en="Primary Care" data-fr="Médecine Générale" data-ru="Общая медицина" data-ar="الرعاية الأولية"></span>
@@ -531,8 +496,7 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
           <div class="st-hr"><span data-de="Fr / Sa / So" data-en="Fri / Sat / Sun" data-fr="Ven / Sam / Dim" data-ru="Пт / Сб / Вс" data-ar="الجمعة / السبت / الأحد"></span><span data-de="Geschlossen" data-en="Closed" data-fr="Fermé" data-ru="Закрыто" data-ar="مغلق"></span></div>
         </div>
         <div class="st-tel">contactgrafen@zpyu.de &nbsp;·&nbsp; 0211 6993093</div>
-        <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&destination=Grafenberger+Allee+134,+40237+Düsseldorf" target="_blank" rel="noopener noreferrer"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> <span data-de="Route planen" data-en="Get directions" data-fr="Itinéraire" data-ru="Маршрут" data-ar="الاتجاهات">Route planen</span></a>
-
+        <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&destination=Grafenberger+Allee+134,+40237+Düsseldorf" target="_blank" rel="noopener noreferrer"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> <span data-de="Route planen" data-en="Get directions" data-fr="Itinéraire" data-ru="Маршрут" data-ar="الاتجاهات">Route planen</span></a> 
         <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:20px 0 8px;" data-de="Eindrücke" data-en="Impressions" data-fr="Aperçu" data-ru="Фотографии" data-ar="انطباعات"></div>
         <div class="slider-wrap" id="slider-grafenberger">
       <div class="slider-track">
@@ -572,17 +536,14 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
       <div class="slider-dots"><button class="slider-dot  active" aria-label="Slide 1"></button><button class="slider-dot" aria-label="Slide 2"></button><button class="slider-dot" aria-label="Slide 3"></button><button class="slider-dot" aria-label="Slide 4"></button><button class="slider-dot" aria-label="Slide 5"></button></div>
     </div>
       </div>
-
     </div>
   </div>
 </section>
-
 <!-- TEAM -->
 <section id="team">
   <div class="sw alt">
     <div class="sec-label" data-de="Unser Team" data-en="Our Team" data-fr="Notre Équipe" data-ru="Наша команда" data-ar="فريقنا"></div>
     <h2 class="sec-title" data-de="Die Menschen<br>hinter <em>ZPYU</em>" data-en="The people<br>behind <em>ZPYU</em>" data-fr="L'équipe<br>derrière <em>ZPYU</em>" data-ru="Люди<br>за <em>ZPYU</em>" data-ar="الأشخاص<br>خلف <em>ZPYU</em>"></h2>
-
     <!-- HANSAALLEE -->
     <div style="padding:12px 0 12px;border-bottom:1px solid var(--border);margin-bottom:20px;">
       <div class="sec-label" style="margin-bottom:4px;" data-de="Hansaallee 179 · Premium Prävention" data-en="Hansaallee 179 · Preventive Medicine Centre" data-fr="Hansaallee 179 · Centre Préventif" data-ru="Hansaallee 179 · Центр профилактики" data-ar="هانساأليه 179 · مركز الوقاية"></div>
@@ -670,7 +631,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
         <div class="team-tags"><span class="team-tag" data-de="Labor" data-en="Laboratory" data-fr="Laboratoire" data-ru="Лаборатория" data-ar="المختبر"></span></div>
       </div>
     </div>
-
     <!-- GRAFENBERGER ALLEE -->
     <div style="padding:28px 0 12px;border-top:2px solid var(--border);margin-top:32px;border-bottom:1px solid var(--border);margin-bottom:20px;">
       <div class="sec-label" style="margin-bottom:4px;" data-de="Grafenberger Allee 134 · Hausärztliche Versorgung" data-en="Grafenberger Allee 134 · Primary Care" data-fr="Grafenberger Allee 134 · Médecine Générale" data-ru="Grafenberger Allee 134 · Общая медицина" data-ar="جرافنبرغر ألي 134 · الرعاية الأولية"></div>
@@ -742,12 +702,9 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
         <div class="team-tags"><span class="team-tag" data-de="Ausbildung" data-en="Training" data-fr="Formation" data-ru="Обучение" data-ar="التدريب"></span></div>
       </div>
     </div>
-
   </div>
 </section>
-
 </section>
-
 <!-- INTERNATIONAL -->
 <section id="international">
   <div class="sw">
@@ -755,7 +712,7 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
       <div>
         <div class="sec-label" data-de="Weltweit willkommen" data-en="Welcome Worldwide" data-fr="Bienvenue du Monde" data-ru="Добро пожаловать" data-ar="مرحباً من العالم"></div>
         <h2 class="sec-title" data-de="Internationale Patienten" data-en="International Patients" data-fr="Patients Internationaux" data-ru="Иностранные пациенты" data-ar="المرضى الدوليون"></h2>
-        <p style="font-size:15px;color:var(--text-mid);line-height:1.8;font-weight:300;margin-bottom:26px;" data-de="Wir bieten Konsultationen für internationale Patienten, die hochwertige Präventiv- und Stoffwechselmedizin in Deutschland suchen." data-en="We offer consultations for international patients seeking advanced preventive and metabolic care in Germany." data-fr="Nous proposons des consultations pour les patients internationaux cherchant des soins préventifs en Allemagne." data-ru="Консультации для иностранных пациентов, ищущих профилактическую медицину в Германии." data-ar="نقدم استشارات للمرضى الدوليين الباحثين عن رعاية وقائية في ألمانيا."></p>
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.8;font-weight:300;margin-bottom:26px;" data-de="Wir bieten Konsultationen für internationale Patienten, die hochwertige Präventiv- und Stoffwechselmedizin in Deutschland suchen." data-en="We offer consultations for international patients seeking advanced preventive and metabolic care in Germany." data-fr="Des consultations sur mesure dédiées à une patientèle internationale en quête d'une médecine préventive d'excellence en Allemagne." data-ru="Консультации для иностранных пациентов, ищущих профилактическую медицину в Германии." data-ar="نقدم استشارات للمرضى الدوليين الباحثين عن رعاية وقائية في ألمانيا."></p>
         <div class="intl-svcs">
           <div class="intl-s"><span>🌐</span><span data-de="Konsultationen auf Englisch, Arabisch, Französisch und Russisch" data-en="Consultations in English, Arabic, French & Russian" data-fr="Consultations en anglais, arabe, français et russe" data-ru="Консультации на 5 языках" data-ar="استشارات بخمس لغات"></span></div>
           <div class="intl-s"><span>🔬</span><span data-de="Erweiterte Diagnostik & metabolische Marker" data-en="Advanced diagnostics & metabolic markers" data-fr="Diagnostics avancés & marqueurs métaboliques" data-ru="Расширенная диагностика" data-ar="تشخيص متقدم"></span></div>
@@ -774,7 +731,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
     </div>
   </div>
 </section>
-
 <!-- KONTAKT -->
 <section id="kontakt">
   <div class="sw alt">
@@ -784,7 +740,7 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
       <div class="k-info">
         <div class="k-item"><div class="k-icon">📍</div><div><div class="k-lbl" data-de="Adresse" data-en="Address" data-fr="Adresse" data-ru="Адрес" data-ar="العنوان"></div><div class="k-val">Hansaallee 179<br>40549 Düsseldorf</div></div></div>
         <div class="k-item"><div class="k-icon">📞</div><div><div class="k-lbl" data-de="Telefon" data-en="Phone" data-fr="Téléphone" data-ru="Телефон" data-ar="الهاتف"></div><div class="k-val" data-de="Folgt in Kürze" data-en="Coming soon" data-fr="Bientôt disponible" data-ru="Скоро" data-ar="قريباً"></div></div></div>
-        <div class="k-item"><div class="k-icon">✉</div><div><div class="k-lbl">E-Mail</div><div class="k-val">info@zpyu.de</div></div></div>
+        <div class="k-item"><div class="k-icon">✉</div><div><div class="k-lbl">E-Mail</div><div class="k-val">contact@zpyu.de</div></div></div>
         <div class="k-item"><div class="k-icon">🌐</div><div><div class="k-lbl">Web</div><div class="k-val">www.zpyu.de</div></div></div>
         <div class="k-hours">
           <div class="k-hours-t" data-de="Öffnungszeiten" data-en="Opening Hours" data-fr="Horaires" data-ru="Часы работы" data-ar="ساعات العمل"></div>
@@ -814,19 +770,16 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
     </div>
   </div>
 </section>
-
 <footer>
   <div class="f-logo">ZPYU</div>
   <div class="f-copy" data-de="© 2026 ZPYU Metabolic & Preventive Medicine Center · Düsseldorf" data-en="© 2026 ZPYU Metabolic & Preventive Medicine Center · Düsseldorf" data-fr="© 2026 ZPYU Centre de Médecine Préventive · Düsseldorf" data-ru="© 2026 ZPYU Центр профилактической медицины · Дюссельдорф" data-ar="© 2026 مركز ZPYU للطب الوقائي · دوسلدورف"></div>
   <div class="f-links">
-    <a href="#" data-de="Impressum" data-en="Imprint" data-fr="Mentions légales" data-ru="Выходные данные" data-ar="بيانات النشر"></a>
-    <a href="#" data-de="Datenschutz" data-en="Privacy" data-fr="Confidentialité" data-ru="Конфиденциальность" data-ar="الخصوصية"></a>
+    <a href="#" onclick="openModal('modal-impressum');return false;" data-de="Impressum" data-en="Imprint" data-fr="Mentions légales" data-ru="Выходные данные" data-ar="بيانات النشر"></a>
+    <a href="#" onclick="openModal('modal-datenschutz');return false;" data-de="Datenschutz" data-en="Privacy" data-fr="Confidentialité" data-ru="Конфиденциальность" data-ar="الخصوصية"></a>
   </div>
 </footer>
-
 <script>
 var currentLang = 'de';
-
 // THEME
 document.getElementById('themeTog').addEventListener('click', function() {
   var html = document.documentElement;
@@ -836,7 +789,6 @@ document.getElementById('themeTog').addEventListener('click', function() {
   document.getElementById('themeLbl').textContent = dark ? 'Hell' : 'Dunkel';
   try { localStorage.setItem('zpyu-theme', dark ? 'light' : 'dark'); } catch(e) {}
 });
-
 // Restore theme
 try {
   var saved = localStorage.getItem('zpyu-theme');
@@ -846,7 +798,6 @@ try {
     document.getElementById('themeLbl').textContent = 'Dunkel';
   }
 } catch(e) {}
-
 // LANG
 function setLang(l) {
   currentLang = l;
@@ -868,7 +819,6 @@ function setLang(l) {
     }
   }
 }
-
 // SHOW SECTION
 function showSec(id) {
   var secs = document.querySelectorAll('section');
@@ -879,13 +829,11 @@ function showSec(id) {
   // close mobile menu
   document.getElementById('mainNav').classList.remove('nav-mobile-open');
 }
-
 // HAMBURGER
 document.getElementById('hambBtn').addEventListener('click', function(e) {
   e.stopPropagation();
   document.getElementById('mainNav').classList.toggle('nav-mobile-open');
 });
-
 // Close on outside click
 document.addEventListener('click', function(e) {
   var nav = document.getElementById('mainNav');
@@ -893,8 +841,141 @@ document.addEventListener('click', function(e) {
     nav.classList.remove('nav-mobile-open');
   }
 });
-
+// ── SLIDER ──
+function initSlider(id) {
+  var wrap = document.getElementById(id);
+  if (!wrap) return;
+  var track = wrap.querySelector('.slider-track');
+  var dots = wrap.querySelectorAll('.slider-dot');
+  var slides = wrap.querySelectorAll('.slide');
+  var cur = 0;
+  function go(n) {
+    cur = (n + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + cur * 100 + '%)';
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===cur); });
+  }
+  wrap.querySelector('.slider-prev').addEventListener('click', function(){ go(cur-1); });
+  wrap.querySelector('.slider-next').addEventListener('click', function(){ go(cur+1); });
+  dots.forEach(function(d,i){ d.addEventListener('click', function(){ go(i); }); });
+  // Auto-advance every 5s
+  setInterval(function(){ go(cur+1); }, 5000);
+}
+document.addEventListener('DOMContentLoaded', function(){
+  initSlider('slider-hansaallee');
+  initSlider('slider-grafenberger');
+});
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Apply current language
+  setLang(currentLang);
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close on overlay click
+document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal(overlay.id);
+  });
+});
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
+      closeModal(m.id);
+    });
+  }
+});
 setLang('de');
 </script>
+<!-- IMPRESSUM MODAL -->
+<div class="modal-overlay" id="modal-impressum">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-impressum')">✕</button>
+    <h1 data-de="Impressum" data-en="Imprint" data-fr="Mentions légales" data-ru="Выходные данные" data-ar="بيانات النشر"></h1>
+    <div class="modal-sub" data-de="Angaben gemäß § 5 TMG" data-en="Information pursuant to § 5 TMG" data-fr="Informations légales" data-ru="Правовая информация" data-ar="معلومات قانونية"></div>
+    <h2 data-de="Betreiber und verantwortliche Person" data-en="Operator and responsible person" data-fr="Exploitant et personne responsable" data-ru="Оператор и ответственное лицо" data-ar="المشغل والشخص المسؤول"></h2>
+    <p>MD Fattah Yunusah<br>
+    Facharzt für Allgemeinmedizin und Allgemeinchirurgie<br>
+    ZPYU – Zentrum für Präventivmedizin Yunusah<br>
+    Hansaallee 179<br>
+    40549 Düsseldorf<br>
+    Deutschland</p>
+    <p data-de="E-Mail: info@zpyu.de | Web: www.zpyu.de" data-en="Email: info@zpyu.de | Web: www.zpyu.de" data-fr="Email: info@zpyu.de | Web: www.zpyu.de" data-ru="Эл. почта: info@zpyu.de | Сайт: www.zpyu.de" data-ar="البريد: info@zpyu.de | الموقع: www.zpyu.de"></p>
+    <h2 data-de="Berufsbezeichnung und zuständige Kammer" data-en="Professional title and competent authority" data-fr="Titre professionnel et autorité compétente" data-ru="Профессиональное звание и ведомство" data-ar="اللقب المهني والجهة المختصة"></h2>
+    <p data-de="Berufsbezeichnung: Arzt (verliehen in der Bundesrepublik Deutschland)<br>Zuständige Ärztekammer: Ärztekammer Nordrhein<br>Zuständige Kassenärztliche Vereinigung: Kassenärztliche Vereinigung Nordrhein (KVNO)<br>Es gelten die berufsrechtlichen Regelungen der Bundesärzteordnung (BÄO) sowie die Berufsordnung der Ärztekammer Nordrhein."
+         data-en="Professional title: Physician (awarded in the Federal Republic of Germany)<br>Competent Medical Association: Ärztekammer Nordrhein<br>Statutory Health Insurance Association: Kassenärztliche Vereinigung Nordrhein (KVNO)<br>Subject to the professional regulations of the German Federal Medical Act (BÄO) and the professional code of the Ärztekammer Nordrhein."
+         data-fr="Titre professionnel : Médecin (délivré en République fédérale d'Allemagne)<br>Ordre des médecins compétent : Ärztekammer Nordrhein<br>Association de l'assurance maladie : KVNO<br>Soumis aux réglementations professionnelles de la BÄO et au code de déontologie de l'Ärztekammer Nordrhein."
+         data-ru="Профессиональное звание: Врач (присвоено в ФРГ)<br>Ответственная врачебная палата: Ärztekammer Nordrhein<br>КВ: KVNO<br>Применяются профессиональные нормы BÄO и Ärztekammer Nordrhein."
+         data-ar="اللقب المهني: طبيب (ممنوح في جمهورية ألمانيا الاتحادية)<br>نقابة الأطباء المختصة: Ärztekammer Nordrhein<br>جمعية التأمين الصحي: KVNO"></p>
+    <h2 data-de="Umsatzsteuer-Identifikationsnummer" data-en="VAT identification number" data-fr="Numéro de TVA intracommunautaire" data-ru="Идентификационный номер НДС" data-ar="رقم تعريف ضريبة القيمة المضافة"></h2>
+    <p data-de="Gemäß § 4 Nr. 14 UStG sind ärztliche Leistungen von der Umsatzsteuer befreit. Eine USt-ID ist daher nicht erforderlich." data-en="Pursuant to § 4 No. 14 UStG, medical services are exempt from VAT. A VAT ID is therefore not required." data-fr="Conformément au § 4 n° 14 UStG, les prestations médicales sont exonérées de TVA. Un numéro de TVA n'est donc pas nécessaire." data-ru="В соответствии с § 4 п. 14 UStG медицинские услуги освобождены от НДС. Идентификационный номер НДС не требуется." data-ar="وفقاً للمادة § 4 رقم 14 UStG، الخدمات الطبية معفاة من ضريبة القيمة المضافة."></p>
+    <h2 data-de="Haftungsausschluss" data-en="Disclaimer" data-fr="Clause de non-responsabilité" data-ru="Отказ от ответственности" data-ar="إخلاء المسؤولية"></h2>
+    <p data-de="Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Haftung übernommen werden. Die Website dient ausschließlich der allgemeinen Information und ersetzt keine ärztliche Beratung oder Behandlung."
+       data-en="The content of this website has been prepared with the utmost care. However, no liability is assumed for the accuracy, completeness and topicality of the content. The website serves exclusively for general information and does not replace medical advice or treatment."
+       data-fr="Le contenu de ce site web a été préparé avec le plus grand soin. Cependant, aucune responsabilité n'est assumée quant à l'exactitude, l'exhaustivité et l'actualité du contenu. Le site sert exclusivement d'information générale et ne remplace pas les conseils ou traitements médicaux."
+       data-ru="Содержание этого сайта подготовлено с максимальной тщательностью. Однако ответственность за точность, полноту и актуальность содержания не принимается. Сайт служит исключительно для общей информации и не заменяет медицинской консультации."
+       data-ar="تم إعداد محتوى هذا الموقع بأقصى قدر من العناية. ومع ذلك، لا تُقبل أي مسؤولية عن دقة المحتوى واكتماله وحداثته. يخدم الموقع فقط للمعلومات العامة ولا يحل محل الاستشارة أو العلاج الطبي."></p>
+    <h2 data-de="Streitschlichtung" data-en="Dispute resolution" data-fr="Règlement des litiges" data-ru="Урегулирование споров" data-ar="تسوية النزاعات"></h2>
+    <p data-de="Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+       data-en="The European Commission provides a platform for online dispute resolution (ODR): https://ec.europa.eu/consumers/odr. We are not obliged and not willing to participate in dispute resolution proceedings before a consumer arbitration board."
+       data-fr="La Commission européenne fournit une plateforme de règlement des litiges en ligne : https://ec.europa.eu/consumers/odr. Nous ne sommes pas tenus de participer à des procédures de règlement des litiges devant un conseil d'arbitrage pour les consommateurs."
+       data-ru="Европейская комиссия предоставляет платформу для онлайн-урегулирования споров: https://ec.europa.eu/consumers/odr. Мы не обязаны и не готовы участвовать в процедурах урегулирования споров."
+       data-ar="توفر المفوضية الأوروبية منصة لتسوية النزاعات عبر الإنترنت: https://ec.europa.eu/consumers/odr. لسنا ملزمين أو راغبين في المشاركة في إجراءات تسوية النزاعات."></p>
+  </div>
+</div>
+<!-- DATENSCHUTZ MODAL -->
+<div class="modal-overlay" id="modal-datenschutz">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-datenschutz')">✕</button>
+    <h1 data-de="Datenschutzerklärung" data-en="Privacy Policy" data-fr="Politique de confidentialité" data-ru="Политика конфиденциальности" data-ar="سياسة الخصوصية"></h1>
+    <div class="modal-sub" data-de="Gemäß DSGVO / Art. 13, 14 DSGVO" data-en="Pursuant to GDPR / Art. 13, 14 GDPR" data-fr="Conformément au RGPD / Art. 13, 14 RGPD" data-ru="В соответствии с GDPR / Art. 13, 14 GDPR" data-ar="وفقاً للائحة GDPR / المادة 13، 14"></div>
+    <h2 data-de="1. Verantwortlicher" data-en="1. Controller" data-fr="1. Responsable du traitement" data-ru="1. Ответственный" data-ar="1. المتحكم في البيانات"></h2>
+    <p data-de="Verantwortlicher im Sinne der DSGVO ist:<br>MD Fattah Yunusah · ZPYU – Zentrum für Präventivmedizin Yunusah · Hansaallee 179 · 40549 Düsseldorf · info@zpyu.de"
+       data-en="The controller within the meaning of the GDPR is:<br>MD Fattah Yunusah · ZPYU – Zentrum für Präventivmedizin Yunusah · Hansaallee 179 · 40549 Düsseldorf · info@zpyu.de"
+       data-fr="Le responsable du traitement au sens du RGPD est :<br>MD Fattah Yunusah · ZPYU · Hansaallee 179 · 40549 Düsseldorf · info@zpyu.de"
+       data-ru="Ответственным в смысле GDPR является:<br>MD Fattah Yunusah · ZPYU · Hansaallee 179 · 40549 Düsseldorf · info@zpyu.de"
+       data-ar="المتحكم في البيانات بموجب GDPR هو:<br>MD Fattah Yunusah · ZPYU · Hansaallee 179 · 40549 Düsseldorf · info@zpyu.de"></p>
+    <h2 data-de="2. Welche Daten wir verarbeiten" data-en="2. Data we process" data-fr="2. Données que nous traitons" data-ru="2. Данные, которые мы обрабатываем" data-ar="2. البيانات التي نعالجها"></h2>
+    <p data-de="Beim Besuch dieser Website werden automatisch folgende Daten erhoben: IP-Adresse (anonymisiert), Datum und Uhrzeit des Zugriffs, Browsertyp und -version, Betriebssystem. Diese Daten dienen ausschließlich der technischen Bereitstellung der Website und werden nicht personenbezogen ausgewertet."
+       data-en="When visiting this website, the following data is automatically collected: IP address (anonymised), date and time of access, browser type and version, operating system. This data is used exclusively for the technical provision of the website and is not evaluated on a personal basis."
+       data-fr="Lors de la visite de ce site, les données suivantes sont automatiquement collectées : adresse IP (anonymisée), date et heure d'accès, type et version du navigateur, système d'exploitation. Ces données sont utilisées exclusivement pour la fourniture technique du site."
+       data-ru="При посещении сайта автоматически собираются следующие данные: IP-адрес (анонимизированный), дата и время доступа, тип и версия браузера, операционная система."
+       data-ar="عند زيارة هذا الموقع، يتم جمع البيانات التالية تلقائياً: عنوان IP (مجهول)، تاريخ ووقت الوصول، نوع المتصفح وإصداره، نظام التشغيل."></p>
+    <h2 data-de="3. Kontaktformular und Terminanfragen" data-en="3. Contact form and appointment requests" data-fr="3. Formulaire de contact et demandes de rendez-vous" data-ru="3. Контактная форма и записи на приём" data-ar="3. نموذج الاتصال وطلبات المواعيد"></h2>
+    <p data-de="Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, werden Ihre Angaben (Name, E-Mail-Adresse, Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). Ihre Daten werden nicht an Dritte weitergegeben und nach Abschluss der Anfrage gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen."
+       data-en="When you contact us via the contact form or by email, your details (name, email address, message) are processed for the purpose of handling your enquiry. The legal basis is Art. 6(1)(b) GDPR (pre-contractual measures) or Art. 6(1)(f) GDPR (legitimate interest). Your data will not be passed on to third parties and will be deleted after completion of the enquiry, unless statutory retention obligations exist."
+       data-fr="Lorsque vous nous contactez via le formulaire de contact ou par e-mail, vos informations (nom, adresse e-mail, message) sont traitées dans le but de traiter votre demande. La base légale est l'Art. 6(1)(b) RGPD ou l'Art. 6(1)(f) RGPD. Vos données ne seront pas transmises à des tiers."
+       data-ru="Когда вы связываетесь с нами через форму или по электронной почте, ваши данные (имя, email, сообщение) обрабатываются для обработки вашего запроса. Правовая основа — ст. 6(1)(b) GDPR. Ваши данные не передаются третьим лицам."
+       data-ar="عندما تتصل بنا عبر نموذج الاتصال أو البريد الإلكتروني، تتم معالجة بياناتك (الاسم، البريد الإلكتروني، الرسالة) لمعالجة طلبك. الأساس القانوني هو المادة 6(1)(b) من GDPR. لن تتم مشاركة بياناتك مع أطراف ثالثة."></p>
+    <h2 data-de="4. Gesundheitsdaten / Patientendaten" data-en="4. Health data / Patient data" data-fr="4. Données de santé / Données des patients" data-ru="4. Данные о здоровье / Данные пациентов" data-ar="4. بيانات الصحة / بيانات المرضى"></h2>
+    <p data-de="Die Verarbeitung von Gesundheitsdaten im Rahmen der ärztlichen Behandlung erfolgt auf Grundlage von Art. 9 Abs. 2 lit. h DSGVO i. V. m. § 22 Abs. 1 Nr. 1 lit. b BDSG sowie der ärztlichen Schweigepflicht gemäß § 9 MBO-Ä. Patientendaten werden ausschließlich zum Zweck der medizinischen Versorgung verarbeitet und nicht an Dritte weitergegeben, es sei denn, dies ist zur Behandlung notwendig oder gesetzlich vorgeschrieben."
+       data-en="The processing of health data in the context of medical treatment is based on Art. 9(2)(h) GDPR in conjunction with § 22(1)(1)(b) BDSG and the medical confidentiality obligation pursuant to § 9 MBO-Ä. Patient data is processed exclusively for the purpose of medical care and is not passed on to third parties unless this is necessary for treatment or required by law."
+       data-fr="Le traitement des données de santé dans le cadre du traitement médical est basé sur l'Art. 9(2)(h) RGPD. Les données des patients sont traitées exclusivement à des fins de soins médicaux et ne sont pas transmises à des tiers sauf si cela est nécessaire au traitement."
+       data-ru="Обработка данных о здоровье в рамках медицинской помощи основана на ст. 9(2)(h) GDPR. Данные пациентов обрабатываются исключительно для медицинской помощи."
+       data-ar="تتم معالجة البيانات الصحية في سياق العلاج الطبي بموجب المادة 9(2)(h) من GDPR. تتم معالجة بيانات المرضى حصراً لأغراض الرعاية الطبية."></p>
+    <h2 data-de="5. Ihre Rechte" data-en="5. Your rights" data-fr="5. Vos droits" data-ru="5. Ваши права" data-ar="5. حقوقك"></h2>
+    <p data-de="Sie haben folgende Rechte: Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20), Widerspruch (Art. 21). Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: contact@zpyu.de"
+       data-en="You have the following rights: access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20), objection (Art. 21). To exercise your rights, please contact: contact@zpyu.de"
+       data-fr="Vous avez les droits suivants : accès (Art. 15 RGPD), rectification (Art. 16), effacement (Art. 17), limitation du traitement (Art. 18), portabilité (Art. 20), opposition (Art. 21). Pour exercer vos droits : contact@zpyu.de"
+       data-ru="Вы имеете следующие права: доступ (ст. 15 GDPR), исправление (ст. 16), удаление (ст. 17), ограничение (ст. 18), переносимость (ст. 20), возражение (ст. 21). Для реализации прав: info@zpyu.de"
+       data-ar="لديك الحقوق التالية: الوصول (المادة 15 GDPR)، التصحيح (المادة 16)، المسح (المادة 17)، تقييد المعالجة (المادة 18)، نقل البيانات (المادة 20)، الاعتراض (المادة 21). للممارسة حقوقك: info@zpyu.de"></p>
+    <h2 data-de="6. Beschwerderecht" data-en="6. Right to lodge a complaint" data-fr="6. Droit de réclamation" data-ru="6. Право на жалобу" data-ar="6. حق تقديم شكوى"></h2>
+    <p data-de="Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die zuständige Aufsichtsbehörde für Nordrhein-Westfalen ist: Landesbeauftragte für Datenschutz und Informationsfreiheit NRW, Kavalleriestr. 2–4, 40213 Düsseldorf, www.ldi.nrw.de"
+       data-en="You have the right to lodge a complaint with a data protection supervisory authority. The competent authority for North Rhine-Westphalia is: Landesbeauftragte für Datenschutz und Informationsfreiheit NRW, Kavalleriestr. 2–4, 40213 Düsseldorf, www.ldi.nrw.de"
+       data-fr="Vous avez le droit de déposer une plainte auprès d'une autorité de contrôle de la protection des données. L'autorité compétente pour la Rhénanie-du-Nord-Westphalie est : LDI NRW, Kavalleriestr. 2-4, 40213 Düsseldorf, www.ldi.nrw.de"
+       data-ru="Вы имеете право подать жалобу в орган по защите данных. Ответственный орган для Северного Рейна-Вестфалии: LDI NRW, Kavalleriestr. 2-4, 40213 Düsseldorf"
+       data-ar="لديك الحق في تقديم شكوى إلى هيئة حماية البيانات. الجهة المختصة لولاية نورث راين وستفاليا: LDI NRW، Kavalleriestr. 2-4، 40213 Düsseldorf"></p>
+    <h2 data-de="7. Keine Cookies / kein Tracking" data-en="7. No cookies / no tracking" data-fr="7. Pas de cookies / pas de suivi" data-ru="7. Нет файлов cookie / нет отслеживания" data-ar="7. لا ملفات تعريف الارتباط / لا تتبع"></h2>
+    <p data-de="Diese Website verwendet keine Tracking-Cookies und keine Analysetools (z. B. Google Analytics). Es werden keine personenbezogenen Daten für Werbezwecke verarbeitet."
+       data-en="This website does not use tracking cookies or analytics tools (e.g. Google Analytics). No personal data is processed for advertising purposes."
+       data-fr="Ce site web n'utilise pas de cookies de suivi ni d'outils d'analyse (par exemple Google Analytics). Aucune donnée personnelle n'est traitée à des fins publicitaires."
+       data-ru="Этот сайт не использует отслеживающие файлы cookie и аналитические инструменты. Персональные данные не обрабатываются в рекламных целях."
+       data-ar="لا يستخدم هذا الموقع ملفات تعريف الارتباط أو أدوات التحليل. لا تتم معالجة البيانات الشخصية لأغراض إعلانية."></p>
+    <p style="margin-top:28px;font-size:12px;color:var(--text-soft);font-style:italic;" data-de="Stand: Juli 2026. Diese Datenschutzerklärung wird bei Bedarf aktualisiert." data-en="As of: July 2026. This privacy policy will be updated as necessary." data-fr="En vigueur : juillet 2026. Cette politique de confidentialité sera mise à jour si nécessaire." data-ru="Актуально на: июль 2026. Данная политика конфиденциальности обновляется по мере необходимости." data-ar="اعتباراً من: يوليو 2026. سيتم تحديث سياسة الخصوصية هذه عند الضرورة."></p>
+  </div>
+</div>
 </body>
 </html>
