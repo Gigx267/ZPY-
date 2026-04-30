@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsletter — ZPYU</title>
+<meta name="description" content="Newsletter des ZPYU Düsseldorf – Gesundheitsthemen, Praxisneuigkeiten und Veranstaltungen.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0C0C0C;--bg-elevated:#151515;--bg-card:#1A1A1A;--border:#2A2A2A;--border-focus:#7A8B6F;--text-primary:#F0EDE8;--text-secondary:#9A9690;--text-muted:#6B6860;--accent:#7A8B6F;--accent-light:#A8B89E;--accent-pale:rgba(122,139,111,0.12);--gold:#C4A86B;--error:#C45B5B}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text-primary);min-height:100vh;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+html[dir="rtl"]{direction:rtl;text-align:right}
+html[dir="rtl"] .nav-back{direction:ltr}
+html[dir="rtl"] .consent{text-align:right}
+html[dir="rtl"] .form-group{text-align:right}
+.page-wrapper{display:flex;flex-direction:column;min-height:100vh}
+.nav{padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:10px}
+.nav-left{display:flex;align-items:center;gap:16px}
+.nav-brand{font-size:1.1rem;font-weight:600;color:var(--text-primary);text-decoration:none;letter-spacing:3px;text-transform:uppercase}
+.nav-back{font-size:0.8rem;color:var(--text-secondary);text-decoration:none;transition:color .3s}
+.nav-back:hover{color:var(--accent-light)}
+.lang-switcher{display:flex;gap:4px;align-items:center}
+.lang-btn{padding:5px 10px;font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.5px;color:var(--text-muted);background:none;border:1px solid transparent;border-radius:4px;cursor:pointer;transition:all .2s}
+.lang-btn:hover{color:var(--text-secondary);border-color:var(--border)}
+.lang-btn.active{color:var(--accent-light);border-color:var(--accent);background:var(--accent-pale)}
+.hero{position:relative;padding:5rem 2rem 4rem;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(122,139,111,.06) 0%,transparent 65%);animation:pulse 15s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:translateX(-50%) scale(1);opacity:.6}50%{transform:translateX(-50%) scale(1.15);opacity:1}}
+.hero-content{position:relative;z-index:2;max-width:640px;margin:0 auto}
+.badge{display:inline-block;padding:6px 16px;background:var(--accent-pale);color:var(--accent-light);font-size:.65rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;border-radius:100px;border:1px solid rgba(122,139,111,.2);margin-bottom:2rem;animation:slideDown .8s ease-out}
+@keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5.5vw,3.2rem);font-weight:600;line-height:1.2;margin-bottom:1rem;animation:fadeUp 1s ease-out .2s both}
+.hero h1 em{font-style:italic;color:var(--accent-light)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-description{font-size:.95rem;line-height:1.75;color:var(--text-secondary);max-width:500px;margin:0 auto 2.5rem;animation:fadeUp 1s ease-out .4s both}
+.divider{width:50px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 2rem;animation:fadeUp 1s ease-out .3s both}
+.pillars{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;animation:fadeUp 1s ease-out .6s both}
+.pillar{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text-muted)}
+.pillar-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.form-section{padding:0 2rem 5rem;text-align:center}
+.form-card{max-width:480px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2.5rem 2rem}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:.4rem}
+.form-subtitle{font-size:.82rem;color:var(--text-muted);margin-bottom:2rem;line-height:1.5}
+.form-group{margin-bottom:1rem;text-align:left}
+.form-group label{display:block;font-size:.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px}
+.form-group input{width:100%;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:.9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:var(--text-primary);transition:all .3s ease;outline:none}
+.form-group input:focus{border-color:var(--border-focus);box-shadow:0 0 0 3px rgba(122,139,111,.15)}
+.form-group input::placeholder{color:#4A4A4A}
+.name-row{display:flex;gap:.75rem}
+.name-row .form-group{flex:1}
+.consent{display:flex;align-items:flex-start;gap:10px;text-align:left;margin:1.5rem 0;padding:1rem;background:var(--accent-pale);border:1px solid rgba(122,139,111,.15);border-radius:8px}
+.consent input[type="checkbox"]{margin-top:2px;width:18px;height:18px;accent-color:var(--accent);flex-shrink:0;cursor:pointer}
+.consent-text{font-size:.75rem;line-height:1.6;color:var(--text-secondary)}
+.consent-text a{color:var(--accent-light);text-decoration:underline;text-decoration-color:rgba(168,184,158,.3)}
+.submit-btn{width:100%;padding:15px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--accent);border:none;border-radius:8px;cursor:pointer;transition:all .3s ease}
+.submit-btn:hover{background:#6A7B5F;transform:translateY(-1px);box-shadow:0 4px 24px rgba(122,139,111,.25)}
+.submit-btn:active{transform:translateY(0)}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.success-message{display:none;text-align:center;padding:1.5rem 0;animation:fadeUp .6s ease-out}
+.success-message.show{display:block}
+.success-icon{width:56px;height:56px;border-radius:50%;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.success-icon svg{width:24px;height:24px;color:var(--accent-light)}
+.success-message h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:.5rem}
+.success-message p{font-size:.85rem;color:var(--text-secondary);line-height:1.6}
+.footer{margin-top:auto;padding:2rem;text-align:center;border-top:1px solid var(--border)}
+.footer-practice{font-size:.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px}
+.footer-address{font-size:.75rem;color:var(--text-muted);margin-bottom:.75rem}
+.footer-legal{font-size:.68rem;color:#4A4640;line-height:1.6}
+.footer-legal a{color:var(--text-muted);text-decoration:none}
+.footer-legal a:hover{color:var(--accent-light)}
+.form-group.error input{border-color:var(--error)}
+.error-text{font-size:.72rem;color:var(--error);margin-top:4px;display:none}
+.form-group.error .error-text{display:block}
+.consent-error-outline{outline:2px solid var(--error)!important;outline-offset:2px}
+@media(max-width:520px){.name-row{flex-direction:column;gap:0}.hero{padding:3rem 1.5rem}.form-section{padding:0 1.5rem 3rem}.form-card{padding:2rem 1.5rem}.nav{padding:1rem 1.5rem}}
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+<nav class="nav">
+<div class="nav-left">
+<a href="https://www.zpyu.de" class="nav-brand">ZPYU</a>
+<a href="https://www.zpyu.de" class="nav-back" data-i18n="back"></a>
+</div>
+<div class="lang-switcher">
+<button class="lang-btn active" onclick="setLang('de')">DE</button>
+<button class="lang-btn" onclick="setLang('en')">EN</button>
+<button class="lang-btn" onclick="setLang('fr')">FR</button>
+<button class="lang-btn" onclick="setLang('ru')">RU</button>
+<button class="lang-btn" onclick="setLang('ar')">AR</button>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<span class="badge" data-i18n="badge"></span>
+<h1 data-i18n-html="headline"></h1>
+<div class="divider"></div>
+<p class="hero-description" data-i18n="description"></p>
+<div class="pillars">
+<div class="pillar"><span class="pillar-dot"></span> <span data-i18n="pillar1"></span></div>
+<div class="pillar"><span class="pillar-dot"></span> <span data-i18n="pillar2"></span></div>
+<div class="pillar"><span class="pillar-dot"></span> <span data-i18n="pillar3"></span></div>
+</div>
+</div>
+</section>
+
+<section class="form-section">
+<div class="form-card">
+<h2 class="form-title" data-i18n="formTitle"></h2>
+<p class="form-subtitle" data-i18n="formSubtitle"></p>
+<form id="newsletterForm" action="https://formspree.io/f/mpqbzany" method="POST" novalidate>
+<input type="hidden" name="_subject" value="ZPYU Newsletter Anmeldung">
+<input type="hidden" name="_language" value="de">
+<div class="name-row">
+<div class="form-group">
+<label for="vorname" data-i18n="labelFirstName"></label>
+<input type="text" id="vorname" name="vorname" data-i18n-ph="placeholderFirstName" required>
+<span class="error-text" data-i18n="errorFirstName"></span>
+</div>
+<div class="form-group">
+<label for="nachname" data-i18n="labelLastName"></label>
+<input type="text" id="nachname" name="nachname" data-i18n-ph="placeholderLastName" required>
+<span class="error-text" data-i18n="errorLastName"></span>
+</div>
+</div>
+<div class="form-group">
+<label for="email" data-i18n="labelEmail"></label>
+<input type="email" id="email" name="email" placeholder="email@example.com" required>
+<span class="error-text" data-i18n="errorEmail"></span>
+</div>
+<div class="consent" id="consentWrapper">
+<input type="checkbox" id="consent" name="consent" value="yes" required>
+<span class="consent-text" data-i18n-html="consentText"></span>
+</div>
+<button type="submit" class="submit-btn" id="submitBtn" data-i18n="submitBtn"></button>
+</form>
+<div class="success-message" id="successMessage">
+<div class="success-icon">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+</div>
+<h3 data-i18n="successTitle"></h3>
+<p data-i18n-html="successText"></p>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<p class="footer-practice">ZPYU</p>
+<p class="footer-address">Hansaallee 179 · 40549 Düsseldorf</p>
+<p class="footer-legal">
+<span data-i18n="footerResp"></span>: MD Fattah Yunusah · contact@zpyu.de<br>
+<span data-i18n="footerAuth"></span>: LDI NRW ·
+<a href="https://www.zpyu.de/datenschutz" data-i18n="footerPriv"></a> ·
+<a href="https://www.zpyu.de/impressum" data-i18n="footerImp"></a>
+</p>
+</footer>
+</div>
+
+<script>
+var T={
+de:{back:"\u2190 Zur\u00fcck zur Startseite",badge:"Er\u00f6ffnung Hansaallee \u00b7 Juli 2026",headline:"Bleiben Sie <em>informiert</em>",description:"Erfahren Sie als Erste/r von der Praxiser\u00f6ffnung, neuen Leistungen, Gesundheitsthemen und Veranstaltungen des ZPYU D\u00fcsseldorf.",pillar1:"Endokrinologie",pillar2:"Stoffwechselmedizin",pillar3:"Pr\u00e4ventivmedizin",formTitle:"Newsletter abonnieren",formSubtitle:"Kostenlos & jederzeit abbestellbar",labelFirstName:"Vorname",labelLastName:"Nachname",labelEmail:"E-Mail-Adresse",placeholderFirstName:"Ihr Vorname",placeholderLastName:"Ihr Nachname",errorFirstName:"Bitte Vornamen eingeben.",errorLastName:"Bitte Nachnamen eingeben.",errorEmail:"Bitte g\u00fcltige E-Mail-Adresse eingeben.",consentText:"Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gem\u00e4\u00df Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit <a href=\"mailto:contact@zpyu.de\">widerrufen</a> werden.",submitBtn:"Jetzt anmelden",submitting:"Wird gesendet\u2026",successTitle:"Vielen Dank!",successText:"Sie erhalten in K\u00fcrze eine Best\u00e4tigungs-E-Mail.<br>Bitte klicken Sie auf den Link, um Ihre Anmeldung abzuschlie\u00dfen.",footerResp:"Verantwortlicher gem. Art. 4 Nr. 7 DSGVO",footerAuth:"Aufsichtsbeh\u00f6rde",footerPriv:"Datenschutz",footerImp:"Impressum"},
+en:{back:"\u2190 Back to homepage",badge:"Opening Hansaallee \u00b7 July 2026",headline:"Stay <em>informed</em>",description:"Be the first to learn about our practice opening, new services, health topics and events at ZPYU D\u00fcsseldorf.",pillar1:"Endocrinology",pillar2:"Metabolic Medicine",pillar3:"Preventive Medicine",formTitle:"Subscribe to our newsletter",formSubtitle:"Free & unsubscribe anytime",labelFirstName:"First name",labelLastName:"Last name",labelEmail:"Email address",placeholderFirstName:"Your first name",placeholderLastName:"Your last name",errorFirstName:"Please enter your first name.",errorLastName:"Please enter your last name.",errorEmail:"Please enter a valid email address.",consentText:"I consent to my email address being processed for newsletter delivery in accordance with Art.&nbsp;6(1)(a) GDPR. This consent is voluntary and can be <a href=\"mailto:contact@zpyu.de\">revoked</a> at any time.",submitBtn:"Subscribe now",submitting:"Sending\u2026",successTitle:"Thank you!",successText:"You will receive a confirmation email shortly.<br>Please click the link to complete your registration.",footerResp:"Controller acc. Art. 4(7) GDPR",footerAuth:"Supervisory authority",footerPriv:"Privacy Policy",footerImp:"Legal Notice"},
+fr:{back:"\u2190 Retour \u00e0 l\u2019accueil",badge:"Ouverture Hansaallee \u00b7 Juillet 2026",headline:"Restez <em>inform\u00e9(e)</em>",description:"Soyez le/la premier(\u00e8re) inform\u00e9(e) de l\u2019ouverture du cabinet, des nouveaux services, des sujets de sant\u00e9 et des \u00e9v\u00e9nements du ZPYU D\u00fcsseldorf.",pillar1:"Endocrinologie",pillar2:"M\u00e9decine m\u00e9tabolique",pillar3:"M\u00e9decine pr\u00e9ventive",formTitle:"S\u2019abonner \u00e0 la newsletter",formSubtitle:"Gratuit & d\u00e9sabonnement \u00e0 tout moment",labelFirstName:"Pr\u00e9nom",labelLastName:"Nom",labelEmail:"Adresse e-mail",placeholderFirstName:"Votre pr\u00e9nom",placeholderLastName:"Votre nom",errorFirstName:"Veuillez entrer votre pr\u00e9nom.",errorLastName:"Veuillez entrer votre nom.",errorEmail:"Veuillez entrer une adresse e-mail valide.",consentText:"Je consens au traitement de mon adresse e-mail aux fins d\u2019envoi de la newsletter conform\u00e9ment \u00e0 l\u2019art.&nbsp;6(1)(a) du RGPD. Ce consentement est volontaire et peut \u00eatre <a href=\"mailto:contact@zpyu.de\">r\u00e9voqu\u00e9</a> \u00e0 tout moment.",submitBtn:"S\u2019abonner",submitting:"Envoi en cours\u2026",successTitle:"Merci\u00a0!",successText:"Vous recevrez un e-mail de confirmation sous peu.<br>Veuillez cliquer sur le lien pour finaliser votre inscription.",footerResp:"Responsable selon art. 4 n\u00b0 7 RGPD",footerAuth:"Autorit\u00e9 de contr\u00f4le",footerPriv:"Confidentialit\u00e9",footerImp:"Mentions l\u00e9gales"},
+ru:{back:"\u2190 \u041d\u0430 \u0433\u043b\u0430\u0432\u043d\u0443\u044e",badge:"\u041e\u0442\u043a\u0440\u044b\u0442\u0438\u0435 Hansaallee \u00b7 \u0418\u044e\u043b\u044c 2026",headline:"\u0411\u0443\u0434\u044c\u0442\u0435 <em>\u0432 \u043a\u0443\u0440\u0441\u0435</em>",description:"\u0423\u0437\u043d\u0430\u0439\u0442\u0435 \u043f\u0435\u0440\u0432\u044b\u043c\u0438 \u043e\u0431 \u043e\u0442\u043a\u0440\u044b\u0442\u0438\u0438 \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0438, \u043d\u043e\u0432\u044b\u0445 \u0443\u0441\u043b\u0443\u0433\u0430\u0445, \u0442\u0435\u043c\u0430\u0445 \u0437\u0434\u043e\u0440\u043e\u0432\u044c\u044f \u0438 \u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u044f\u0445 ZPYU.",pillar1:"\u042d\u043d\u0434\u043e\u043a\u0440\u0438\u043d\u043e\u043b\u043e\u0433\u0438\u044f",pillar2:"\u041c\u0435\u0442\u0430\u0431\u043e\u043b\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0430",pillar3:"\u041f\u0440\u043e\u0444\u0438\u043b\u0430\u043a\u0442\u0438\u043a\u0430",formTitle:"\u041f\u043e\u0434\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u0440\u0430\u0441\u0441\u044b\u043b\u043a\u0443",formSubtitle:"\u0411\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e \u0438 \u043c\u043e\u0436\u043d\u043e \u043e\u0442\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u0432 \u043b\u044e\u0431\u043e\u0435 \u0432\u0440\u0435\u043c\u044f",labelFirstName:"\u0418\u043c\u044f",labelLastName:"\u0424\u0430\u043c\u0438\u043b\u0438\u044f",labelEmail:"\u042d\u043b. \u043f\u043e\u0447\u0442\u0430",placeholderFirstName:"\u0412\u0430\u0448\u0435 \u0438\u043c\u044f",placeholderLastName:"\u0412\u0430\u0448\u0430 \u0444\u0430\u043c\u0438\u043b\u0438\u044f",errorFirstName:"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043c\u044f.",errorLastName:"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0444\u0430\u043c\u0438\u043b\u0438\u044e.",errorEmail:"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0439 e-mail.",consentText:"\u042f \u0441\u043e\u0433\u043b\u0430\u0441\u0435\u043d/\u043d\u0430 \u043d\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0443 \u043c\u043e\u0435\u0433\u043e e-mail \u0434\u043b\u044f \u0440\u0430\u0441\u0441\u044b\u043b\u043a\u0438 \u0432 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441\u043e \u0441\u0442. 6(1)(a) GDPR. \u042d\u0442\u043e \u0441\u043e\u0433\u043b\u0430\u0441\u0438\u0435 \u0434\u043e\u0431\u0440\u043e\u0432\u043e\u043b\u044c\u043d\u043e\u0435 \u0438 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c <a href=\"mailto:contact@zpyu.de\">\u043e\u0442\u043e\u0437\u0432\u0430\u043d\u043e</a> \u0432 \u043b\u044e\u0431\u043e\u0435 \u0432\u0440\u0435\u043c\u044f.",submitBtn:"\u041f\u043e\u0434\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f",submitting:"\u041e\u0442\u043f\u0440\u0430\u0432\u043a\u0430\u2026",successTitle:"\u0421\u043f\u0430\u0441\u0438\u0431\u043e!",successText:"\u0412\u044b \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u0435 \u043f\u0438\u0441\u044c\u043c\u043e \u0441 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435\u043c.<br>\u041d\u0430\u0436\u043c\u0438\u0442\u0435 \u043d\u0430 \u0441\u0441\u044b\u043b\u043a\u0443 \u0434\u043b\u044f \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u044f \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438.",footerResp:"\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0441\u043e\u0433\u043b. \u0441\u0442. 4 \u2116 7 GDPR",footerAuth:"\u041d\u0430\u0434\u0437\u043e\u0440\u043d\u044b\u0439 \u043e\u0440\u0433\u0430\u043d",footerPriv:"\u041a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",footerImp:"\u0418\u043c\u043f\u0440\u0435\u0441\u0441\u0443\u043c"},
+ar:{back:"\u2192 \u0627\u0644\u0639\u0648\u062f\u0629 \u0625\u0644\u0649 \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629",badge:"\u0627\u0641\u062a\u062a\u0627\u062d Hansaallee \u00b7 \u064a\u0648\u0644\u064a\u0648 2026",headline:"\u0627\u0628\u0642\u064e <em>\u0639\u0644\u0649 \u0627\u0637\u0644\u0627\u0639</em>",description:"\u0643\u0646 \u0623\u0648\u0644 \u0645\u0646 \u064a\u0639\u0631\u0641 \u0639\u0646 \u0627\u0641\u062a\u062a\u0627\u062d \u0627\u0644\u0639\u064a\u0627\u062f\u0629 \u0648\u0627\u0644\u062e\u062f\u0645\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u0648\u0627\u0644\u0645\u0648\u0627\u0636\u064a\u0639 \u0627\u0644\u0635\u062d\u064a\u0629 \u0648\u0641\u0639\u0627\u0644\u064a\u0627\u062a ZPYU.",pillar1:"\u0637\u0628 \u0627\u0644\u063a\u062f\u062f \u0627\u0644\u0635\u0645\u0627\u0621",pillar2:"\u0637\u0628 \u0627\u0644\u0623\u064a\u0636",pillar3:"\u0627\u0644\u0637\u0628 \u0627\u0644\u0648\u0642\u0627\u0626\u064a",formTitle:"\u0627\u0634\u062a\u0631\u0643 \u0641\u064a \u0627\u0644\u0646\u0634\u0631\u0629",formSubtitle:"\u0645\u062c\u0627\u0646\u064a \u0648\u064a\u0645\u0643\u0646 \u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u0627\u0634\u062a\u0631\u0627\u0643 \u0641\u064a \u0623\u064a \u0648\u0642\u062a",labelFirstName:"\u0627\u0644\u0627\u0633\u0645 \u0627\u0644\u0623\u0648\u0644",labelLastName:"\u0627\u0633\u0645 \u0627\u0644\u0639\u0627\u0626\u0644\u0629",labelEmail:"\u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a",placeholderFirstName:"\u0627\u0633\u0645\u0643 \u0627\u0644\u0623\u0648\u0644",placeholderLastName:"\u0627\u0633\u0645 \u0639\u0627\u0626\u0644\u062a\u0643",errorFirstName:"\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0627\u0644\u0627\u0633\u0645.",errorLastName:"\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0627\u0633\u0645 \u0627\u0644\u0639\u0627\u0626\u0644\u0629.",errorEmail:"\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0628\u0631\u064a\u062f \u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0635\u0627\u0644\u062d.",consentText:"\u0623\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0645\u0639\u0627\u0644\u062c\u0629 \u0628\u0631\u064a\u062f\u064a \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0644\u0625\u0631\u0633\u0627\u0644 \u0627\u0644\u0646\u0634\u0631\u0629 \u0648\u0641\u0642\u064b\u0627 \u0644\u0644\u0645\u0627\u062f\u0629 6(1)(\u0623) GDPR. \u0647\u0630\u0647 \u0627\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0637\u0648\u0639\u064a\u0629 \u0648\u064a\u0645\u0643\u0646 <a href=\"mailto:contact@zpyu.de\">\u0633\u062d\u0628\u0647\u0627</a> \u0641\u064a \u0623\u064a \u0648\u0642\u062a.",submitBtn:"\u0627\u0634\u062a\u0631\u0643 \u0627\u0644\u0622\u0646",submitting:"\u062c\u0627\u0631\u064d \u0627\u0644\u0625\u0631\u0633\u0627\u0644\u2026",successTitle:"\u0634\u0643\u0631\u064b\u0627!",successText:"\u0633\u062a\u062a\u0644\u0642\u0649 \u0631\u0633\u0627\u0644\u0629 \u062a\u0623\u0643\u064a\u062f \u0642\u0631\u064a\u0628\u064b\u0627.<br>\u064a\u0631\u062c\u0649 \u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0631\u0627\u0628\u0637 \u0644\u0625\u0643\u0645\u0627\u0644 \u0627\u0644\u062a\u0633\u062c\u064a\u0644.",footerResp:"\u0627\u0644\u0645\u0633\u0624\u0648\u0644 \u0648\u0641\u0642 \u0627\u0644\u0645\u0627\u062f\u0629 4 \u0631\u0642\u0645 7 GDPR",footerAuth:"\u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u0631\u0642\u0627\u0628\u064a\u0629",footerPriv:"\u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629",footerImp:"\u0628\u064a\u0627\u0646\u0627\u062a \u0642\u0627\u0646\u0648\u0646\u064a\u0629"}
+};
+
+var currentLang='de';
+function setLang(lang){
+currentLang=lang;
+var t=T[lang];
+document.documentElement.setAttribute('dir',lang==='ar'?'rtl':'ltr');
+document.documentElement.setAttribute('lang',lang);
+document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(t[k])el.textContent=t[k]});
+document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.getAttribute('data-i18n-html');if(t[k])el.innerHTML=t[k]});
+document.querySelectorAll('[data-i18n-ph]').forEach(function(el){var k=el.getAttribute('data-i18n-ph');if(t[k])el.placeholder=t[k]});
+document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang)});
+}
+
+var form=document.getElementById('newsletterForm');
+var submitBtn=document.getElementById('submitBtn');
+var successMsg=document.getElementById('successMessage');
+var formContainer=document.querySelector('.form-card form');
+
+function showValidationError(element, show){
+if(show){
+element.closest('.form-group').classList.add('error');
+}else{
+if(element.closest('.form-group')) element.closest('.form-group').classList.remove('error');
+}
+}
+
+function validateEmail(email){
+return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+form.addEventListener('submit', function(e){
+e.preventDefault();
+
+var vornameField=document.getElementById('vorname');
+var nachnameField=document.getElementById('nachname');
+var emailField=document.getElementById('email');
+var consentCheck=document.getElementById('consent');
+var consentWrap=document.getElementById('consentWrapper');
+
+var isValid=true;
+
+if(!vornameField.value.trim()){
+showValidationError(vornameField, true);
+isValid=false;
+}else{
+showValidationError(vornameField, false);
+}
+
+if(!nachnameField.value.trim()){
+showValidationError(nachnameField, true);
+isValid=false;
+}else{
+showValidationError(nachnameField, false);
+}
+
+if(!emailField.value.trim() || !validateEmail(emailField.value.trim())){
+showValidationError(emailField, true);
+isValid=false;
+}else{
+showValidationError(emailField, false);
+}
+
+if(!consentCheck.checked){
+consentWrap.classList.add('consent-error-outline');
+setTimeout(function(){consentWrap.classList.remove('consent-error-outline');},3000);
+isValid=false;
+}else{
+consentWrap.classList.remove('consent-error-outline');
+}
+
+if(isValid){
+submitBtn.disabled=true;
+var originalText=submitBtn.textContent;
+submitBtn.textContent=T[currentLang].submitting;
+
+var formData=new FormData(form);
+fetch(form.action, {
+method: 'POST',
+body: formData,
+headers: { 'Accept': 'application/json' }
+})
+.then(response => {
+if(response.ok){
+form.style.display='none';
+successMsg.classList.add('show');
+} else {
+return response.json().then(data => { throw new Error(data.error || 'Formspree Fehler'); });
+}
+})
+.catch(error => {
+submitBtn.disabled=false;
+submitBtn.textContent=originalText;
+alert(error.message || 'Verbindungsfehler. Bitte versuchen Sie es erneut.');
+});
+}
+});
+
+document.querySelectorAll('input').forEach(function(i){
+i.addEventListener('input',function(){
+if(i.closest('.form-group')) i.closest('.form-group').classList.remove('error');
+if(i.id==='consent'){
+document.getElementById('consentWrapper').classList.remove('consent-error-outline');
+}
+});
+});
+setLang('de');
+</script>
+</body>
+</html>
