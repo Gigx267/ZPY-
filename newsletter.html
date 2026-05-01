@@ -14,7 +14,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 html[dir="rtl"]{direction:rtl;text-align:right}
 html[dir="rtl"] .nav-back{direction:ltr}
 html[dir="rtl"] .consent{text-align:right}
-html[dir="rtl"] .form-group{text-align:right}
 .page-wrapper{display:flex;flex-direction:column;min-height:100vh}
 .nav{padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:10px}
 .nav-left{display:flex;align-items:center;gap:16px}
@@ -40,10 +39,10 @@ html[dir="rtl"] .form-group{text-align:right}
 .pillar{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text-muted)}
 .pillar-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
 .form-section{padding:0 2rem 5rem;text-align:center}
-.form-card{max-width:540px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem 1.8rem}
+.form-card{max-width:580px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem 1.8rem}
 .form-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:.4rem}
-.form-subtitle{font-size:.82rem;color:var(--text-muted);margin-bottom:1.8rem;line-height:1.5}
-/* CleverReach form styling integration - matching dark theme */
+.form-subtitle{font-size:.82rem;color:var(--text-muted);margin-bottom:1rem;line-height:1.5}
+/* CleverReach styling with dark mode integration */
 .cr_site {
     background-color: transparent !important;
     padding: 0 !important;
@@ -67,7 +66,7 @@ html[dir="rtl"] .form-group{text-align:right}
     padding: 0 !important;
 }
 .cr_form-component, .cr_ipe_item {
-    margin: 0 0 1.2rem 0 !important;
+    margin: 0 0 1rem 0 !important;
     padding: 0 !important;
 }
 .cr_form-inputgroup label {
@@ -91,7 +90,6 @@ html[dir="rtl"] .form-group{text-align:right}
     color: var(--text-primary) !important;
     transition: all .3s ease !important;
     outline: none !important;
-    box-sizing: border-box !important;
 }
 .cr_form-inputgroup input:focus {
     border-color: var(--border-focus) !important;
@@ -105,7 +103,7 @@ html[dir="rtl"] .form-group{text-align:right}
     color: #fff !important;
     border: none !important;
     border-radius: 8px !important;
-    padding: 15px !important;
+    padding: 14px 20px !important;
     font-family: 'DM Sans', sans-serif !important;
     font-size: .85rem !important;
     font-weight: 600 !important;
@@ -114,7 +112,6 @@ html[dir="rtl"] .form-group{text-align:right}
     width: 100% !important;
     height: auto !important;
     line-height: normal !important;
-    white-space: normal !important;
     transition: all .3s ease !important;
     cursor: pointer !important;
 }
@@ -127,7 +124,7 @@ html[dir="rtl"] .form-group{text-align:right}
 .g-recaptcha {
     transform: scale(0.92);
     transform-origin: 0 0;
-    margin: 10px 0 5px 0;
+    margin: 8px 0 5px 0;
 }
 .clever_form_error {
     background-color: rgba(196,91,91,0.2) !important;
@@ -145,30 +142,56 @@ html[dir="rtl"] .form-group{text-align:right}
 .badge {
     display: none !important;
 }
-.cr-form-consent-wrap {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+/* GDPR Consent & reCaptcha Notice */
+.consent-checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 1.2rem 0 0.8rem 0;
+    padding: 0.8rem 1rem;
+    background: var(--accent-pale);
+    border: 1px solid rgba(122,139,111,.2);
+    border-radius: 10px;
 }
-.consent-text-cr {
-    font-size: .72rem;
+.consent-checkbox-wrapper input {
+    margin-top: 2px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.consent-checkbox-wrapper label {
+    font-size: .75rem;
     line-height: 1.5;
     color: var(--text-secondary);
-    display: block;
-    text-align: left;
-    margin-top: 12px;
+    cursor: pointer;
 }
-.consent-text-cr a {
+.consent-checkbox-wrapper a {
     color: var(--accent-light);
     text-decoration: underline;
 }
-.submit_container {
-    text-align: center !important;
-    margin-top: 0.8rem !important;
+.recaptcha-notice {
+    font-size: .65rem;
+    line-height: 1.4;
+    color: var(--text-muted);
+    background: rgba(107,104,96,0.15);
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin: 1rem 0 0.5rem 0;
+    text-align: left;
+}
+.recaptcha-notice p {
+    margin-bottom: 4px;
+}
+.recaptcha-notice a {
+    color: var(--accent-light);
+    text-decoration: underline;
 }
 .success-message-cr {
     display: none;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     animation: fadeUp .6s ease-out;
 }
 .success-message-cr.show {
@@ -195,7 +218,7 @@ html[dir="rtl"] .form-group{text-align:right}
 .footer-legal{font-size:.68rem;color:#4A4640;line-height:1.6}
 .footer-legal a{color:var(--text-muted);text-decoration:none}
 .footer-legal a:hover{color:var(--accent-light)}
-@media(max-width:520px){.hero{padding:3rem 1.5rem}.form-section{padding:0 1.5rem 3rem}.form-card{padding:1.5rem}.g-recaptcha{transform:scale(0.82);transform-origin:0 0}}
+@media(max-width:520px){.hero{padding:3rem 1.5rem}.form-section{padding:0 1.5rem 3rem}.form-card{padding:1.5rem}.g-recaptcha{transform:scale(0.8);transform-origin:0 0}}
 </style>
 </head>
 <body>
@@ -232,40 +255,47 @@ html[dir="rtl"] .form-group{text-align:right}
 <div class="form-card">
 <h2 class="form-title" data-i18n="formTitle"></h2>
 <p class="form-subtitle" data-i18n="formSubtitle"></p>
-<!-- CleverReach native form integration (replaces Formspree) -->
+
+<!-- CleverReach Form with reCaptcha (provided by user) + DSGVO consent & recaptcha notice -->
 <div id="crFormContainer">
-<form class="layout_form cr_form cr_font" action="https://seu2.cleverreach.com/f/448270-426888/wcs/" method="post" target="_blank" id="cleverReachNewsletterForm">
+<form class="layout_form cr_form cr_font" action="https://seu2.cleverreach.com/f/448270-427027/wcs/" method="post" target="_blank" id="cleverReachNewsletterForm">
     <div class="cr_body cr_page cr_font formbox">
         <div class="non_sortable" style="text-align:left;"></div>
         <div class="editable_content" style="text-align:left;">
-            <div id="9745377" rel="email" class="cr_form-component cr_form-component--email cr_ipe_item ui-sortable musthave" style="margin-bottom:px;">
+            <!-- Email field -->
+            <div id="9748594" rel="email" class="cr_form-component cr_form-component--email cr_ipe_item ui-sortable musthave">
                 <div class="cr_form-inputgroup cr_form-inputgroup--typeemail">
-                    <label for="text9745377" data-i18n="labelEmail">E-Mail*</label>
-                    <input class="cr_form-input" type="email" id="text9745377" name="email" value="" placeholder="name@example.com" style="width:100%;" required>
+                    <label for="text9748594" data-i18n="labelEmail">E-Mail*</label>
+                    <input class="cr_form-input" type="email" id="text9748594" name="email" value="" placeholder="name@example.com" style="width:100%;">
                 </div>
             </div>
-            <!-- GDPR Consent Checkbox (added manually to meet DSGVO) -->
-            <div class="cr-form-consent-wrap" id="consentWrapperCr">
-                <div class="consent-text-cr">
-                    <input type="checkbox" id="consent_cr_news" style="width: 18px; height: 18px; accent-color: var(--accent); margin-right: 10px; vertical-align: middle;">
-                    <label for="consent_cr_news" id="consentLabelHtml" style="display: inline; font-size: .72rem; color: var(--text-secondary); cursor: pointer;"></label>
-                </div>
+            
+            <!-- DSGVO Einwilligung (Consent Checkbox) -->
+            <div class="consent-checkbox-wrapper" id="consentWrapper">
+                <input type="checkbox" id="consentNewsletter" name="consent_gdpr" value="yes">
+                <label for="consentNewsletter" id="consentLabelText" data-i18n-html="consentText"></label>
             </div>
-            <div id="9745381" rel="recaptcha" class="cr_ipe_item ui-sortable musthave">
+            
+            <!-- Google reCaptcha (CleverReach integration) -->
+            <div id="9748598" rel="recaptcha" class="cr_ipe_item ui-sortable musthave">
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                 <div id="recaptcha_v2_widget" class="g-recaptcha" data-theme="dark" data-size="normal" data-sitekey="6Lfhcd0SAAAAAOBEHmAVEHJeRnrH8T7wPvvNzEPD"></div>
             </div>
-            <div id="9745379" rel="button" class="cr_form-component cr_form-component--submit cr_ipe_item ui-sortable submit_container">
+            
+            <!-- reCaptcha privacy notice (required by Google / DSGVO) -->
+            <div class="recaptcha-notice" data-i18n-html="recaptchaNotice"></div>
+            
+            <!-- Submit button -->
+            <div id="9748596" rel="button" class="cr_form-component cr_form-component--submit cr_ipe_item ui-sortable submit_container">
                 <button type="submit" class="cr_form-block cr_button" data-i18n="submitBtn">Anmelden</button>
             </div>
         </div>
         <noscript><a href="http://www.cleverreach.de">www.CleverReach.de</a></noscript>
     </div>
-    <div class="badge" style="text-align:center; border:none !Important; background:transparent !Important; display: none;">
-        <a href="https://www.cleverreach.de/?utm_source=system&utm_medium=form&utm_campaign=c448270" target="_blank"><img src="https://d388us03v35p3m.cloudfront.net/cr3_images/badget1.png" border="0" /></a>
-    </div>
+    <div class="badge" style="display:none;"></div>
 </form>
 </div>
+
 <div class="success-message-cr" id="successMessageCr">
 <div class="success-icon">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
@@ -289,13 +319,13 @@ html[dir="rtl"] .form-group{text-align:right}
 </div>
 
 <script>
-// Translation object
+// Translation object with all texts including reCaptcha notice
 var T={
-de:{back:"← Zurück zur Startseite",badge:"Eröffnung Hansaallee · Juli 2026",headline:"Bleiben Sie <em>informiert</em>",description:"Erfahren Sie als Erste/r von der Praxiseröffnung, neuen Leistungen, Gesundheitsthemen und Veranstaltungen des ZPYU Düsseldorf.",pillar1:"Endokrinologie",pillar2:"Stoffwechselmedizin",pillar3:"Präventivmedizin",formTitle:"Newsletter abonnieren",formSubtitle:"Kostenlos & jederzeit abbestellbar",labelEmail:"E-Mail-Adresse",submitBtn:"Jetzt anmelden",successTitle:"Vielen Dank!",successText:"Ihre Anmeldung wurde erfolgreich versendet.<br>Sie erhalten in Kürze eine Bestätigungs-E-Mail.<br>Bitte klicken Sie den Link in der E-Mail, um Ihre Anmeldung abzuschließen.",footerResp:"Verantwortlicher gem. Art. 4 Nr. 7 DSGVO",footerAuth:"Aufsichtsbehörde",footerPriv:"Datenschutz",footerImp:"Impressum",consentText:"Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit <a href=\"mailto:contact@zpyu.de\">widerrufen</a> werden."},
-en:{back:"← Back to homepage",badge:"Opening Hansaallee · July 2026",headline:"Stay <em>informed</em>",description:"Be the first to learn about our practice opening, new services, health topics and events at ZPYU Düsseldorf.",pillar1:"Endocrinology",pillar2:"Metabolic Medicine",pillar3:"Preventive Medicine",formTitle:"Subscribe to our newsletter",formSubtitle:"Free & unsubscribe anytime",labelEmail:"Email address",submitBtn:"Subscribe now",successTitle:"Thank you!",successText:"Your subscription has been sent successfully.<br>You will receive a confirmation email shortly.<br>Please click the link in the email to complete your registration.",footerResp:"Controller acc. Art. 4(7) GDPR",footerAuth:"Supervisory authority",footerPriv:"Privacy Policy",footerImp:"Legal Notice",consentText:"I consent to my email address being processed for newsletter delivery in accordance with Art.&nbsp;6(1)(a) GDPR. This consent is voluntary and can be <a href=\"mailto:contact@zpyu.de\">revoked</a> at any time."},
-fr:{back:"← Retour à l'accueil",badge:"Ouverture Hansaallee · Juillet 2026",headline:"Restez <em>informé(e)</em>",description:"Soyez le/la premier(ère) informé(e) de l'ouverture du cabinet, des nouveaux services, des sujets de santé et des événements du ZPYU Düsseldorf.",pillar1:"Endocrinologie",pillar2:"Médecine métabolique",pillar3:"Médecine préventive",formTitle:"S'abonner à la newsletter",formSubtitle:"Gratuit & désabonnement à tout moment",labelEmail:"Adresse e-mail",submitBtn:"S'abonner",successTitle:"Merci !",successText:"Votre inscription a été envoyée avec succès.<br>Vous recevrez un e-mail de confirmation sous peu.<br>Veuillez cliquer sur le lien dans l'e-mail pour finaliser votre inscription.",footerResp:"Responsable selon art. 4 nº 7 RGPD",footerAuth:"Autorité de contrôle",footerPriv:"Confidentialité",footerImp:"Mentions légales",consentText:"Je consens au traitement de mon adresse e-mail aux fins d'envoi de la newsletter conformément à l'art.&nbsp;6(1)(a) du RGPD. Ce consentement est volontaire et peut être <a href=\"mailto:contact@zpyu.de\">révoqué</a> à tout moment."},
-ru:{back:"← На главную",badge:"Открытие Hansaallee · Июль 2026",headline:"Будьте <em>в курсе</em>",description:"Узнайте первыми об открытии практики, новых услугах, темах здоровья и мероприятиях ZPYU.",pillar1:"Эндокринология",pillar2:"Метаболическая медицина",pillar3:"Профилактика",formTitle:"Подписаться на рассылку",formSubtitle:"Бесплатно и можно отписаться в любое время",labelEmail:"Эл. почта",submitBtn:"Подписаться",successTitle:"Спасибо!",successText:"Ваша подписка успешно отправлена.<br>Вы получите письмо с подтверждением.<br>Пожалуйста, нажмите на ссылку в письме для завершения регистрации.",footerResp:"Ответственный согл. ст. 4 № 7 GDPR",footerAuth:"Надзорный орган",footerPriv:"Конфиденциальность",footerImp:"Импрессум",consentText:"Я согласен/на на обработку моего e-mail для рассылки в соответствии со ст. 6(1)(a) GDPR. Это согласие добровольное и может быть <a href=\"mailto:contact@zpyu.de\">отозвано</a> в любое время."},
-ar:{back:"→ العودة إلى الرئيسية",badge:"افتتاح Hansaallee · يوليو 2026",headline:"<em>ابق على اطلاع</em>",description:"كن أول من يعرف عن افتتاح العيادة والخدمات الجديدة والمواضيع الصحية وفعاليات ZPYU.",pillar1:"طب الغدد الصماء",pillar2:"طب الأيض",pillar3:"الطب الوقائي",formTitle:"اشترك في النشرة",formSubtitle:"مجاني ويمكن إلغاء الاشتراك في أي وقت",labelEmail:"البريد الإلكتروني",submitBtn:"اشترك الآن",successTitle:"شكراً!",successText:"تم إرسال اشتراكك بنجاح.<br>ستتلقى رسالة تأكيد قريباً.<br>يرجى النقر على الرابط في البريد الإلكتروني لإكمال التسجيل.",footerResp:"المسؤول وفق المادة 4 رقم 7 GDPR",footerAuth:"جهة الإشراف",footerPriv:"الخصوصية",footerImp:"بيانات قانونية",consentText:"أوافق على معالجة بريدي الإلكتروني لإرسال النشرة وفقًا للمادة 6(1)(أ) GDPR. هذه الموافقة طوعية ويمكن <a href=\"mailto:contact@zpyu.de\">سحبها</a> في أي وقت."}
+de:{back:"← Zurück zur Startseite",badge:"Eröffnung Hansaallee · Juli 2026",headline:"Bleiben Sie <em>informiert</em>",description:"Erfahren Sie als Erste/r von der Praxiseröffnung, neuen Leistungen, Gesundheitsthemen und Veranstaltungen des ZPYU Düsseldorf.",pillar1:"Endokrinologie",pillar2:"Stoffwechselmedizin",pillar3:"Präventivmedizin",formTitle:"Newsletter abonnieren",formSubtitle:"Kostenlos & jederzeit abbestellbar",labelEmail:"E-Mail-Adresse",submitBtn:"Jetzt anmelden",successTitle:"Vielen Dank!",successText:"Ihre Anmeldung wurde erfolgreich versendet.<br>Sie erhalten in Kürze eine Bestätigungs-E-Mail.<br>Bitte klicken Sie den Link in der E-Mail, um Ihre Anmeldung abzuschließen.",footerResp:"Verantwortlicher gem. Art. 4 Nr. 7 DSGVO",footerAuth:"Aufsichtsbehörde",footerPriv:"Datenschutz",footerImp:"Impressum",consentText:"Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit <a href=\"mailto:contact@zpyu.de\">widerrufen</a> werden.",recaptchaNotice:"<strong>reCaptcha-Hinweis:</strong> Wir verwenden Google reCaptcha, um automatisierte Anmeldungen zu verhindern. Google erfasst dabei Ihre IP-Adresse, Browserversion, Mausbewegungen und ggf. weitere Daten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse, Schutz vor Spam). Weitere Details: <a href='https://policies.google.com/privacy' target='_blank'>Google Privacy Policy</a>."},
+en:{back:"← Back to homepage",badge:"Opening Hansaallee · July 2026",headline:"Stay <em>informed</em>",description:"Be the first to learn about our practice opening, new services, health topics and events at ZPYU Düsseldorf.",pillar1:"Endocrinology",pillar2:"Metabolic Medicine",pillar3:"Preventive Medicine",formTitle:"Subscribe to our newsletter",formSubtitle:"Free & unsubscribe anytime",labelEmail:"Email address",submitBtn:"Subscribe now",successTitle:"Thank you!",successText:"Your subscription has been sent successfully.<br>You will receive a confirmation email shortly.<br>Please click the link in the email to complete your registration.",footerResp:"Controller acc. Art. 4(7) GDPR",footerAuth:"Supervisory authority",footerPriv:"Privacy Policy",footerImp:"Legal Notice",consentText:"I consent to my email address being processed for newsletter delivery in accordance with Art.&nbsp;6(1)(a) GDPR. This consent is voluntary and can be <a href=\"mailto:contact@zpyu.de\">revoked</a> at any time.",recaptchaNotice:"<strong>reCaptcha Notice:</strong> We use Google reCaptcha to prevent automated signups. Google collects your IP address, browser type, mouse movements, and other data. Legal basis: Art. 6(1)(f) GDPR (legitimate interest to protect against spam). Details: <a href='https://policies.google.com/privacy' target='_blank'>Google Privacy Policy</a>."},
+fr:{back:"← Retour à l'accueil",badge:"Ouverture Hansaallee · Juillet 2026",headline:"Restez <em>informé(e)</em>",description:"Soyez le/la premier(ère) informé(e) de l'ouverture du cabinet, des nouveaux services, des sujets de santé et des événements du ZPYU Düsseldorf.",pillar1:"Endocrinologie",pillar2:"Médecine métabolique",pillar3:"Médecine préventive",formTitle:"S'abonner à la newsletter",formSubtitle:"Gratuit & désabonnement à tout moment",labelEmail:"Adresse e-mail",submitBtn:"S'abonner",successTitle:"Merci !",successText:"Votre inscription a été envoyée avec succès.<br>Vous recevrez un e-mail de confirmation sous peu.<br>Veuillez cliquer sur le lien dans l'e-mail pour finaliser votre inscription.",footerResp:"Responsable selon art. 4 nº 7 RGPD",footerAuth:"Autorité de contrôle",footerPriv:"Confidentialité",footerImp:"Mentions légales",consentText:"Je consens au traitement de mon adresse e-mail aux fins d'envoi de la newsletter conformément à l'art.&nbsp;6(1)(a) du RGPD. Ce consentement est volontaire et peut être <a href=\"mailto:contact@zpyu.de\">révoqué</a> à tout moment.",recaptchaNotice:"<strong>Notice reCaptcha:</strong> Nous utilisons Google reCaptcha pour empêcher les inscriptions automatisées. Google collecte votre adresse IP, type de navigateur, mouvements de souris et autres données. Base juridique : Art. 6(1)(f) RGPD (intérêt légitime). Détails : <a href='https://policies.google.com/privacy' target='_blank'>Politique de confidentialité Google</a>."},
+ru:{back:"← На главную",badge:"Открытие Hansaallee · Июль 2026",headline:"Будьте <em>в курсе</em>",description:"Узнайте первыми об открытии практики, новых услугах, темах здоровья и мероприятиях ZPYU.",pillar1:"Эндокринология",pillar2:"Метаболическая медицина",pillar3:"Профилактика",formTitle:"Подписаться на рассылку",formSubtitle:"Бесплатно и можно отписаться в любое время",labelEmail:"Эл. почта",submitBtn:"Подписаться",successTitle:"Спасибо!",successText:"Ваша подписка успешно отправлена.<br>Вы получите письмо с подтверждением.<br>Пожалуйста, нажмите на ссылку в письме для завершения регистрации.",footerResp:"Ответственный согл. ст. 4 № 7 GDPR",footerAuth:"Надзорный орган",footerPriv:"Конфиденциальность",footerImp:"Импрессум",consentText:"Я согласен/на на обработку моего e-mail для рассылки в соответствии со ст. 6(1)(a) GDPR. Это согласие добровольное и может быть <a href=\"mailto:contact@zpyu.de\">отозвано</a> в любое время.",recaptchaNotice:"<strong>Уведомление reCaptcha:</strong> Мы используем Google reCaptcha для предотвращения автоматических регистраций. Google собирает ваш IP-адрес, тип браузера, движения мыши и другие данные. Правовое основание: ст. 6(1)(f) GDPR. Подробнее: <a href='https://policies.google.com/privacy' target='_blank'>Политика конфиденциальности Google</a>."},
+ar:{back:"→ العودة إلى الرئيسية",badge:"افتتاح Hansaallee · يوليو 2026",headline:"<em>ابق على اطلاع</em>",description:"كن أول من يعرف عن افتتاح العيادة والخدمات الجديدة والمواضيع الصحية وفعاليات ZPYU.",pillar1:"طب الغدد الصماء",pillar2:"طب الأيض",pillar3:"الطب الوقائي",formTitle:"اشترك في النشرة",formSubtitle:"مجاني ويمكن إلغاء الاشتراك في أي وقت",labelEmail:"البريد الإلكتروني",submitBtn:"اشترك الآن",successTitle:"شكراً!",successText:"تم إرسال اشتراكك بنجاح.<br>ستتلقى رسالة تأكيد قريباً.<br>يرجى النقر على الرابط في البريد الإلكتروني لإكمال التسجيل.",footerResp:"المسؤول وفق المادة 4 رقم 7 GDPR",footerAuth:"جهة الإشراف",footerPriv:"الخصوصية",footerImp:"بيانات قانونية",consentText:"أوافق على معالجة بريدي الإلكتروني لإرسال النشرة وفقًا للمادة 6(1)(أ) GDPR. هذه الموافقة طوعية ويمكن <a href=\"mailto:contact@zpyu.de\">سحبها</a> في أي وقت.",recaptchaNotice:"<strong>إشعار reCaptcha:</strong> نستخدم Google reCaptcha لمنع الاشتراكات الآلية. تجمع Google عنوان IP الخاص بك ونوع المتصفح وحركات الماوس وبيانات أخرى. الأساس القانوني: المادة 6(1)(f) GDPR. التفاصيل: <a href='https://policies.google.com/privacy' target='_blank'>سياسة خصوصية Google</a>."}
 };
 
 var currentLang='de';
@@ -307,92 +337,73 @@ function setLang(lang){
     document.documentElement.setAttribute('lang',lang);
     document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(t[k])el.textContent=t[k];});
     document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.getAttribute('data-i18n-html');if(t[k])el.innerHTML=t[k];});
-    // update consent label HTML
-    var consentLabel = document.getElementById('consentLabelHtml');
-    if(consentLabel && t.consentText) consentLabel.innerHTML = t.consentText;
-    // update email label if exists
-    var emailLabel = document.querySelector('label[for="text9745377"]');
+    document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang);});
+    // Update consent label explicitly
+    var consentLabelSpan = document.getElementById('consentLabelText');
+    if(consentLabelSpan && t.consentText) consentLabelSpan.innerHTML = t.consentText;
+    // Update email label
+    var emailLabel = document.querySelector('label[for="text9748594"]');
     if(emailLabel && t.labelEmail) emailLabel.innerHTML = t.labelEmail + '*';
-    // update submit button text
     var submitBtn = document.querySelector('.cr_button');
     if(submitBtn && t.submitBtn) submitBtn.textContent = t.submitBtn;
-    document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang);});
 }
 
-// CleverReach + GDPR validation
+// CleverReach original validation script + GDPR consent enforcement
+function loadjQuery(e,t){var n=document.createElement("script");n.setAttribute("src",e);n.onload=t;n.onreadystatechange=function(){if(this.readyState=="complete"||this.readyState=="loaded")t()};document.getElementsByTagName("head")[0].appendChild(n)}
+function main(){
+    var $cr=jQuery.noConflict();
+    $cr(document).ready(function(){
+        $cr(".cr_form").submit(function(e){
+            var consentChecked = document.getElementById('consentNewsletter');
+            if(!consentChecked || !consentChecked.checked) {
+                var wrap = document.getElementById('consentWrapper');
+                if(wrap) wrap.style.outline = "2px solid var(--error)";
+                setTimeout(() => { if(wrap) wrap.style.outline = ""; }, 2500);
+                e.preventDefault();
+                return false;
+            }
+            $cr(this).find('.clever_form_error').removeClass('clever_form_error');
+            $cr(this).find('.clever_form_note').remove();
+            $cr(this).find(".musthave").find('input, textarea').each(function(){
+                if($cr.trim($cr(this).val())==""||($cr(this).is(':checkbox'))||($cr(this).is(':radio'))){
+                    if($cr(this).is(':checkbox')||($cr(this).is(':radio'))){
+                        if(!$cr(this).parents(".cr_ipe_item").find(":checked").is(":checked")){
+                            $cr(this).parents(".cr_ipe_item").addClass('clever_form_error')
+                        }
+                    }else{
+                        $cr(this).addClass('clever_form_error')
+                    }
+                }
+            });
+            if($cr(this).find('.clever_form_error').length){return false}
+            return true;
+        });
+    });
+}
+if(typeof jQuery==="undefined"){loadjQuery("//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",main)}else{main()}
+
+// Success message handling after submitting CleverReach in new tab
 document.addEventListener('DOMContentLoaded', function() {
     setLang('de');
-    
     const crForm = document.getElementById('cleverReachNewsletterForm');
-    const consentCheckbox = document.getElementById('consent_cr_news');
+    const container = document.getElementById('crFormContainer');
     const successDiv = document.getElementById('successMessageCr');
-    const formContainer = document.getElementById('crFormContainer');
     
-    // inject consent label text
-    const consentLabelSpan = document.getElementById('consentLabelHtml');
-    if(consentLabelSpan && T.de.consentText) consentLabelSpan.innerHTML = T.de.consentText;
-    
-    // override submit to enforce consent before native cleverreach validation
-    crForm.addEventListener('submit', function(e) {
-        if(!consentCheckbox.checked) {
-            e.preventDefault();
-            const consentWrap = document.getElementById('consentWrapperCr');
-            consentWrap.style.outline = "2px solid var(--error)";
-            consentWrap.style.borderRadius = "8px";
-            setTimeout(() => { consentWrap.style.outline = ""; }, 2500);
-            return false;
-        }
-        // optional: show success UI after a short delay because CleverReach opens new tab
-        // but we keep normal behaviour; we don't break CR functionality
-        // display success message but still allow native submit
-        setTimeout(() => {
-            if(formContainer && crForm.style.display !== 'none') {
-                crForm.style.display = 'none';
-                successDiv.classList.add('show');
-            }
-        }, 500);
-        return true;
-    });
-    
-    // If CR loads its own validation script, make sure it doesn't conflict. We keep original CR script
-    // Load CleverReach extra validation script that was provided.
-    function loadjQuery(e,t){var n=document.createElement("script");n.setAttribute("src",e);n.onload=t;n.onreadystatechange=function(){if(this.readyState=="complete"||this.readyState=="loaded")t()};document.getElementsByTagName("head")[0].appendChild(n)}
-    function main(){
-        var $cr=jQuery.noConflict();
-        $cr(document).ready(function(){
-            $cr(".cr_form").submit(function(){
-                // original cleverreach validation
-                $cr(this).find('.clever_form_error').removeClass('clever_form_error');
-                $cr(this).find('.clever_form_note').remove();
-                $cr(this).find(".musthave").find('input, textarea').each(function(){
-                    if($cr.trim($cr(this).val())==""||($cr(this).is(':checkbox'))||($cr(this).is(':radio'))){
-                        if($cr(this).is(':checkbox')||($cr(this).is(':radio'))){
-                            if(!$cr(this).parents(".cr_ipe_item").find(":checked").is(":checked")){
-                                $cr(this).parents(".cr_ipe_item").addClass('clever_form_error')
-                            }
-                        }else{
-                            $cr(this).addClass('clever_form_error')
-                        }
-                    }
-                });
-                if($cr(this).find('.clever_form_error').length){return false}
-                // custom consent double-check
-                var consentField = document.getElementById('consent_cr_news');
-                if(consentField && !consentField.checked) {
-                    return false;
+    if(crForm) {
+        crForm.addEventListener('submit', function() {
+            // Show success message and hide form after short delay (opens new tab)
+            setTimeout(() => {
+                if(container && crForm.style.display !== 'none') {
+                    crForm.style.display = 'none';
+                    successDiv.classList.add('show');
                 }
-                return true;
-            });
+            }, 300);
         });
     }
-    if(typeof jQuery==="undefined"){loadjQuery("//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",main)}else{main()}
     
-    // recaptcha dark theme adjustment: change theme to dark if needed (data-theme already dark)
-    // ensure recaptcha uses dark
+    // style adjustments for recaptcha dark theme based on background
     var recaptchaDiv = document.querySelector('.g-recaptcha');
-    if(recaptchaDiv && currentLang !== 'de') {
-        // theme already dark, ok.
-    }
+    if(recaptchaDiv) recaptchaDiv.setAttribute('data-theme', 'dark');
 });
 </script>
 </body>
