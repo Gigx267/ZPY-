@@ -40,41 +40,162 @@ html[dir="rtl"] .form-group{text-align:right}
 .pillar{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text-muted)}
 .pillar-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
 .form-section{padding:0 2rem 5rem;text-align:center}
-.form-card{max-width:480px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2.5rem 2rem}
+.form-card{max-width:540px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem 1.8rem}
 .form-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:.4rem}
-.form-subtitle{font-size:.82rem;color:var(--text-muted);margin-bottom:2rem;line-height:1.5}
-.form-group{margin-bottom:1rem;text-align:left}
-.form-group label{display:block;font-size:.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px}
-.form-group input{width:100%;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:.9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-elevated);color:var(--text-primary);transition:all .3s ease;outline:none}
-.form-group input:focus{border-color:var(--border-focus);box-shadow:0 0 0 3px rgba(122,139,111,.15)}
-.form-group input::placeholder{color:#4A4A4A}
-.name-row{display:flex;gap:.75rem}
-.name-row .form-group{flex:1}
-.consent{display:flex;align-items:flex-start;gap:10px;text-align:left;margin:1.5rem 0;padding:1rem;background:var(--accent-pale);border:1px solid rgba(122,139,111,.15);border-radius:8px}
-.consent input[type="checkbox"]{margin-top:2px;width:18px;height:18px;accent-color:var(--accent);flex-shrink:0;cursor:pointer}
-.consent-text{font-size:.75rem;line-height:1.6;color:var(--text-secondary)}
-.consent-text a{color:var(--accent-light);text-decoration:underline;text-decoration-color:rgba(168,184,158,.3)}
-.submit-btn{width:100%;padding:15px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--accent);border:none;border-radius:8px;cursor:pointer;transition:all .3s ease}
-.submit-btn:hover{background:#6A7B5F;transform:translateY(-1px);box-shadow:0 4px 24px rgba(122,139,111,.25)}
-.submit-btn:active{transform:translateY(0)}
-.submit-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
-.success-message{display:none;text-align:center;padding:1.5rem 0;animation:fadeUp .6s ease-out}
-.success-message.show{display:block}
-.success-icon{width:56px;height:56px;border-radius:50%;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
-.success-icon svg{width:24px;height:24px;color:var(--accent-light)}
-.success-message h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:.5rem}
-.success-message p{font-size:.85rem;color:var(--text-secondary);line-height:1.6}
+.form-subtitle{font-size:.82rem;color:var(--text-muted);margin-bottom:1.8rem;line-height:1.5}
+/* CleverReach form styling integration - matching dark theme */
+.cr_site {
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: left;
+}
+.cr_page {
+    max-width: 100% !important;
+    width: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+.cr_body {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    color: var(--text-primary) !important;
+    font-family: 'DM Sans', sans-serif !important;
+}
+.editable_content, .cr_body #editable_content {
+    padding: 0 !important;
+}
+.cr_form-component, .cr_ipe_item {
+    margin: 0 0 1.2rem 0 !important;
+    padding: 0 !important;
+}
+.cr_form-inputgroup label {
+    font-size: .7rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: var(--text-muted) !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+    font-family: 'DM Sans', sans-serif !important;
+}
+.cr_form-inputgroup input {
+    width: 100% !important;
+    padding: 13px 16px !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: .9rem !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    background: var(--bg-elevated) !important;
+    color: var(--text-primary) !important;
+    transition: all .3s ease !important;
+    outline: none !important;
+    box-sizing: border-box !important;
+}
+.cr_form-inputgroup input:focus {
+    border-color: var(--border-focus) !important;
+    box-shadow: 0 0 0 3px rgba(122,139,111,.15) !important;
+}
+.cr_form-inputgroup input::placeholder {
+    color: #4A4A4A !important;
+}
+.cr_button {
+    background-color: var(--accent) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: .85rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    width: 100% !important;
+    height: auto !important;
+    line-height: normal !important;
+    white-space: normal !important;
+    transition: all .3s ease !important;
+    cursor: pointer !important;
+}
+.cr_button:hover {
+    background-color: #6A7B5F !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 24px rgba(122,139,111,.25) !important;
+    opacity: 1 !important;
+}
+.g-recaptcha {
+    transform: scale(0.92);
+    transform-origin: 0 0;
+    margin: 10px 0 5px 0;
+}
+.clever_form_error {
+    background-color: rgba(196,91,91,0.2) !important;
+    border: 1px solid var(--error) !important;
+}
+.clever_form_note {
+    background-color: var(--accent-pale) !important;
+    color: var(--accent-light) !important;
+    font-size: 11px !important;
+    border-radius: 6px !important;
+    margin-top: 6px !important;
+    position: relative !important;
+    display: inline-block !important;
+}
+.badge {
+    display: none !important;
+}
+.cr-form-consent-wrap {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.consent-text-cr {
+    font-size: .72rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    display: block;
+    text-align: left;
+    margin-top: 12px;
+}
+.consent-text-cr a {
+    color: var(--accent-light);
+    text-decoration: underline;
+}
+.submit_container {
+    text-align: center !important;
+    margin-top: 0.8rem !important;
+}
+.success-message-cr {
+    display: none;
+    text-align: center;
+    padding: 1rem 0;
+    animation: fadeUp .6s ease-out;
+}
+.success-message-cr.show {
+    display: block;
+}
+.success-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+.success-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-light);
+}
 .footer{margin-top:auto;padding:2rem;text-align:center;border-top:1px solid var(--border)}
 .footer-practice{font-size:.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px}
 .footer-address{font-size:.75rem;color:var(--text-muted);margin-bottom:.75rem}
 .footer-legal{font-size:.68rem;color:#4A4640;line-height:1.6}
 .footer-legal a{color:var(--text-muted);text-decoration:none}
 .footer-legal a:hover{color:var(--accent-light)}
-.form-group.error input{border-color:var(--error)}
-.error-text{font-size:.72rem;color:var(--error);margin-top:4px;display:none}
-.form-group.error .error-text{display:block}
-.consent-error-outline{outline:2px solid var(--error)!important;outline-offset:2px}
-@media(max-width:520px){.name-row{flex-direction:column;gap:0}.hero{padding:3rem 1.5rem}.form-section{padding:0 1.5rem 3rem}.form-card{padding:2rem 1.5rem}.nav{padding:1rem 1.5rem}}
+@media(max-width:520px){.hero{padding:3rem 1.5rem}.form-section{padding:0 1.5rem 3rem}.form-card{padding:1.5rem}.g-recaptcha{transform:scale(0.82);transform-origin:0 0}}
 </style>
 </head>
 <body>
@@ -111,33 +232,41 @@ html[dir="rtl"] .form-group{text-align:right}
 <div class="form-card">
 <h2 class="form-title" data-i18n="formTitle"></h2>
 <p class="form-subtitle" data-i18n="formSubtitle"></p>
-<form id="newsletterForm" action="https://formspree.io/f/meenqezz" method="POST" novalidate>
-<input type="hidden" name="_subject" value="ZPYU Newsletter Anmeldung">
-<input type="hidden" name="_language" value="de">
-<div class="name-row">
-<div class="form-group">
-<label for="vorname" data-i18n="labelFirstName"></label>
-<input type="text" id="vorname" name="vorname" data-i18n-ph="placeholderFirstName" required>
-<span class="error-text" data-i18n="errorFirstName"></span>
-</div>
-<div class="form-group">
-<label for="nachname" data-i18n="labelLastName"></label>
-<input type="text" id="nachname" name="nachname" data-i18n-ph="placeholderLastName" required>
-<span class="error-text" data-i18n="errorLastName"></span>
-</div>
-</div>
-<div class="form-group">
-<label for="email" data-i18n="labelEmail"></label>
-<input type="email" id="email" name="email" placeholder="email@example.com" required>
-<span class="error-text" data-i18n="errorEmail"></span>
-</div>
-<div class="consent" id="consentWrapper">
-<input type="checkbox" id="consent" name="consent" value="yes" required>
-<span class="consent-text" data-i18n-html="consentText"></span>
-</div>
-<button type="submit" class="submit-btn" id="submitBtn" data-i18n="submitBtn"></button>
+<!-- CleverReach native form integration (replaces Formspree) -->
+<div id="crFormContainer">
+<form class="layout_form cr_form cr_font" action="https://seu2.cleverreach.com/f/448270-426888/wcs/" method="post" target="_blank" id="cleverReachNewsletterForm">
+    <div class="cr_body cr_page cr_font formbox">
+        <div class="non_sortable" style="text-align:left;"></div>
+        <div class="editable_content" style="text-align:left;">
+            <div id="9745377" rel="email" class="cr_form-component cr_form-component--email cr_ipe_item ui-sortable musthave" style="margin-bottom:px;">
+                <div class="cr_form-inputgroup cr_form-inputgroup--typeemail">
+                    <label for="text9745377" data-i18n="labelEmail">E-Mail*</label>
+                    <input class="cr_form-input" type="email" id="text9745377" name="email" value="" placeholder="name@example.com" style="width:100%;" required>
+                </div>
+            </div>
+            <!-- GDPR Consent Checkbox (added manually to meet DSGVO) -->
+            <div class="cr-form-consent-wrap" id="consentWrapperCr">
+                <div class="consent-text-cr">
+                    <input type="checkbox" id="consent_cr_news" style="width: 18px; height: 18px; accent-color: var(--accent); margin-right: 10px; vertical-align: middle;">
+                    <label for="consent_cr_news" id="consentLabelHtml" style="display: inline; font-size: .72rem; color: var(--text-secondary); cursor: pointer;"></label>
+                </div>
+            </div>
+            <div id="9745381" rel="recaptcha" class="cr_ipe_item ui-sortable musthave">
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                <div id="recaptcha_v2_widget" class="g-recaptcha" data-theme="dark" data-size="normal" data-sitekey="6Lfhcd0SAAAAAOBEHmAVEHJeRnrH8T7wPvvNzEPD"></div>
+            </div>
+            <div id="9745379" rel="button" class="cr_form-component cr_form-component--submit cr_ipe_item ui-sortable submit_container">
+                <button type="submit" class="cr_form-block cr_button" data-i18n="submitBtn">Anmelden</button>
+            </div>
+        </div>
+        <noscript><a href="http://www.cleverreach.de">www.CleverReach.de</a></noscript>
+    </div>
+    <div class="badge" style="text-align:center; border:none !Important; background:transparent !Important; display: none;">
+        <a href="https://www.cleverreach.de/?utm_source=system&utm_medium=form&utm_campaign=c448270" target="_blank"><img src="https://d388us03v35p3m.cloudfront.net/cr3_images/badget1.png" border="0" /></a>
+    </div>
 </form>
-<div class="success-message" id="successMessage">
+</div>
+<div class="success-message-cr" id="successMessageCr">
 <div class="success-icon">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
 </div>
@@ -160,119 +289,111 @@ html[dir="rtl"] .form-group{text-align:right}
 </div>
 
 <script>
+// Translation object
 var T={
-de:{back:"\u2190 Zur\u00fcck zur Startseite",badge:"Er\u00f6ffnung Hansaallee \u00b7 Juli 2026",headline:"Bleiben Sie <em>informiert</em>",description:"Erfahren Sie als Erste/r von der Praxiser\u00f6ffnung, neuen Leistungen, Gesundheitsthemen und Veranstaltungen des ZPYU D\u00fcsseldorf.",pillar1:"Endokrinologie",pillar2:"Stoffwechselmedizin",pillar3:"Pr\u00e4ventivmedizin",formTitle:"Newsletter abonnieren",formSubtitle:"Kostenlos & jederzeit abbestellbar",labelFirstName:"Vorname",labelLastName:"Nachname",labelEmail:"E-Mail-Adresse",placeholderFirstName:"Ihr Vorname",placeholderLastName:"Ihr Nachname",errorFirstName:"Bitte Vornamen eingeben.",errorLastName:"Bitte Nachnamen eingeben.",errorEmail:"Bitte g\u00fcltige E-Mail-Adresse eingeben.",consentText:"Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gem\u00e4\u00df Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit <a href=\"mailto:contact@zpyu.de\">widerrufen</a> werden.",submitBtn:"Jetzt anmelden",submitting:"Wird gesendet\u2026",successTitle:"Vielen Dank!",successText:"Sie erhalten in K\u00fcrze eine Best\u00e4tigungs-E-Mail.<br>Bitte klicken Sie auf den Link, um Ihre Anmeldung abzuschlie\u00dfen.",footerResp:"Verantwortlicher gem. Art. 4 Nr. 7 DSGVO",footerAuth:"Aufsichtsbeh\u00f6rde",footerPriv:"Datenschutz",footerImp:"Impressum"},
-en:{back:"\u2190 Back to homepage",badge:"Opening Hansaallee \u00b7 July 2026",headline:"Stay <em>informed</em>",description:"Be the first to learn about our practice opening, new services, health topics and events at ZPYU D\u00fcsseldorf.",pillar1:"Endocrinology",pillar2:"Metabolic Medicine",pillar3:"Preventive Medicine",formTitle:"Subscribe to our newsletter",formSubtitle:"Free & unsubscribe anytime",labelFirstName:"First name",labelLastName:"Last name",labelEmail:"Email address",placeholderFirstName:"Your first name",placeholderLastName:"Your last name",errorFirstName:"Please enter your first name.",errorLastName:"Please enter your last name.",errorEmail:"Please enter a valid email address.",consentText:"I consent to my email address being processed for newsletter delivery in accordance with Art.&nbsp;6(1)(a) GDPR. This consent is voluntary and can be <a href=\"mailto:contact@zpyu.de\">revoked</a> at any time.",submitBtn:"Subscribe now",submitting:"Sending\u2026",successTitle:"Thank you!",successText:"You will receive a confirmation email shortly.<br>Please click the link to complete your registration.",footerResp:"Controller acc. Art. 4(7) GDPR",footerAuth:"Supervisory authority",footerPriv:"Privacy Policy",footerImp:"Legal Notice"},
-fr:{back:"\u2190 Retour \u00e0 l\u2019accueil",badge:"Ouverture Hansaallee \u00b7 Juillet 2026",headline:"Restez <em>inform\u00e9(e)</em>",description:"Soyez le/la premier(\u00e8re) inform\u00e9(e) de l\u2019ouverture du cabinet, des nouveaux services, des sujets de sant\u00e9 et des \u00e9v\u00e9nements du ZPYU D\u00fcsseldorf.",pillar1:"Endocrinologie",pillar2:"M\u00e9decine m\u00e9tabolique",pillar3:"M\u00e9decine pr\u00e9ventive",formTitle:"S\u2019abonner \u00e0 la newsletter",formSubtitle:"Gratuit & d\u00e9sabonnement \u00e0 tout moment",labelFirstName:"Pr\u00e9nom",labelLastName:"Nom",labelEmail:"Adresse e-mail",placeholderFirstName:"Votre pr\u00e9nom",placeholderLastName:"Votre nom",errorFirstName:"Veuillez entrer votre pr\u00e9nom.",errorLastName:"Veuillez entrer votre nom.",errorEmail:"Veuillez entrer une adresse e-mail valide.",consentText:"Je consens au traitement de mon adresse e-mail aux fins d\u2019envoi de la newsletter conform\u00e9ment \u00e0 l\u2019art.&nbsp;6(1)(a) du RGPD. Ce consentement est volontaire et peut \u00eatre <a href=\"mailto:contact@zpyu.de\">r\u00e9voqu\u00e9</a> \u00e0 tout moment.",submitBtn:"S\u2019abonner",submitting:"Envoi en cours\u2026",successTitle:"Merci\u00a0!",successText:"Vous recevrez un e-mail de confirmation sous peu.<br>Veuillez cliquer sur le lien pour finaliser votre inscription.",footerResp:"Responsable selon art. 4 n\u00b0 7 RGPD",footerAuth:"Autorit\u00e9 de contr\u00f4le",footerPriv:"Confidentialit\u00e9",footerImp:"Mentions l\u00e9gales"},
-ru:{back:"\u2190 \u041d\u0430 \u0433\u043b\u0430\u0432\u043d\u0443\u044e",badge:"\u041e\u0442\u043a\u0440\u044b\u0442\u0438\u0435 Hansaallee \u00b7 \u0418\u044e\u043b\u044c 2026",headline:"\u0411\u0443\u0434\u044c\u0442\u0435 <em>\u0432 \u043a\u0443\u0440\u0441\u0435</em>",description:"\u0423\u0437\u043d\u0430\u0439\u0442\u0435 \u043f\u0435\u0440\u0432\u044b\u043c\u0438 \u043e\u0431 \u043e\u0442\u043a\u0440\u044b\u0442\u0438\u0438 \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0438, \u043d\u043e\u0432\u044b\u0445 \u0443\u0441\u043b\u0443\u0433\u0430\u0445, \u0442\u0435\u043c\u0430\u0445 \u0437\u0434\u043e\u0440\u043e\u0432\u044c\u044f \u0438 \u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u044f\u0445 ZPYU.",pillar1:"\u042d\u043d\u0434\u043e\u043a\u0440\u0438\u043d\u043e\u043b\u043e\u0433\u0438\u044f",pillar2:"\u041c\u0435\u0442\u0430\u0431\u043e\u043b\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0430",pillar3:"\u041f\u0440\u043e\u0444\u0438\u043b\u0430\u043a\u0442\u0438\u043a\u0430",formTitle:"\u041f\u043e\u0434\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u0440\u0430\u0441\u0441\u044b\u043b\u043a\u0443",formSubtitle:"\u0411\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e \u0438 \u043c\u043e\u0436\u043d\u043e \u043e\u0442\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u0432 \u043b\u044e\u0431\u043e\u0435 \u0432\u0440\u0435\u043c\u044f",labelFirstName:"\u0418\u043c\u044f",labelLastName:"\u0424\u0430\u043c\u0438\u043b\u0438\u044f",labelEmail:"\u042d\u043b. \u043f\u043e\u0447\u0442\u0430",placeholderFirstName:"\u0412\u0430\u0448\u0435 \u0438\u043c\u044f",placeholderLastName:"\u0412\u0430\u0448\u0430 \u0444\u0430\u043c\u0438\u043b\u0438\u044f",errorFirstName:"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043c\u044f.",errorLastName:"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0444\u0430\u043c\u0438\u043b\u0438\u044e.",errorEmail:"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0439 e-mail.",consentText:"\u042f \u0441\u043e\u0433\u043b\u0430\u0441\u0435\u043d/\u043d\u0430 \u043d\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0443 \u043c\u043e\u0435\u0433\u043e e-mail \u0434\u043b\u044f \u0440\u0430\u0441\u0441\u044b\u043b\u043a\u0438 \u0432 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441\u043e \u0441\u0442. 6(1)(a) GDPR. \u042d\u0442\u043e \u0441\u043e\u0433\u043b\u0430\u0441\u0438\u0435 \u0434\u043e\u0431\u0440\u043e\u0432\u043e\u043b\u044c\u043d\u043e\u0435 \u0438 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c <a href=\"mailto:contact@zpyu.de\">\u043e\u0442\u043e\u0437\u0432\u0430\u043d\u043e</a> \u0432 \u043b\u044e\u0431\u043e\u0435 \u0432\u0440\u0435\u043c\u044f.",submitBtn:"\u041f\u043e\u0434\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f",submitting:"\u041e\u0442\u043f\u0440\u0430\u0432\u043a\u0430\u2026",successTitle:"\u0421\u043f\u0430\u0441\u0438\u0431\u043e!",successText:"\u0412\u044b \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u0435 \u043f\u0438\u0441\u044c\u043c\u043e \u0441 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435\u043c.<br>\u041d\u0430\u0436\u043c\u0438\u0442\u0435 \u043d\u0430 \u0441\u0441\u044b\u043b\u043a\u0443 \u0434\u043b\u044f \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u044f \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438.",footerResp:"\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0441\u043e\u0433\u043b. \u0441\u0442. 4 \u2116 7 GDPR",footerAuth:"\u041d\u0430\u0434\u0437\u043e\u0440\u043d\u044b\u0439 \u043e\u0440\u0433\u0430\u043d",footerPriv:"\u041a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",footerImp:"\u0418\u043c\u043f\u0440\u0435\u0441\u0441\u0443\u043c"},
-ar:{back:"\u2192 \u0627\u0644\u0639\u0648\u062f\u0629 \u0625\u0644\u0649 \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629",badge:"\u0627\u0641\u062a\u062a\u0627\u062d Hansaallee \u00b7 \u064a\u0648\u0644\u064a\u0648 2026",headline:"\u0627\u0628\u0642\u064e <em>\u0639\u0644\u0649 \u0627\u0637\u0644\u0627\u0639</em>",description:"\u0643\u0646 \u0623\u0648\u0644 \u0645\u0646 \u064a\u0639\u0631\u0641 \u0639\u0646 \u0627\u0641\u062a\u062a\u0627\u062d \u0627\u0644\u0639\u064a\u0627\u062f\u0629 \u0648\u0627\u0644\u062e\u062f\u0645\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u0648\u0627\u0644\u0645\u0648\u0627\u0636\u064a\u0639 \u0627\u0644\u0635\u062d\u064a\u0629 \u0648\u0641\u0639\u0627\u0644\u064a\u0627\u062a ZPYU.",pillar1:"\u0637\u0628 \u0627\u0644\u063a\u062f\u062f \u0627\u0644\u0635\u0645\u0627\u0621",pillar2:"\u0637\u0628 \u0627\u0644\u0623\u064a\u0636",pillar3:"\u0627\u0644\u0637\u0628 \u0627\u0644\u0648\u0642\u0627\u0626\u064a",formTitle:"\u0627\u0634\u062a\u0631\u0643 \u0641\u064a \u0627\u0644\u0646\u0634\u0631\u0629",formSubtitle:"\u0645\u062c\u0627\u0646\u064a \u0648\u064a\u0645\u0643\u0646 \u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u0627\u0634\u062a\u0631\u0627\u0643 \u0641\u064a \u0623\u064a \u0648\u0642\u062a",labelFirstName:"\u0627\u0644\u0627\u0633\u0645 \u0627\u0644\u0623\u0648\u0644",labelLastName:"\u0627\u0633\u0645 \u0627\u0644\u0639\u0627\u0626\u0644\u0629",labelEmail:"\u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a",placeholderFirstName:"\u0627\u0633\u0645\u0643 \u0627\u0644\u0623\u0648\u0644",placeholderLastName:"\u0627\u0633\u0645 \u0639\u0627\u0626\u0644\u062a\u0643",errorFirstName:"\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0627\u0644\u0627\u0633\u0645.",errorLastName:"\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0627\u0633\u0645 \u0627\u0644\u0639\u0627\u0626\u0644\u0629.",errorEmail:"\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0628\u0631\u064a\u062f \u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0635\u0627\u0644\u062d.",consentText:"\u0623\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0645\u0639\u0627\u0644\u062c\u0629 \u0628\u0631\u064a\u062f\u064a \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0644\u0625\u0631\u0633\u0627\u0644 \u0627\u0644\u0646\u0634\u0631\u0629 \u0648\u0641\u0642\u064b\u0627 \u0644\u0644\u0645\u0627\u062f\u0629 6(1)(\u0623) GDPR. \u0647\u0630\u0647 \u0627\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0637\u0648\u0639\u064a\u0629 \u0648\u064a\u0645\u0643\u0646 <a href=\"mailto:contact@zpyu.de\">\u0633\u062d\u0628\u0647\u0627</a> \u0641\u064a \u0623\u064a \u0648\u0642\u062a.",submitBtn:"\u0627\u0634\u062a\u0631\u0643 \u0627\u0644\u0622\u0646",submitting:"\u062c\u0627\u0631\u064d \u0627\u0644\u0625\u0631\u0633\u0627\u0644\u2026",successTitle:"\u0634\u0643\u0631\u064b\u0627!",successText:"\u0633\u062a\u062a\u0644\u0642\u0649 \u0631\u0633\u0627\u0644\u0629 \u062a\u0623\u0643\u064a\u062f \u0642\u0631\u064a\u0628\u064b\u0627.<br>\u064a\u0631\u062c\u0649 \u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0631\u0627\u0628\u0637 \u0644\u0625\u0643\u0645\u0627\u0644 \u0627\u0644\u062a\u0633\u062c\u064a\u0644.",footerResp:"\u0627\u0644\u0645\u0633\u0624\u0648\u0644 \u0648\u0641\u0642 \u0627\u0644\u0645\u0627\u062f\u0629 4 \u0631\u0642\u0645 7 GDPR",footerAuth:"\u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u0631\u0642\u0627\u0628\u064a\u0629",footerPriv:"\u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629",footerImp:"\u0628\u064a\u0627\u0646\u0627\u062a \u0642\u0627\u0646\u0648\u0646\u064a\u0629"}
+de:{back:"← Zurück zur Startseite",badge:"Eröffnung Hansaallee · Juli 2026",headline:"Bleiben Sie <em>informiert</em>",description:"Erfahren Sie als Erste/r von der Praxiseröffnung, neuen Leistungen, Gesundheitsthemen und Veranstaltungen des ZPYU Düsseldorf.",pillar1:"Endokrinologie",pillar2:"Stoffwechselmedizin",pillar3:"Präventivmedizin",formTitle:"Newsletter abonnieren",formSubtitle:"Kostenlos & jederzeit abbestellbar",labelEmail:"E-Mail-Adresse",submitBtn:"Jetzt anmelden",successTitle:"Vielen Dank!",successText:"Ihre Anmeldung wurde erfolgreich versendet.<br>Sie erhalten in Kürze eine Bestätigungs-E-Mail.<br>Bitte klicken Sie den Link in der E-Mail, um Ihre Anmeldung abzuschließen.",footerResp:"Verantwortlicher gem. Art. 4 Nr. 7 DSGVO",footerAuth:"Aufsichtsbehörde",footerPriv:"Datenschutz",footerImp:"Impressum",consentText:"Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit <a href=\"mailto:contact@zpyu.de\">widerrufen</a> werden."},
+en:{back:"← Back to homepage",badge:"Opening Hansaallee · July 2026",headline:"Stay <em>informed</em>",description:"Be the first to learn about our practice opening, new services, health topics and events at ZPYU Düsseldorf.",pillar1:"Endocrinology",pillar2:"Metabolic Medicine",pillar3:"Preventive Medicine",formTitle:"Subscribe to our newsletter",formSubtitle:"Free & unsubscribe anytime",labelEmail:"Email address",submitBtn:"Subscribe now",successTitle:"Thank you!",successText:"Your subscription has been sent successfully.<br>You will receive a confirmation email shortly.<br>Please click the link in the email to complete your registration.",footerResp:"Controller acc. Art. 4(7) GDPR",footerAuth:"Supervisory authority",footerPriv:"Privacy Policy",footerImp:"Legal Notice",consentText:"I consent to my email address being processed for newsletter delivery in accordance with Art.&nbsp;6(1)(a) GDPR. This consent is voluntary and can be <a href=\"mailto:contact@zpyu.de\">revoked</a> at any time."},
+fr:{back:"← Retour à l'accueil",badge:"Ouverture Hansaallee · Juillet 2026",headline:"Restez <em>informé(e)</em>",description:"Soyez le/la premier(ère) informé(e) de l'ouverture du cabinet, des nouveaux services, des sujets de santé et des événements du ZPYU Düsseldorf.",pillar1:"Endocrinologie",pillar2:"Médecine métabolique",pillar3:"Médecine préventive",formTitle:"S'abonner à la newsletter",formSubtitle:"Gratuit & désabonnement à tout moment",labelEmail:"Adresse e-mail",submitBtn:"S'abonner",successTitle:"Merci !",successText:"Votre inscription a été envoyée avec succès.<br>Vous recevrez un e-mail de confirmation sous peu.<br>Veuillez cliquer sur le lien dans l'e-mail pour finaliser votre inscription.",footerResp:"Responsable selon art. 4 nº 7 RGPD",footerAuth:"Autorité de contrôle",footerPriv:"Confidentialité",footerImp:"Mentions légales",consentText:"Je consens au traitement de mon adresse e-mail aux fins d'envoi de la newsletter conformément à l'art.&nbsp;6(1)(a) du RGPD. Ce consentement est volontaire et peut être <a href=\"mailto:contact@zpyu.de\">révoqué</a> à tout moment."},
+ru:{back:"← На главную",badge:"Открытие Hansaallee · Июль 2026",headline:"Будьте <em>в курсе</em>",description:"Узнайте первыми об открытии практики, новых услугах, темах здоровья и мероприятиях ZPYU.",pillar1:"Эндокринология",pillar2:"Метаболическая медицина",pillar3:"Профилактика",formTitle:"Подписаться на рассылку",formSubtitle:"Бесплатно и можно отписаться в любое время",labelEmail:"Эл. почта",submitBtn:"Подписаться",successTitle:"Спасибо!",successText:"Ваша подписка успешно отправлена.<br>Вы получите письмо с подтверждением.<br>Пожалуйста, нажмите на ссылку в письме для завершения регистрации.",footerResp:"Ответственный согл. ст. 4 № 7 GDPR",footerAuth:"Надзорный орган",footerPriv:"Конфиденциальность",footerImp:"Импрессум",consentText:"Я согласен/на на обработку моего e-mail для рассылки в соответствии со ст. 6(1)(a) GDPR. Это согласие добровольное и может быть <a href=\"mailto:contact@zpyu.de\">отозвано</a> в любое время."},
+ar:{back:"→ العودة إلى الرئيسية",badge:"افتتاح Hansaallee · يوليو 2026",headline:"<em>ابق على اطلاع</em>",description:"كن أول من يعرف عن افتتاح العيادة والخدمات الجديدة والمواضيع الصحية وفعاليات ZPYU.",pillar1:"طب الغدد الصماء",pillar2:"طب الأيض",pillar3:"الطب الوقائي",formTitle:"اشترك في النشرة",formSubtitle:"مجاني ويمكن إلغاء الاشتراك في أي وقت",labelEmail:"البريد الإلكتروني",submitBtn:"اشترك الآن",successTitle:"شكراً!",successText:"تم إرسال اشتراكك بنجاح.<br>ستتلقى رسالة تأكيد قريباً.<br>يرجى النقر على الرابط في البريد الإلكتروني لإكمال التسجيل.",footerResp:"المسؤول وفق المادة 4 رقم 7 GDPR",footerAuth:"جهة الإشراف",footerPriv:"الخصوصية",footerImp:"بيانات قانونية",consentText:"أوافق على معالجة بريدي الإلكتروني لإرسال النشرة وفقًا للمادة 6(1)(أ) GDPR. هذه الموافقة طوعية ويمكن <a href=\"mailto:contact@zpyu.de\">سحبها</a> في أي وقت."}
 };
 
 var currentLang='de';
+
 function setLang(lang){
-currentLang=lang;
-var t=T[lang];
-document.documentElement.setAttribute('dir',lang==='ar'?'rtl':'ltr');
-document.documentElement.setAttribute('lang',lang);
-document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(t[k])el.textContent=t[k]});
-document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.getAttribute('data-i18n-html');if(t[k])el.innerHTML=t[k]});
-document.querySelectorAll('[data-i18n-ph]').forEach(function(el){var k=el.getAttribute('data-i18n-ph');if(t[k])el.placeholder=t[k]});
-document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang)});
+    currentLang=lang;
+    var t=T[lang];
+    document.documentElement.setAttribute('dir',lang==='ar'?'rtl':'ltr');
+    document.documentElement.setAttribute('lang',lang);
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(t[k])el.textContent=t[k];});
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.getAttribute('data-i18n-html');if(t[k])el.innerHTML=t[k];});
+    // update consent label HTML
+    var consentLabel = document.getElementById('consentLabelHtml');
+    if(consentLabel && t.consentText) consentLabel.innerHTML = t.consentText;
+    // update email label if exists
+    var emailLabel = document.querySelector('label[for="text9745377"]');
+    if(emailLabel && t.labelEmail) emailLabel.innerHTML = t.labelEmail + '*';
+    // update submit button text
+    var submitBtn = document.querySelector('.cr_button');
+    if(submitBtn && t.submitBtn) submitBtn.textContent = t.submitBtn;
+    document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang);});
 }
 
-var form=document.getElementById('newsletterForm');
-var submitBtn=document.getElementById('submitBtn');
-var successMsg=document.getElementById('successMessage');
-var formContainer=document.querySelector('.form-card form');
-
-function showValidationError(element, show){
-if(show){
-element.closest('.form-group').classList.add('error');
-}else{
-if(element.closest('.form-group')) element.closest('.form-group').classList.remove('error');
-}
-}
-
-function validateEmail(email){
-return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-form.addEventListener('submit', function(e){
-e.preventDefault();
-
-var vornameField=document.getElementById('vorname');
-var nachnameField=document.getElementById('nachname');
-var emailField=document.getElementById('email');
-var consentCheck=document.getElementById('consent');
-var consentWrap=document.getElementById('consentWrapper');
-
-var isValid=true;
-
-if(!vornameField.value.trim()){
-showValidationError(vornameField, true);
-isValid=false;
-}else{
-showValidationError(vornameField, false);
-}
-
-if(!nachnameField.value.trim()){
-showValidationError(nachnameField, true);
-isValid=false;
-}else{
-showValidationError(nachnameField, false);
-}
-
-if(!emailField.value.trim() || !validateEmail(emailField.value.trim())){
-showValidationError(emailField, true);
-isValid=false;
-}else{
-showValidationError(emailField, false);
-}
-
-if(!consentCheck.checked){
-consentWrap.classList.add('consent-error-outline');
-setTimeout(function(){consentWrap.classList.remove('consent-error-outline');},3000);
-isValid=false;
-}else{
-consentWrap.classList.remove('consent-error-outline');
-}
-
-if(isValid){
-submitBtn.disabled=true;
-var originalText=submitBtn.textContent;
-submitBtn.textContent=T[currentLang].submitting;
-
-var formData=new FormData(form);
-fetch(form.action, {
-method: 'POST',
-body: formData,
-headers: { 'Accept': 'application/json' }
-})
-.then(response => {
-if(response.ok){
-form.style.display='none';
-successMsg.classList.add('show');
-} else {
-return response.json().then(data => { throw new Error(data.error || 'Formspree Fehler'); });
-}
-})
-.catch(error => {
-submitBtn.disabled=false;
-submitBtn.textContent=originalText;
-alert(error.message || 'Verbindungsfehler. Bitte versuchen Sie es erneut.');
+// CleverReach + GDPR validation
+document.addEventListener('DOMContentLoaded', function() {
+    setLang('de');
+    
+    const crForm = document.getElementById('cleverReachNewsletterForm');
+    const consentCheckbox = document.getElementById('consent_cr_news');
+    const successDiv = document.getElementById('successMessageCr');
+    const formContainer = document.getElementById('crFormContainer');
+    
+    // inject consent label text
+    const consentLabelSpan = document.getElementById('consentLabelHtml');
+    if(consentLabelSpan && T.de.consentText) consentLabelSpan.innerHTML = T.de.consentText;
+    
+    // override submit to enforce consent before native cleverreach validation
+    crForm.addEventListener('submit', function(e) {
+        if(!consentCheckbox.checked) {
+            e.preventDefault();
+            const consentWrap = document.getElementById('consentWrapperCr');
+            consentWrap.style.outline = "2px solid var(--error)";
+            consentWrap.style.borderRadius = "8px";
+            setTimeout(() => { consentWrap.style.outline = ""; }, 2500);
+            return false;
+        }
+        // optional: show success UI after a short delay because CleverReach opens new tab
+        // but we keep normal behaviour; we don't break CR functionality
+        // display success message but still allow native submit
+        setTimeout(() => {
+            if(formContainer && crForm.style.display !== 'none') {
+                crForm.style.display = 'none';
+                successDiv.classList.add('show');
+            }
+        }, 500);
+        return true;
+    });
+    
+    // If CR loads its own validation script, make sure it doesn't conflict. We keep original CR script
+    // Load CleverReach extra validation script that was provided.
+    function loadjQuery(e,t){var n=document.createElement("script");n.setAttribute("src",e);n.onload=t;n.onreadystatechange=function(){if(this.readyState=="complete"||this.readyState=="loaded")t()};document.getElementsByTagName("head")[0].appendChild(n)}
+    function main(){
+        var $cr=jQuery.noConflict();
+        $cr(document).ready(function(){
+            $cr(".cr_form").submit(function(){
+                // original cleverreach validation
+                $cr(this).find('.clever_form_error').removeClass('clever_form_error');
+                $cr(this).find('.clever_form_note').remove();
+                $cr(this).find(".musthave").find('input, textarea').each(function(){
+                    if($cr.trim($cr(this).val())==""||($cr(this).is(':checkbox'))||($cr(this).is(':radio'))){
+                        if($cr(this).is(':checkbox')||($cr(this).is(':radio'))){
+                            if(!$cr(this).parents(".cr_ipe_item").find(":checked").is(":checked")){
+                                $cr(this).parents(".cr_ipe_item").addClass('clever_form_error')
+                            }
+                        }else{
+                            $cr(this).addClass('clever_form_error')
+                        }
+                    }
+                });
+                if($cr(this).find('.clever_form_error').length){return false}
+                // custom consent double-check
+                var consentField = document.getElementById('consent_cr_news');
+                if(consentField && !consentField.checked) {
+                    return false;
+                }
+                return true;
+            });
+        });
+    }
+    if(typeof jQuery==="undefined"){loadjQuery("//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",main)}else{main()}
+    
+    // recaptcha dark theme adjustment: change theme to dark if needed (data-theme already dark)
+    // ensure recaptcha uses dark
+    var recaptchaDiv = document.querySelector('.g-recaptcha');
+    if(recaptchaDiv && currentLang !== 'de') {
+        // theme already dark, ok.
+    }
 });
-}
-});
-
-document.querySelectorAll('input').forEach(function(i){
-i.addEventListener('input',function(){
-if(i.closest('.form-group')) i.closest('.form-group').classList.remove('error');
-if(i.id==='consent'){
-document.getElementById('consentWrapper').classList.remove('consent-error-outline');
-}
-});
-});
-setLang('de');
 </script>
 </body>
 </html>
