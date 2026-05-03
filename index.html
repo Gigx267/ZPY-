@@ -800,7 +800,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
   </div>
 </section>
 
-
 <!-- NEWSLETTER -->
 <section id="newsletter" style="padding:0;margin:0;">
 <div style="background:#1e3d2f;min-height:100vh;display:flex;flex-direction:column;position:relative;overflow:hidden;">
@@ -826,27 +825,18 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
         #nlf input[type=email]:focus{border-color:#b8902a;background:rgba(255,255,255,0.1);}
         #nlf .cr_button{display:block;width:100%;padding:14px;background:#b8902a;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;margin-top:16px;transition:background 0.2s;border-radius:0;}
         #nlf .cr_button:hover{background:#d4ab4e;}
-        #nlf .g-recaptcha{margin:12px 0;transform:scale(0.88);transform-origin:left top;}
         #nlf .mce_text p{font-size:10px;color:rgba(255,255,255,0.28);line-height:1.6;margin-top:10px;}
-        #nlf .badge{display:none!important;}
-        #nlf .cr_body{box-shadow:none!important;background:transparent!important;}
-        #nlf .clever_form_error{border-color:#e05050!important;}
       </style>
       <div id="nlf">
-        <script>function loadjQuery(e,t){var n=document.createElement("script");n.setAttribute("src",e);n.onload=t;n.onreadystatechange=function(){if(this.readyState=="complete"||this.readyState=="loaded")t()};document.getElementsByTagName("head")[0].appendChild(n)}function mainNL(){var $cr=jQuery.noConflict();$cr(document).ready(function(){$cr("#nlf .cr_form").submit(function(){$cr(this).find('.clever_form_error').removeClass('clever_form_error');$cr(this).find(".musthave").find('input').each(function(){if(jQuery.trim($cr(this).val())==""){$cr(this).addClass('clever_form_error')}});if($cr(this).find('.clever_form_error').length){return false}return true})})}if(typeof jQuery==="undefined"){loadjQuery("//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",mainNL)}else{mainNL()}</script>
-        <form class="cr_form" action="https://seu2.cleverreach.com/f/448270-427027/wcs/" method="post" target="_blank">
+        <form action="https://formspree.io/f/meenqezz" method="POST">
           <div class="cr_body">
             <div class="cr_ipe_item musthave">
               <label data-de="E-Mail-Adresse *" data-en="Email address *" data-fr="Adresse e-mail *" data-ru="Email *" data-ar="البريد الإلكتروني *">E-Mail-Adresse *</label>
-              <input type="email" name="email" placeholder="ihre@email.de">
-            </div>
-            <div class="cr_ipe_item musthave">
-              <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-              <div class="g-recaptcha" data-theme="dark" data-sitekey="6Lfhcd0SAAAAAOBEHmAVEHJeRnrH8T7wPvvNzEPD"></div>
+              <input type="email" name="email" placeholder="ihre@email.de" required>
             </div>
             <div class="cr_ipe_item" style="margin-bottom:16px;">
               <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:11px!important;text-transform:none!important;letter-spacing:0!important;color:rgba(255,255,255,0.55)!important;font-weight:300!important;line-height:1.6;">
-                <input type="checkbox" name="cr_subunsubscribe" value="true" required style="width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:#b8902a;cursor:pointer;">
+                <input type="checkbox" name="consent" value="yes" required style="width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:#b8902a;cursor:pointer;">
                 <span data-de="Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit widerrufen werden." data-en="I consent to my email address being processed for the purpose of sending the newsletter in accordance with Art. 6(1)(a) GDPR. This consent is voluntary and can be withdrawn at any time." data-fr="Je consens à ce que mon adresse e-mail soit traitée aux fins d'envoi de la newsletter conformément à l'Art. 6(1)(a) RGPD. Ce consentement est volontaire et peut être retiré à tout moment." data-ru="Я согласен на обработку моего email-адреса для рассылки newsletter согласно ст. 6(1)(a) GDPR. Согласие добровольное и может быть отозвано." data-ar="أوافق على معالجة عنوان بريدي الإلكتروني لأغراض إرسال النشرة وفقاً للمادة 6(1)(أ) من GDPR.">Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit widerrufen werden.</span>
               </label>
             </div>
