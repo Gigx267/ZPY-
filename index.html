@@ -1375,7 +1375,6 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
   </div>
 </section>
 
-
 <!-- NEWSLETTER -->
 <section id="newsletter" style="padding:0;margin:0;">
 <div style="background:#1e3d2f;min-height:100vh;display:flex;flex-direction:column;position:relative;overflow:hidden;">
@@ -1393,47 +1392,55 @@ footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-conten
 
   <div style="max-width:460px;margin:0 auto 52px;width:100%;padding:0 24px;">
     <div style="background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.08);padding:28px 24px;">
-      <style>
-        #nlf .cr_ipe_item{margin:0 0 14px 0;padding:0;}
-        #nlf label{display:block;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:400;margin-bottom:7px;font-family:'Jost',sans-serif;}
-        #nlf input[type=email]{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,0.18);font-family:'Jost',sans-serif;font-size:13px;color:#fff;background:rgba(255,255,255,0.07);outline:none;transition:border 0.2s;border-radius:0;}
-        #nlf input[type=email]::placeholder{color:rgba(255,255,255,0.3);}
-        #nlf input[type=email]:focus{border-color:#b8902a;background:rgba(255,255,255,0.1);}
-        #nlf .cr_button{display:block;width:100%;padding:14px;background:#b8902a;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;margin-top:16px;transition:background 0.2s;border-radius:0;}
-        #nlf .cr_button:hover{background:#d4ab4e;}
-        #nlf .g-recaptcha{margin:12px 0;transform:scale(0.88);transform-origin:left top;}
-        #nlf .mce_text p{font-size:10px;color:rgba(255,255,255,0.28);line-height:1.6;margin-top:10px;}
-        #nlf .badge{display:none!important;}
-        #nlf .cr_body{box-shadow:none!important;background:transparent!important;}
-        #nlf .clever_form_error{border-color:#e05050!important;}
-      </style>
-      <div id="nlf">
-        <script>function loadjQuery(e,t){var n=document.createElement("script");n.setAttribute("src",e);n.onload=t;n.onreadystatechange=function(){if(this.readyState=="complete"||this.readyState=="loaded")t()};document.getElementsByTagName("head")[0].appendChild(n)}function mainNL(){var $cr=jQuery.noConflict();$cr(document).ready(function(){$cr("#nlf .cr_form").submit(function(){$cr(this).find('.clever_form_error').removeClass('clever_form_error');$cr(this).find(".musthave").find('input').each(function(){if(jQuery.trim($cr(this).val())==""){$cr(this).addClass('clever_form_error')}});if($cr(this).find('.clever_form_error').length){return false}return true})})}if(typeof jQuery==="undefined"){loadjQuery("//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",mainNL)}else{mainNL()}</script>
-        <form class="cr_form" action="https://seu2.cleverreach.com/f/448270-427027/wcs/" method="post" target="_blank">
-          <div class="cr_body">
-            <div class="cr_ipe_item musthave">
-              <label data-de="E-Mail-Adresse *" data-en="Email address *" data-fr="Adresse e-mail *" data-ru="Email *" data-ar="البريد الإلكتروني *">E-Mail-Adresse *</label>
-              <input type="email" name="email" placeholder="ihre@email.de">
-            </div>
-            <div class="cr_ipe_item musthave">
-              <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-              <div class="g-recaptcha" data-theme="dark" data-sitekey="6Lfhcd0SAAAAAOBEHmAVEHJeRnrH8T7wPvvNzEPD"></div>
-            </div>
-            <div class="cr_ipe_item" style="margin-bottom:16px;">
-              <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:11px!important;text-transform:none!important;letter-spacing:0!important;color:rgba(255,255,255,0.55)!important;font-weight:300!important;line-height:1.6;">
-                <input type="checkbox" name="cr_subunsubscribe" value="true" required style="width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:#b8902a;cursor:pointer;">
-                <span data-de="Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit widerrufen werden." data-en="I consent to my email address being processed for the purpose of sending the newsletter in accordance with Art. 6(1)(a) GDPR. This consent is voluntary and can be withdrawn at any time." data-fr="Je consens à ce que mon adresse e-mail soit traitée aux fins d'envoi de la newsletter conformément à l'Art. 6(1)(a) RGPD. Ce consentement est volontaire et peut être retiré à tout moment." data-ru="Я согласен на обработку моего email-адреса для рассылки newsletter согласно ст. 6(1)(a) GDPR. Согласие добровольное и может быть отозвано." data-ar="أوافق على معالجة عنوان بريدي الإلكتروني لأغراض إرسال النشرة وفقاً للمادة 6(1)(أ) من GDPR.">Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit widerrufen werden.</span>
-              </label>
-            </div>
-            <div class="cr_ipe_item">
-              <button type="submit" class="cr_button" data-de="Jetzt anmelden" data-en="Subscribe now" data-fr="S'inscrire" data-ru="Подписаться" data-ar="اشترك الآن">Jetzt anmelden</button>
-            </div>
-            <div class="cr_ipe_item">
-              <div class="mce_text"><p data-de="Double Opt-In — Ihre Einwilligung wird per E-Mail bestätigt. Abmeldung jederzeit möglich." data-en="Double opt-in — confirmed by email. Unsubscribe anytime." data-fr="Double opt-in — confirmé par email. Résiliation possible à tout moment." data-ru="Двойное подтверждение по email. Отписка в любое время." data-ar="تأكيد عبر البريد الإلكتروني. إلغاء الاشتراك في أي وقت.">Double Opt-In — Ihre Einwilligung wird per E-Mail bestätigt. Abmeldung jederzeit möglich.</p></div>
-            </div>
-          </div>
-        </form>
-      </div>
+      <!-- 
+        ============================================
+        NEWSLETTER FORM WITH FORMSPREE
+        ============================================
+        ACTION: Replace the URL below with your own Formspree endpoint.
+        You can get one for free at https://formspree.io/
+        ============================================
+      -->
+      <form action="https://formspree.io/f/mpqbzany" method="POST">
+        <!-- Hidden input for Formspree to identify the form -->
+        <input type="hidden" name="_subject" value="ZPYU Newsletter Anmeldung">
+        <!-- Optional: Use this to redirect after submission -->
+        <!-- <input type="hidden" name="_next" value="https://your-site.com/thank-you.html"> -->
+        
+        <div style="margin:0 0 14px 0;padding:0;">
+          <label style="display:block;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:400;margin-bottom:7px;font-family:'Jost',sans-serif;" data-de="E-Mail-Adresse *" data-en="Email address *" data-fr="Adresse e-mail *" data-ru="Email *" data-ar="البريد الإلكتروني *">E-Mail-Adresse *</label>
+          <input type="email" name="email" placeholder="ihre@email.de" required style="width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,0.18);font-family:'Jost',sans-serif;font-size:13px;color:#fff;background:rgba(255,255,255,0.07);outline:none;transition:border 0.2s;border-radius:0;">
+        </div>
+        
+        <!-- Optional: Add a name field if you want to collect it -->
+        <!--
+        <div style="margin:0 0 14px 0;padding:0;">
+          <label style="display:block;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:400;margin-bottom:7px;font-family:'Jost',sans-serif;" data-de="Vorname" data-en="First Name" data-fr="Prénom" data-ru="Имя" data-ar="الاسم الأول">Vorname</label>
+          <input type="text" name="name" placeholder="Ihr Name" style="width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,0.18);font-family:'Jost',sans-serif;font-size:13px;color:#fff;background:rgba(255,255,255,0.07);outline:none;transition:border 0.2s;border-radius:0;">
+        </div>
+        -->
+
+        <div style="margin-bottom:16px;">
+          <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:11px!important;text-transform:none!important;letter-spacing:0!important;color:rgba(255,255,255,0.55)!important;font-weight:300!important;line-height:1.6;">
+            <input type="checkbox" name="cr_subunsubscribe" value="true" required style="width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:#b8902a;cursor:pointer;">
+            <span data-de="Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit widerrufen werden." data-en="I consent to my email address being processed for the purpose of sending the newsletter in accordance with Art. 6(1)(a) GDPR. This consent is voluntary and can be withdrawn at any time." data-fr="Je consens à ce que mon adresse e-mail soit traitée aux fins d'envoi de la newsletter conformément à l'Art. 6(1)(a) RGPD. Ce consentement est volontaire et peut être retiré à tout moment." data-ru="Я согласен на обработку моего email-адреса для рассылки newsletter согласно ст. 6(1)(a) GDPR. Согласие добровольное и может быть отозвано." data-ar="أوافق على معالجة عنوان بريدي الإلكتروني لأغراض إرسال النشرة وفقاً للمادة 6(1)(أ) من GDPR.">Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit widerrufen werden.</span>
+          </label>
+        </div>
+
+        <!-- Honeypot field to prevent spam -->
+        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+          <label for="nl-email-confirm">Leave this field empty</label>
+          <input type="text" name="_gotcha" id="nl-email-confirm" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div>
+          <button type="submit" class="cr_button" style="display:block;width:100%;padding:14px;background:#b8902a;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;margin-top:16px;transition:background 0.2s;border-radius:0;" data-de="Jetzt anmelden" data-en="Subscribe now" data-fr="S'inscrire" data-ru="Подписаться" data-ar="اشترك الآن">Jetzt anmelden</button>
+        </div>
+
+        <div style="margin-top:10px;">
+          <div class="mce_text"><p style="font-size:10px;color:rgba(255,255,255,0.28);line-height:1.6;margin-top:10px;" data-de="Double Opt-In — Ihre Einwilligung wird per E-Mail bestätigt. Abmeldung jederzeit möglich." data-en="Double opt-in — confirmed by email. Unsubscribe anytime." data-fr="Double opt-in — confirmé par email. Résiliation possible à tout moment." data-ru="Двойное подтверждение по email. Отписка в любое время." data-ar="تأكيد عبر البريد الإلكتروني. إلغاء الاشتراك في أي وقت.">Double Opt-In — Ihre Einwilligung wird per E-Mail bestätigt. Abmeldung jederzeit möglich.</p></div>
+        </div>
+      </form>
+      <!-- END NEWSLETTER FORM -->
     </div>
   </div>
 
@@ -1810,7 +1817,6 @@ setLang('de');
     <p style="margin-top:28px;font-size:12px;color:var(--text-soft);font-style:italic;" data-de="Stand: Juli 2026. Diese Datenschutzerklärung wird bei Bedarf aktualisiert." data-en="As of: July 2026. This privacy policy will be updated as necessary." data-fr="En vigueur : juillet 2026. Cette politique de confidentialité sera mise à jour si nécessaire." data-ru="Актуально на: июль 2026. Данная политика конфиденциальности обновляется по мере необходимости." data-ar="اعتباراً من: يوليو 2026. سيتم تحديث سياسة الخصوصية هذه عند الضرورة."></p>
   </div>
 </div>
-
 
 <!-- NEWSLETTER POPUP -->
 <div id="nl-popup" role="banner">
