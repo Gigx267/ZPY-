@@ -1809,31 +1809,39 @@ document.addEventListener('DOMContentLoaded', function(){ zpyuExpandMails(); });
        <p class="nl-gate-t" data-de="Für die Anmeldung wird das Formular unseres Versanddienstleisters <strong>CleverReach</strong> (CleverReach GmbH &amp; Co. KG, Rastede) geladen. Zum Spam-Schutz bindet es <strong>Google reCAPTCHA</strong> ein — dabei wird Ihre IP-Adresse an Google übertragen. Details in unserer Datenschutzerklärung." data-en="Signing up loads the form of our mail service provider <strong>CleverReach</strong> (CleverReach GmbH &amp; Co. KG, Germany). For spam protection it embeds <strong>Google reCAPTCHA</strong>, which transmits your IP address to Google. See our privacy policy for details." data-fr="L&#39;inscription charge le formulaire de notre prestataire <strong>CleverReach</strong> (Allemagne). Il intègre <strong>Google reCAPTCHA</strong>, ce qui transmet votre adresse IP à Google. Voir notre politique de confidentialité." data-ru="Для подписки загружается форма нашего сервиса рассылок <strong>CleverReach</strong> (Германия). Для защиты от спама используется <strong>Google reCAPTCHA</strong> — ваш IP-адрес передаётся Google." data-ar="يتطلب الاشتراك تحميل نموذج مزود خدمة البريد <strong>CleverReach</strong> (ألمانيا). ولحماية من الرسائل المزعجة يستخدم <strong>Google reCAPTCHA</strong>، مما ينقل عنوان IP الخاص بك إلى Google."></p>
        <button type="button" id="nl-load" class="cr_button" data-de="Formular laden" data-en="Load form" data-fr="Charger le formulaire" data-ru="Загрузить форму" data-ar="تحميل النموذج">Formular laden</button>
      </div>
+
+     <!-- NEWSLETTER FORM — now using Formspree endpoint -->
      <div id="nlf" hidden>
-       <!-- Das CleverReach-Snippet lud hier jQuery 1.4.4 von ajax.googleapis.com,
-            nur um leere Pflichtfelder rot zu faerben. Das uebernimmt der
-            Browser mit "required" selbst — ein Drittanbieter-Request weniger. -->
-       <form class="cr_form" action="https://seu2.cleverreach.com/f/448270-427027/wcs/" method="post" target="_blank">
+       <form id="nl-form" action="https://formspree.io/f/mpqbzany" method="POST">
          <div class="cr_body">
            <div class="cr_ipe_item musthave">
              <label data-de="E-Mail-Adresse *" data-en="Email address *" data-fr="Adresse e-mail *" data-ru="Email *" data-ar="البريد الإلكتروني *">E-Mail-Adresse *</label>
              <input type="email" name="email" placeholder="ihre@email.de" required autocomplete="email">
            </div>
-           <!-- reCAPTCHA wird erst nach Klick auf "Formular laden" nachgeladen.
-                Sitekey: Konstante NL_RECAPTCHA_SITEKEY im Script unten. -->
-           <div class="cr_ipe_item" id="nl-captcha-slot"></div>
+
+           <!-- Consent checkbox -->
            <div class="cr_ipe_item" style="margin-bottom:16px;">
              <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:11px!important;text-transform:none!important;letter-spacing:0!important;color:rgba(255,255,255,0.55)!important;font-weight:300!important;line-height:1.6;">
-               <input type="checkbox" name="cr_subunsubscribe" value="true" required style="width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:#b8902a;cursor:pointer;">
+               <input type="checkbox" name="consent" value="yes" required style="width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:#b8902a;cursor:pointer;">
                <span data-de="Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit widerrufen werden." data-en="I consent to my email address being processed for the purpose of sending the newsletter in accordance with Art. 6(1)(a) GDPR. This consent is voluntary and can be withdrawn at any time." data-fr="Je consens à ce que mon adresse e-mail soit traitée aux fins d'envoi de la newsletter conformément à l'Art. 6(1)(a) RGPD. Ce consentement est volontaire et peut être retiré à tout moment." data-ru="Я согласен на обработку моего email-адреса для рассылки newsletter согласно ст. 6(1)(a) GDPR. Согласие добровольное и может быть отозвано." data-ar="أوافق على معالجة عنوان بريدي الإلكتروني لأغراض إرسال النشرة وفقاً للمادة 6(1)(أ) من GDPR.">Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit widerrufen werden.</span>
              </label>
            </div>
+
+           <!-- Honeypot field for spam protection -->
+           <input type="text" name="_gotcha" style="display:none;">
+
+           <!-- Submit button -->
            <div class="cr_ipe_item">
              <button type="submit" class="cr_button" data-de="Jetzt anmelden" data-en="Subscribe now" data-fr="S'inscrire" data-ru="Подписаться" data-ar="اشترك الآن">Jetzt anmelden</button>
            </div>
+
+           <!-- Double Opt-In note -->
            <div class="cr_ipe_item">
              <div class="mce_text"><p data-de="Double Opt-In — Ihre Einwilligung wird per E-Mail bestätigt. Abmeldung jederzeit möglich." data-en="Double opt-in — confirmed by email. Unsubscribe anytime." data-fr="Double opt-in — confirmé par email. Résiliation possible à tout moment." data-ru="Двойное подтверждение по email. Отписка в любое время." data-ar="تأكيد عبر البريد الإلكتروني. إلغاء الاشتراك في أي وقت.">Double Opt-In — Ihre Einwilligung wird per E-Mail bestätigt. Abmeldung jederzeit möglich.</p></div>
            </div>
+
+           <!-- Formspree redirect (optional) -->
+           <input type="hidden" name="_next" value="https://zpyu.de/newsletter-danke">
          </div>
        </form>
      </div>
@@ -1848,72 +1856,58 @@ document.addEventListener('DOMContentLoaded', function(){ zpyuExpandMails(); });
 
 <script>
 // ══════════════════════════════════════════════════════════════════════════
-// NEWSLETTER — CleverReach + Google reCAPTCHA erst nach ausdruecklichem Klick
+// NEWSLETTER — Formspree integration
 // ══════════════════════════════════════════════════════════════════════════
-// Warum das Gate: CleverReach und Google reCAPTCHA sind Drittanbieter. Wuerden
-// sie beim Seitenaufruf geladen, wuerde bei jedem Besucher ungefragt die
-// IP-Adresse an Google uebertragen — das widerspricht der Aussage "kein
-// Tracking" und ist ohne Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO
-// angreifbar. Erst der Klick auf "Formular laden" ist diese Einwilligung.
-//
-// ┌─ SITEKEY ──────────────────────────────────────────────────────────────┐
-// │ Der bisherige Key stammt aus dem CleverReach-Snippet und ist NICHT fuer │
-// │ zpyu.de freigegeben — daher der rote Kasten "Ungültige Domain für       │
-// │ Websiteschlüssel". Zwei Wege, das zu loesen:                            │
-// │  a) Eigenen reCAPTCHA-v2-Key auf google.com/recaptcha anlegen, dort     │
-// │     zpyu.de + www.zpyu.de als Domain eintragen, Key hier einsetzen und  │
-// │     denselben Key im CleverReach-Formular hinterlegen.                  │
-// │  b) reCAPTCHA im CleverReach-Formular deaktivieren lassen (Support      │
-// │     anfragen) und hier '' eintragen — Double-Opt-In schuetzt ohnehin.   │
-// │ Solange '' gesetzt ist, wird gar kein Google-Code geladen.              │
-// └────────────────────────────────────────────────────────────────────────┘
-var NL_RECAPTCHA_SITEKEY = '';   // <- hier den eigenen Sitekey eintragen
-
-// Direktlink auf das von CleverReach gehostete Formular — funktioniert immer,
-// auch wenn das eingebettete Formular klemmt.
-var NL_HOSTED_URL = 'https://seu2.cleverreach.com/f/448270-427027/';
-
 (function(){
- var gate = document.getElementById('nl-gate');
- var form = document.getElementById('nlf');
- var btn  = document.getElementById('nl-load');
- if(!gate || !form || !btn) return;
+  var gate = document.getElementById('nl-gate');
+  var formContainer = document.getElementById('nlf');
+  var loadBtn = document.getElementById('nl-load');
 
- var FB = {
-   de:'Formular klemmt? <a href="'+NL_HOSTED_URL+'" target="_blank" rel="noopener">Direkt bei CleverReach anmelden</a>.',
-   en:'Form not working? <a href="'+NL_HOSTED_URL+'" target="_blank" rel="noopener">Subscribe directly via CleverReach</a>.',
-   fr:'Le formulaire ne fonctionne pas ? <a href="'+NL_HOSTED_URL+'" target="_blank" rel="noopener">S\u2019inscrire directement</a>.',
-   ru:'\u0424\u043e\u0440\u043c\u0430 \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442? <a href="'+NL_HOSTED_URL+'" target="_blank" rel="noopener">\u041f\u043e\u0434\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0430\u043f\u0440\u044f\u043c\u0443\u044e</a>.',
-   ar:'<a href="'+NL_HOSTED_URL+'" target="_blank" rel="noopener">\u0627\u0634\u062a\u0631\u0643 \u0645\u0628\u0627\u0634\u0631\u0629 \u0639\u0628\u0631 CleverReach</a>.'
- };
+  if (!gate || !formContainer || !loadBtn) return;
 
- btn.addEventListener('click', function(){
-   gate.hidden = true;
-   form.hidden = false;
+  loadBtn.addEventListener('click', function() {
+    gate.hidden = true;
+    formContainer.hidden = false;
 
-   var fb = document.createElement('p');
-   fb.id = 'nl-fallback';
-   var lang = (typeof currentLang !== 'undefined' ? currentLang : 'de');
-   fb.innerHTML = FB[lang] || FB.de;
-   form.appendChild(fb);
+    // Handle form submission with fetch to show feedback
+    var form = document.getElementById('nl-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-   if(!NL_RECAPTCHA_SITEKEY) return;   // kein Key -> kein Google-Request
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Senden…';
+        submitBtn.disabled = true;
 
-   var slot = document.getElementById('nl-captcha-slot');
-   window.zpyuRenderCaptcha = function(){
-     try {
-       grecaptcha.render(slot, {sitekey: NL_RECAPTCHA_SITEKEY, theme: 'dark'});
-     } catch(e) {
-       slot.innerHTML = '<p style="font-size:11px;color:rgba(255,255,255,0.45);">'
-         + (FB[lang] || FB.de) + '</p>';
-     }
-   };
-   var sc = document.createElement('script');
-   sc.src = 'https://www.google.com/recaptcha/api.js?onload=zpyuRenderCaptcha&render=explicit';
-   sc.async = true; sc.defer = true;
-   sc.onerror = window.zpyuRenderCaptcha;
-   document.head.appendChild(sc);
- });
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(function(response) {
+          if (response.ok) {
+            // Success — replace form with thank you message
+            form.innerHTML = '<p style="color:#c9a84c;font-size:16px;text-align:center;padding:20px 0;">✓ Vielen Dank für Ihre Anmeldung!</p><p style="color:rgba(255,255,255,0.5);font-size:13px;text-align:center;">Bitte bestätigen Sie Ihre E-Mail-Adresse in der soeben versandten Nachricht.</p>';
+          } else {
+            throw new Error('Submission failed');
+          }
+        })
+        .catch(function() {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          var msg = document.createElement('p');
+          msg.style.cssText = 'color:#e05050;font-size:13px;margin-top:10px;text-align:center;';
+          msg.textContent = 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.';
+          form.appendChild(msg);
+        });
+      });
+    }
+  });
 })();
 </script>
 
