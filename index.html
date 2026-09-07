@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de" dir="ltr" data-theme="light">
 <head>
@@ -60,6 +61,9 @@
  --sans:  'Jost', 'Helvetica Neue', sans-serif;
  --blue: #3a6fa8; --blue-mid: #5285b8;
  --gold: #b8902a; --gold-l: #d4ab4e;
+ /* Originalfarben aus der Logodatei — nur fuer Bild- und Wortmarke.
+    Die UI-Toene (--blue/--gold) bleiben davon unberuehrt. */
+ --brand-blue: #174895; --brand-gold: #b7842c; --brand-grey: #939598;
 }
 [data-theme="light"] {
  --bg:#fff; --bg2:#f8fafc; --bg3:#eef4fb;
@@ -118,17 +122,24 @@ body{font-family:var(--sans);color:var(--text);background:var(--bg);overflow-x:h
 /* NAV */
 nav{position:fixed;top:34px;left:0;right:0;z-index:1000;background:var(--nav-bg);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:68px;border-bottom:1px solid var(--border);box-shadow:var(--nav-shadow);}
 .nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer;overflow:visible;flex-shrink:0;min-height:44px;}
-.nav-logo-zpyu{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--blue);letter-spacing:2px;}
+/* Bild- und Wortmarke stammen unveraendert aus der Logodatei
+   (logo_ZPYU_grau.svg). Die frueher hier nachgezeichnete Sonne mit zwei
+   Wellen und das als Text gesetzte "ZPYU" waren nur eine Annaeherung:
+   falscher Kreisversatz, halbtransparente zweite Welle, und die Farben
+   #b8902a/#3a6fa8 statt der Markentoene #b7842c/#174895. */
+.logo-mark{height:36px;width:auto;flex-shrink:0;display:block;}
+.logo-word{height:19px;width:auto;flex-shrink:0;display:block;color:var(--brand-blue);}
+[data-theme="dark"] .logo-word{color:#e8eef8;}
 [data-theme="dark"] .nav-logo-zpyu{color:var(--gold-l);}
 .nav-logo-div{width:1px;height:22px;background:var(--border);}
-.nav-logo-sub{font-family:var(--sans);font-size:10px;color:var(--text-mid);letter-spacing:1px;line-height:1.4;text-transform:uppercase;}
+.nav-logo-sub{font-family:var(--sans);font-size:10px;color:var(--brand-grey);letter-spacing:1px;line-height:1.4;text-transform:uppercase;}
 /* LOGO-FIX: auf schmalen Bildschirmen Untertitel & Divider verbergen,
    damit Logo nicht mit Hamburger-Menü kollidiert */
 @media(max-width:920px){
  /* Untertitel wird bereits ab 1240px ausgeblendet — siehe NAV-BREAKPOINTS */
 }
 @media(max-width:600px){
- .nav-logo-zpyu{font-size:22px;}
+ .logo-mark{height:30px;} .logo-word{height:16px;}
 }
 .nav-links{display:flex;gap:18px;list-style:none;align-items:center;}
 .nav-links a{font-family:var(--sans);font-size:10.5px;font-weight:400;color:var(--text-mid);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:var(--ease);position:relative;padding-bottom:3px;cursor:pointer;white-space:nowrap;}
@@ -440,7 +451,10 @@ section > .phil:first-of-type{padding-top:var(--page-top);}
 
 /* FOOTER */
 footer{background:var(--footer-bg);padding:54px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(58,111,168,0.2);}
-.f-logo{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--gold);letter-spacing:3px;}
+.f-logo{display:flex;align-items:center;}
+/* eigenstaendig, nicht ueber .logo-word — der Footer ist in beiden
+   Themes dunkel, die Wortmarke bleibt dort immer gold. */
+.f-word{height:22px;width:auto;flex-shrink:0;display:block;color:var(--brand-gold);}
 .f-copy{font-size:13px;color:var(--footer-text);font-weight:300;}
 .f-links{display:flex;gap:22px;}
 .f-links a{font-size:12px;color:var(--footer-text);text-decoration:none;letter-spacing:1px;transition:var(--ease);}
@@ -747,12 +761,8 @@ document.addEventListener('DOMContentLoaded', function(){ zpyuExpandMails(); });
 
 <nav id="mainNav">
  <div class="nav-logo" onclick="showSec('home')">
-   <svg width="32" height="25.6" viewBox="0 0 100 80" fill="none" style="flex-shrink:0;" xmlns="http://www.w3.org/2000/svg">
-     <circle cx="50" cy="22" r="13" fill="#b8902a"/>
-     <path d="M10,48 Q30,36 50,48 Q70,60 90,48" fill="none" stroke="#b8902a" stroke-width="5" stroke-linecap="round"/>
-     <path d="M14,60 Q32,50 50,60 Q68,70 86,60" fill="none" stroke="#b8902a" stroke-width="3.4" stroke-linecap="round" opacity="0.5"/>
-   </svg>
-   <span class="nav-logo-zpyu">ZPYU</span>
+   <svg class="logo-mark" viewBox="77.2 107.76 189.15 168.91" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><g transform="matrix(0.702402,0,0,0.702402,39.831235,68.756789)"><g transform="matrix(1.016283,0,0,1,-8.243373,-37)"><path d="M248.065,161.386C242.624,188.088 219.412,205.824 193.641,205.882C167.432,205.941 144.152,187.354 138.923,161.021C132.34,127.871 154.81,96.517 188.35,92.832C206.341,90.855 223.12,98.499 234.651,110.839C247.068,124.128 251.925,142.443 248.065,161.386Z" style="fill:rgb(183,132,44);"/></g><g transform="matrix(1,0,0,1,0,-37)"><path d="M314.481,256.725C310.642,262.784 294.02,274.265 285.423,277.716C259.97,287.931 232.333,289.247 206.399,278.929L168.236,260.349C134.358,243.854 96.23,247.488 67.51,271.646C62.32,276.012 49.635,261.213 54.152,256.737C83.792,227.367 128.802,219.408 167.126,235.577C178.881,240.536 189.006,245.672 199.996,251.803C231.323,269.28 269.138,267.622 297.167,244.979C299.606,243.009 301.529,241.202 304.485,241.695C308.08,242.296 317.185,252.457 314.481,256.725Z" style="fill:rgb(183,132,44);"/></g><g transform="matrix(1,0,0,1,0,-37)"><path d="M211.78,325.92L176.791,308.619C154.693,297.693 130.433,293.856 106.566,300.969C95.688,304.211 86.765,310.811 77.194,316.307C73.826,318.241 62.399,304.121 66.564,300.346C92.841,276.533 129.918,269.11 163.827,279.951C177.127,284.204 189.393,289.34 201.204,296.676C235.807,318.168 278.529,315.159 309.561,288.173C315.33,288.384 322.267,298.529 322.463,300.393C322.674,302.399 321.562,304.876 319.393,306.771C290.203,332.28 248.977,340.266 211.78,325.92Z" style="fill:rgb(183,132,44);"/></g></g></svg>
+   <svg class="logo-word" viewBox="310.26 107.15 438.59 89.81" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ZPYU"><g transform="matrix(0.924372,0,0,0.360171,308.126437,102.127535)"><path d="M87.503,13.942L31.711,243.906L49.772,243.906C58.312,243.906 64.285,242.528 67.692,239.773C73.246,235.462 78.029,227.527 82.043,215.969C86.056,204.41 88.833,188.93 90.373,169.527L93.103,169.527L89.253,257.56L2.31,257.56L58.172,27.236L44.101,27.236C38.641,27.236 35.048,27.656 33.321,28.494C30.054,30.051 26.986,33.135 24.116,37.746C21.246,42.358 18.866,48.496 16.976,56.162C15.085,63.827 13.604,73.529 12.53,85.266L9.94,85.266L12.53,13.942L87.503,13.942Z" style="fill:currentColor;fill-rule:nonzero;"/><path d="M170.175,147.249L170.175,214.801C170.175,227.976 170.49,236.27 171.12,239.684C171.75,243.097 172.871,245.822 174.481,247.858C176.091,249.894 179.042,250.912 183.336,250.912L183.336,257.56L135.104,257.56L135.104,250.912C139.491,250.912 142.466,249.864 144.03,247.768C145.593,245.672 146.69,242.947 147.32,239.594C147.95,236.24 148.265,227.976 148.265,214.801L148.265,56.7C148.265,43.525 147.95,35.231 147.32,31.818C146.69,28.404 145.581,25.679 143.995,23.643C142.408,21.607 139.444,20.589 135.104,20.589L135.104,13.942L176.476,13.942C190.103,13.942 199.88,20.17 205.807,32.626C211.733,45.083 214.697,60.653 214.697,79.338C214.697,95.148 212.783,108.682 208.957,119.941C205.13,131.199 199.856,138.865 193.136,142.937C188.609,145.812 180.956,147.249 170.175,147.249ZM170.175,27.955L170.175,133.235C171.715,133.475 172.882,133.595 173.676,133.595C179.369,133.595 183.756,129.253 186.836,120.569C189.916,111.886 191.456,98.441 191.456,80.236C191.456,62.15 189.916,48.915 186.836,40.531C183.756,32.147 179.159,27.955 173.046,27.955L170.175,27.955Z" style="fill:currentColor;fill-rule:nonzero;"/><path d="M343.571,13.942L343.571,20.589C340.444,21.667 338.041,24.002 336.361,27.596C334.027,32.626 330.341,46.34 325.3,68.738L304.72,156.95L304.72,215.879C304.72,228.455 304.976,236.27 305.49,239.324C306.003,242.378 307.018,245.073 308.535,247.409C310.052,249.744 312.07,250.912 314.59,250.912L319.91,250.912L319.91,257.56L266.639,257.56L266.639,250.912L271.609,250.912C274.409,250.912 276.626,249.655 278.259,247.139C279.472,245.463 280.429,242.588 281.129,238.516C281.642,235.641 281.899,228.096 281.899,215.879L281.899,167.011L259.568,62.629C255.135,42.028 252.008,29.901 250.188,26.248C248.368,22.595 245.941,20.709 242.908,20.589L242.908,13.942L288.409,13.942L288.409,20.589L286.379,20.589C283.626,20.589 281.701,21.607 280.604,23.643C279.507,25.679 278.959,27.835 278.959,30.111C278.959,34.423 280.826,45.262 284.559,62.629L301.71,143.296L318.79,69.816C323.037,51.85 325.16,39.932 325.16,34.063C325.16,30.83 324.554,28.135 323.34,25.979C321.754,22.984 318.837,21.188 314.59,20.589L314.59,13.942L343.571,13.942Z" style="fill:currentColor;fill-rule:nonzero;"/><path d="M379.062,13.942L428.064,13.942L428.064,20.589L425.614,20.589C421.927,20.589 419.395,21.577 418.018,23.553C416.642,25.53 415.662,28.254 415.078,31.728C414.495,35.201 414.203,43.885 414.203,57.778L414.203,177.072C414.203,198.871 414.845,213.304 416.128,220.37C417.412,227.437 419.523,233.306 422.464,237.977C425.404,242.648 429.114,244.984 433.594,244.984C438.727,244.984 443.102,242.019 446.719,236.09C450.336,230.162 453.043,221.987 454.84,211.567C456.636,201.147 457.535,183.001 457.535,157.13L457.535,57.778C457.535,46.879 457.091,39.094 456.205,34.423C455.318,29.752 454.198,26.518 452.844,24.721C450.744,21.966 447.781,20.589 443.954,20.589L443.954,13.942L476.785,13.942L476.785,20.589L474.825,20.589C472.165,20.589 469.948,21.966 468.175,24.721C466.402,27.476 465.118,31.608 464.325,37.118C463.718,40.95 463.415,47.837 463.415,57.778L463.415,150.303C463.415,178.929 462.68,199.59 461.21,212.286C459.74,224.981 456.158,236.659 450.464,247.319C444.771,257.979 437.001,263.309 427.154,263.309C418.94,263.309 412.593,260.494 408.113,254.865C402,247.199 397.683,237.378 395.163,225.401C392.643,213.423 391.383,197.314 391.383,177.072L391.383,57.778C391.383,43.765 391.079,35.052 390.472,31.638C389.866,28.224 388.816,25.5 387.322,23.464C385.829,21.427 383.076,20.469 379.062,20.589L379.062,13.942Z" style="fill:currentColor;fill-rule:nonzero;"/></g></svg>
    <span class="nav-logo-div"></span>
    <span class="nav-logo-sub" data-de="Zentrum für<br>Präventivmedizin Yunusah" data-en="Preventive<br>Medicine Center Yunusah" data-fr="Centre de Médecine<br>Préventive Yunusah" data-ru="Центр профилактической<br>медицины Юнусах" data-ar="مركز الطب الوقائي<br>يونوساه"></span>
  </div>
@@ -1809,39 +1819,31 @@ document.addEventListener('DOMContentLoaded', function(){ zpyuExpandMails(); });
        <p class="nl-gate-t" data-de="Für die Anmeldung wird das Formular unseres Versanddienstleisters <strong>CleverReach</strong> (CleverReach GmbH &amp; Co. KG, Rastede) geladen. Zum Spam-Schutz bindet es <strong>Google reCAPTCHA</strong> ein — dabei wird Ihre IP-Adresse an Google übertragen. Details in unserer Datenschutzerklärung." data-en="Signing up loads the form of our mail service provider <strong>CleverReach</strong> (CleverReach GmbH &amp; Co. KG, Germany). For spam protection it embeds <strong>Google reCAPTCHA</strong>, which transmits your IP address to Google. See our privacy policy for details." data-fr="L&#39;inscription charge le formulaire de notre prestataire <strong>CleverReach</strong> (Allemagne). Il intègre <strong>Google reCAPTCHA</strong>, ce qui transmet votre adresse IP à Google. Voir notre politique de confidentialité." data-ru="Для подписки загружается форма нашего сервиса рассылок <strong>CleverReach</strong> (Германия). Для защиты от спама используется <strong>Google reCAPTCHA</strong> — ваш IP-адрес передаётся Google." data-ar="يتطلب الاشتراك تحميل نموذج مزود خدمة البريد <strong>CleverReach</strong> (ألمانيا). ولحماية من الرسائل المزعجة يستخدم <strong>Google reCAPTCHA</strong>، مما ينقل عنوان IP الخاص بك إلى Google."></p>
        <button type="button" id="nl-load" class="cr_button" data-de="Formular laden" data-en="Load form" data-fr="Charger le formulaire" data-ru="Загрузить форму" data-ar="تحميل النموذج">Formular laden</button>
      </div>
-
-     <!-- NEWSLETTER FORM — now using Formspree endpoint -->
      <div id="nlf" hidden>
-       <form id="nl-form" action="https://formspree.io/f/mpqbzany" method="POST">
+       <!-- Das CleverReach-Snippet lud hier jQuery 1.4.4 von ajax.googleapis.com,
+            nur um leere Pflichtfelder rot zu faerben. Das uebernimmt der
+            Browser mit "required" selbst — ein Drittanbieter-Request weniger. -->
+       <form class="cr_form" action="https://seu2.cleverreach.com/f/448270-427027/wcs/" method="post" target="_blank">
          <div class="cr_body">
            <div class="cr_ipe_item musthave">
              <label data-de="E-Mail-Adresse *" data-en="Email address *" data-fr="Adresse e-mail *" data-ru="Email *" data-ar="البريد الإلكتروني *">E-Mail-Adresse *</label>
              <input type="email" name="email" placeholder="ihre@email.de" required autocomplete="email">
            </div>
-
-           <!-- Consent checkbox -->
+           <!-- reCAPTCHA wird erst nach Klick auf "Formular laden" nachgeladen.
+                Sitekey: Konstante NL_RECAPTCHA_SITEKEY im Script unten. -->
+           <div class="cr_ipe_item" id="nl-captcha-slot"></div>
            <div class="cr_ipe_item" style="margin-bottom:16px;">
              <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:11px!important;text-transform:none!important;letter-spacing:0!important;color:rgba(255,255,255,0.55)!important;font-weight:300!important;line-height:1.6;">
-               <input type="checkbox" name="consent" value="yes" required style="width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:#b8902a;cursor:pointer;">
+               <input type="checkbox" name="cr_subunsubscribe" value="true" required style="width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:#b8902a;cursor:pointer;">
                <span data-de="Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit widerrufen werden." data-en="I consent to my email address being processed for the purpose of sending the newsletter in accordance with Art. 6(1)(a) GDPR. This consent is voluntary and can be withdrawn at any time." data-fr="Je consens à ce que mon adresse e-mail soit traitée aux fins d'envoi de la newsletter conformément à l'Art. 6(1)(a) RGPD. Ce consentement est volontaire et peut être retiré à tout moment." data-ru="Я согласен на обработку моего email-адреса для рассылки newsletter согласно ст. 6(1)(a) GDPR. Согласие добровольное и может быть отозвано." data-ar="أوافق على معالجة عنوان بريدي الإلكتروني لأغراض إرسال النشرة وفقاً للمادة 6(1)(أ) من GDPR.">Ich willige ein, dass meine E-Mail-Adresse zum Zweck des Newsletter-Versands gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet wird. Diese Einwilligung ist freiwillig und kann jederzeit widerrufen werden.</span>
              </label>
            </div>
-
-           <!-- Honeypot field for spam protection -->
-           <input type="text" name="_gotcha" style="display:none;">
-
-           <!-- Submit button -->
            <div class="cr_ipe_item">
              <button type="submit" class="cr_button" data-de="Jetzt anmelden" data-en="Subscribe now" data-fr="S'inscrire" data-ru="Подписаться" data-ar="اشترك الآن">Jetzt anmelden</button>
            </div>
-
-           <!-- Double Opt-In note -->
            <div class="cr_ipe_item">
              <div class="mce_text"><p data-de="Double Opt-In — Ihre Einwilligung wird per E-Mail bestätigt. Abmeldung jederzeit möglich." data-en="Double opt-in — confirmed by email. Unsubscribe anytime." data-fr="Double opt-in — confirmé par email. Résiliation possible à tout moment." data-ru="Двойное подтверждение по email. Отписка в любое время." data-ar="تأكيد عبر البريد الإلكتروني. إلغاء الاشتراك في أي وقت.">Double Opt-In — Ihre Einwilligung wird per E-Mail bestätigt. Abmeldung jederzeit möglich.</p></div>
            </div>
-
-           <!-- Formspree redirect (optional) -->
-           <input type="hidden" name="_next" value="https://zpyu.de/newsletter-danke">
          </div>
        </form>
      </div>
@@ -1856,58 +1858,72 @@ document.addEventListener('DOMContentLoaded', function(){ zpyuExpandMails(); });
 
 <script>
 // ══════════════════════════════════════════════════════════════════════════
-// NEWSLETTER — Formspree integration
+// NEWSLETTER — CleverReach + Google reCAPTCHA erst nach ausdruecklichem Klick
 // ══════════════════════════════════════════════════════════════════════════
+// Warum das Gate: CleverReach und Google reCAPTCHA sind Drittanbieter. Wuerden
+// sie beim Seitenaufruf geladen, wuerde bei jedem Besucher ungefragt die
+// IP-Adresse an Google uebertragen — das widerspricht der Aussage "kein
+// Tracking" und ist ohne Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO
+// angreifbar. Erst der Klick auf "Formular laden" ist diese Einwilligung.
+//
+// ┌─ SITEKEY ──────────────────────────────────────────────────────────────┐
+// │ Der bisherige Key stammt aus dem CleverReach-Snippet und ist NICHT fuer │
+// │ zpyu.de freigegeben — daher der rote Kasten "Ungültige Domain für       │
+// │ Websiteschlüssel". Zwei Wege, das zu loesen:                            │
+// │  a) Eigenen reCAPTCHA-v2-Key auf google.com/recaptcha anlegen, dort     │
+// │     zpyu.de + www.zpyu.de als Domain eintragen, Key hier einsetzen und  │
+// │     denselben Key im CleverReach-Formular hinterlegen.                  │
+// │  b) reCAPTCHA im CleverReach-Formular deaktivieren lassen (Support      │
+// │     anfragen) und hier '' eintragen — Double-Opt-In schuetzt ohnehin.   │
+// │ Solange '' gesetzt ist, wird gar kein Google-Code geladen.              │
+// └────────────────────────────────────────────────────────────────────────┘
+var NL_RECAPTCHA_SITEKEY = '';   // <- hier den eigenen Sitekey eintragen
+
+// Direktlink auf das von CleverReach gehostete Formular — funktioniert immer,
+// auch wenn das eingebettete Formular klemmt.
+var NL_HOSTED_URL = 'https://seu2.cleverreach.com/f/448270-427027/';
+
 (function(){
-  var gate = document.getElementById('nl-gate');
-  var formContainer = document.getElementById('nlf');
-  var loadBtn = document.getElementById('nl-load');
+ var gate = document.getElementById('nl-gate');
+ var form = document.getElementById('nlf');
+ var btn  = document.getElementById('nl-load');
+ if(!gate || !form || !btn) return;
 
-  if (!gate || !formContainer || !loadBtn) return;
+ var FB = {
+   de:'Formular klemmt? <a href="'+NL_HOSTED_URL+'" target="_blank" rel="noopener">Direkt bei CleverReach anmelden</a>.',
+   en:'Form not working? <a href="'+NL_HOSTED_URL+'" target="_blank" rel="noopener">Subscribe directly via CleverReach</a>.',
+   fr:'Le formulaire ne fonctionne pas ? <a href="'+NL_HOSTED_URL+'" target="_blank" rel="noopener">S\u2019inscrire directement</a>.',
+   ru:'\u0424\u043e\u0440\u043c\u0430 \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442? <a href="'+NL_HOSTED_URL+'" target="_blank" rel="noopener">\u041f\u043e\u0434\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0430\u043f\u0440\u044f\u043c\u0443\u044e</a>.',
+   ar:'<a href="'+NL_HOSTED_URL+'" target="_blank" rel="noopener">\u0627\u0634\u062a\u0631\u0643 \u0645\u0628\u0627\u0634\u0631\u0629 \u0639\u0628\u0631 CleverReach</a>.'
+ };
 
-  loadBtn.addEventListener('click', function() {
-    gate.hidden = true;
-    formContainer.hidden = false;
+ btn.addEventListener('click', function(){
+   gate.hidden = true;
+   form.hidden = false;
 
-    // Handle form submission with fetch to show feedback
-    var form = document.getElementById('nl-form');
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
+   var fb = document.createElement('p');
+   fb.id = 'nl-fallback';
+   var lang = (typeof currentLang !== 'undefined' ? currentLang : 'de');
+   fb.innerHTML = FB[lang] || FB.de;
+   form.appendChild(fb);
 
-        var submitBtn = form.querySelector('button[type="submit"]');
-        var originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Senden…';
-        submitBtn.disabled = true;
+   if(!NL_RECAPTCHA_SITEKEY) return;   // kein Key -> kein Google-Request
 
-        var formData = new FormData(form);
-
-        fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        })
-        .then(function(response) {
-          if (response.ok) {
-            // Success — replace form with thank you message
-            form.innerHTML = '<p style="color:#c9a84c;font-size:16px;text-align:center;padding:20px 0;">✓ Vielen Dank für Ihre Anmeldung!</p><p style="color:rgba(255,255,255,0.5);font-size:13px;text-align:center;">Bitte bestätigen Sie Ihre E-Mail-Adresse in der soeben versandten Nachricht.</p>';
-          } else {
-            throw new Error('Submission failed');
-          }
-        })
-        .catch(function() {
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-          var msg = document.createElement('p');
-          msg.style.cssText = 'color:#e05050;font-size:13px;margin-top:10px;text-align:center;';
-          msg.textContent = 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.';
-          form.appendChild(msg);
-        });
-      });
-    }
-  });
+   var slot = document.getElementById('nl-captcha-slot');
+   window.zpyuRenderCaptcha = function(){
+     try {
+       grecaptcha.render(slot, {sitekey: NL_RECAPTCHA_SITEKEY, theme: 'dark'});
+     } catch(e) {
+       slot.innerHTML = '<p style="font-size:11px;color:rgba(255,255,255,0.45);">'
+         + (FB[lang] || FB.de) + '</p>';
+     }
+   };
+   var sc = document.createElement('script');
+   sc.src = 'https://www.google.com/recaptcha/api.js?onload=zpyuRenderCaptcha&render=explicit';
+   sc.async = true; sc.defer = true;
+   sc.onerror = window.zpyuRenderCaptcha;
+   document.head.appendChild(sc);
+ });
 })();
 </script>
 
@@ -2024,7 +2040,7 @@ document.addEventListener('DOMContentLoaded', function(){ zpyuExpandMails(); });
 </section>
 
 <footer>
- <div class="f-logo">ZPYU</div>
+ <div class="f-logo"><svg class="f-word" viewBox="310.26 107.15 438.59 89.81" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ZPYU"><g transform="matrix(0.924372,0,0,0.360171,308.126437,102.127535)"><path d="M87.503,13.942L31.711,243.906L49.772,243.906C58.312,243.906 64.285,242.528 67.692,239.773C73.246,235.462 78.029,227.527 82.043,215.969C86.056,204.41 88.833,188.93 90.373,169.527L93.103,169.527L89.253,257.56L2.31,257.56L58.172,27.236L44.101,27.236C38.641,27.236 35.048,27.656 33.321,28.494C30.054,30.051 26.986,33.135 24.116,37.746C21.246,42.358 18.866,48.496 16.976,56.162C15.085,63.827 13.604,73.529 12.53,85.266L9.94,85.266L12.53,13.942L87.503,13.942Z" style="fill:currentColor;fill-rule:nonzero;"/><path d="M170.175,147.249L170.175,214.801C170.175,227.976 170.49,236.27 171.12,239.684C171.75,243.097 172.871,245.822 174.481,247.858C176.091,249.894 179.042,250.912 183.336,250.912L183.336,257.56L135.104,257.56L135.104,250.912C139.491,250.912 142.466,249.864 144.03,247.768C145.593,245.672 146.69,242.947 147.32,239.594C147.95,236.24 148.265,227.976 148.265,214.801L148.265,56.7C148.265,43.525 147.95,35.231 147.32,31.818C146.69,28.404 145.581,25.679 143.995,23.643C142.408,21.607 139.444,20.589 135.104,20.589L135.104,13.942L176.476,13.942C190.103,13.942 199.88,20.17 205.807,32.626C211.733,45.083 214.697,60.653 214.697,79.338C214.697,95.148 212.783,108.682 208.957,119.941C205.13,131.199 199.856,138.865 193.136,142.937C188.609,145.812 180.956,147.249 170.175,147.249ZM170.175,27.955L170.175,133.235C171.715,133.475 172.882,133.595 173.676,133.595C179.369,133.595 183.756,129.253 186.836,120.569C189.916,111.886 191.456,98.441 191.456,80.236C191.456,62.15 189.916,48.915 186.836,40.531C183.756,32.147 179.159,27.955 173.046,27.955L170.175,27.955Z" style="fill:currentColor;fill-rule:nonzero;"/><path d="M343.571,13.942L343.571,20.589C340.444,21.667 338.041,24.002 336.361,27.596C334.027,32.626 330.341,46.34 325.3,68.738L304.72,156.95L304.72,215.879C304.72,228.455 304.976,236.27 305.49,239.324C306.003,242.378 307.018,245.073 308.535,247.409C310.052,249.744 312.07,250.912 314.59,250.912L319.91,250.912L319.91,257.56L266.639,257.56L266.639,250.912L271.609,250.912C274.409,250.912 276.626,249.655 278.259,247.139C279.472,245.463 280.429,242.588 281.129,238.516C281.642,235.641 281.899,228.096 281.899,215.879L281.899,167.011L259.568,62.629C255.135,42.028 252.008,29.901 250.188,26.248C248.368,22.595 245.941,20.709 242.908,20.589L242.908,13.942L288.409,13.942L288.409,20.589L286.379,20.589C283.626,20.589 281.701,21.607 280.604,23.643C279.507,25.679 278.959,27.835 278.959,30.111C278.959,34.423 280.826,45.262 284.559,62.629L301.71,143.296L318.79,69.816C323.037,51.85 325.16,39.932 325.16,34.063C325.16,30.83 324.554,28.135 323.34,25.979C321.754,22.984 318.837,21.188 314.59,20.589L314.59,13.942L343.571,13.942Z" style="fill:currentColor;fill-rule:nonzero;"/><path d="M379.062,13.942L428.064,13.942L428.064,20.589L425.614,20.589C421.927,20.589 419.395,21.577 418.018,23.553C416.642,25.53 415.662,28.254 415.078,31.728C414.495,35.201 414.203,43.885 414.203,57.778L414.203,177.072C414.203,198.871 414.845,213.304 416.128,220.37C417.412,227.437 419.523,233.306 422.464,237.977C425.404,242.648 429.114,244.984 433.594,244.984C438.727,244.984 443.102,242.019 446.719,236.09C450.336,230.162 453.043,221.987 454.84,211.567C456.636,201.147 457.535,183.001 457.535,157.13L457.535,57.778C457.535,46.879 457.091,39.094 456.205,34.423C455.318,29.752 454.198,26.518 452.844,24.721C450.744,21.966 447.781,20.589 443.954,20.589L443.954,13.942L476.785,13.942L476.785,20.589L474.825,20.589C472.165,20.589 469.948,21.966 468.175,24.721C466.402,27.476 465.118,31.608 464.325,37.118C463.718,40.95 463.415,47.837 463.415,57.778L463.415,150.303C463.415,178.929 462.68,199.59 461.21,212.286C459.74,224.981 456.158,236.659 450.464,247.319C444.771,257.979 437.001,263.309 427.154,263.309C418.94,263.309 412.593,260.494 408.113,254.865C402,247.199 397.683,237.378 395.163,225.401C392.643,213.423 391.383,197.314 391.383,177.072L391.383,57.778C391.383,43.765 391.079,35.052 390.472,31.638C389.866,28.224 388.816,25.5 387.322,23.464C385.829,21.427 383.076,20.469 379.062,20.589L379.062,13.942Z" style="fill:currentColor;fill-rule:nonzero;"/></g></svg></div>
  <div class="f-copy" data-de="© 2026 ZPYU Metabolic & Preventive Medicine Center · Düsseldorf" data-en="© 2026 ZPYU Metabolic & Preventive Medicine Center · Düsseldorf" data-fr="© 2026 ZPYU Centre de Médecine Préventive · Düsseldorf" data-ru="© 2026 ZPYU Центр профилактической медицины · Дюссельдорф" data-ar="© 2026 مركز ZPYU للطب الوقائي · دوسلدورف"></div>
  <div class="f-links">
    <a href="#" onclick="openModal('modal-impressum');return false;" data-de="Impressum" data-en="Imprint" data-fr="Mentions légales" data-ru="Выходные данные" data-ar="بيانات النشر"></a>
