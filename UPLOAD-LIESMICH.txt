@@ -23,4 +23,11 @@ Kontrolle nach dem Upload:
 https://zpyu.de/fonts/jost-400-latin.woff2
 → startet ein Download = richtig.  404 = Ordner fehlt.
 
+Das Logo steckt als Vektor direkt in der index.html — es muss keine
+separate Logodatei hochgeladen werden.
+
+Prüfen nach dem Upload: Impressum im Footer öffnen. Alle Zeilen müssen
+Beschriftungen haben (z. B. "Betriebsstättennummer (BSNR): 248007900").
+Steht dort nur ": 248007900", ist JavaScript blockiert.
+
 Diese Datei (UPLOAD-LIESMICH.txt) muss nicht mit hoch.
